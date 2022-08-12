@@ -715,22 +715,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseSpeed: 20
   bouncyMaterial: {fileID: 6200000, guid: 3555f168242e5f743a6e1050c66c9705, type: 2}
---- !u!58 &1812016448
-CircleCollider2D:
+--- !u!114 &1812016448
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1812016442}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.6
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 362d455f164d45b45af018876c0833cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingHealth: 100
+  minimumScale: 0.25
+  loseHealthPerSecond: 1
+  currentHealth: 0
 --- !u!1 &1886712775
 GameObject:
   m_ObjectHideFlags: 0
