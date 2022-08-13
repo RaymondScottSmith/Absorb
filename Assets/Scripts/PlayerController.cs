@@ -55,6 +55,7 @@ public class PlayerController : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D col)
     {
+        
         //If we hit a bounceable object while holding down mouse and moving
         if (col.gameObject.CompareTag("Bounceable") && Input.GetMouseButton(0) && moving)
         {
@@ -63,13 +64,16 @@ public class PlayerController : MonoBehaviour
             //Set current velocity to zero. Stopping the player
             rb.velocity = Vector2.zero;
             moving = false;
+            /*
             //Use raycast to determine exactly where we impacted wall
             RaycastHit2D hit = Physics2D.Raycast(transform.position, reverseVelocity);
             if (hit.collider != null)
             {
                 //Move the player back if we bounced a little away from the wall
                 transform.position = hit.point;
-            }
+            }*/
+
+            transform.position = col.GetContact(0).point;
         }
     }
 

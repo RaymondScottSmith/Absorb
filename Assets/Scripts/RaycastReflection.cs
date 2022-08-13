@@ -29,6 +29,7 @@ public class RaycastReflection : MonoBehaviour
             Vector3 origin = transform.position;
             Vector3 velocity = (endDragPos - origin);
             velocity.Normalize();
+            Debug.Log("32: velocity: " + velocity);
             // RaycastHit2D hit = Physics2D.Raycast(transform.position, velocity);
 
             lineRenderer.positionCount = 1;
@@ -54,13 +55,13 @@ public class RaycastReflection : MonoBehaviour
                     origin = hit.point;
                     velocity = Vector2.Reflect(velocity, hit.normal);
                     velocity.Normalize();
-                    if (!hit.collider.CompareTag("Bounceable"))
+                    Debug.Log("58: velocity: " + velocity);
+                    if (hit.collider.CompareTag("Food"))
                     {
                         break;
                     }
                     else if (hit.collider.CompareTag("Bounceable") && i == reflections)
                     {
-                        
                         break;
                     }
                     else
