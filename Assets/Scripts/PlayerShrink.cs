@@ -14,7 +14,7 @@ public class PlayerShrink : Shrink
         //Set currentHealth to starting health
         currentHealth = startingHealth;
         //Calculate scale value
-        scaleValue = (1 - minimumScale)/startingHealth;
+        scaleValue = (transform.localScale.x - minimumScale)/startingHealth;
         //Start the Coroutine that will decrease health over time
         StartCoroutine(LoseHealth());
 
