@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float baseSpeed = 1;
 
+    [SerializeField]
     private Rigidbody2D rb;
     private bool moving;
     private bool touchingBounceable;
@@ -17,9 +18,9 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
         moving = false;
         readyToLaunch = true;
+        rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
