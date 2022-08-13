@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     private bool moving;
     private bool touchingBounceable;
+    private PlayerShrink playerShrink;
     public bool readyToLaunch;
     public PhysicsMaterial2D bouncyMaterial;
 
@@ -23,6 +24,7 @@ public class PlayerController : MonoBehaviour
         moving = false;
         readyToLaunch = true;
         rb = GetComponent<Rigidbody2D>();
+        playerShrink = GetComponent<PlayerShrink>();
     }
 
     // Update is called once per frame
@@ -47,23 +49,21 @@ public class PlayerController : MonoBehaviour
                 //Start the player moving
                 rb.AddForce(mouseDir * baseSpeed, ForceMode2D.Impulse);
             }
-            /*
-            else if (!moving)
-            {
-                //Resets player when releasing mouse button after sticking
-                readyToLaunch = true;
-            }
-            */
         }
         if (Input.GetKeyDown(KeyCode.Space) && moving)
         {
             grabbing = true;
-            //Debug.Log("Grabbing should be true");
         }
     }
 
     void OnCollisionEnter2D(Collision2D col)
     {
+        //transform.LookAt(Vector2.Reflect(rb.velocity, col.GetContact(0).normal));
+        //transform.Rotate(Vector3.forward, 90);
+        
+        Vector2 v = rb.velocity;
+        float angle = Mathf.Atan2(v.y, v.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.AngleAxis(angle-90, Vector3.forward);
         
         //If we hit a bounceable object while holding down mouse and moving
         if (col.gameObject.CompareTag("Bounceable") && grabbing)
@@ -76,6 +76,11 @@ public class PlayerController : MonoBehaviour
             moving = false;
             readyToLaunch = true;
             transform.position = col.GetContact(0).point;
+        }
+
+        if (col.gameObject.CompareTag("Damaging"))
+        {
+            playerShrink.TakeDamage(10);
         }
     }
 

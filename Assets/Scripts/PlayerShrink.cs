@@ -7,10 +7,16 @@ public class PlayerShrink : Shrink
 {
     private List<GameObject> foodBeingEaten;
 
+    [SerializeField]
+    private Gradient playerColor;
+
+    private SpriteRenderer spriteRenderer;
+
     // Start is called before the first frame update
     void Start()
     {
         foodBeingEaten = new List<GameObject>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
         //Set currentHealth to starting health
         currentHealth = startingHealth;
         //Calculate scale value
@@ -26,8 +32,12 @@ public class PlayerShrink : Shrink
         //Calculate the new scale
         float newScale = scaleValue * currentHealth + minimumScale;
             
-        //Adjust scale as health decreases
+        //Adjust scale as health changes
         transform.localScale = new Vector3(newScale, newScale, 0);
+        //Adjust color as health changes
+        float healthColor = (float)currentHealth / startingHealth;
+        spriteRenderer.color = playerColor.Evaluate(healthColor);
+
     }
 
 
@@ -41,6 +51,13 @@ public class PlayerShrink : Shrink
             yield return new WaitForSeconds(1);
         }
         GameOver();
+    }
+
+    public void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
+        if (currentHealth < 0)
+            currentHealth = 0;
     }
 
     public void GameOver()

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Bounceable
   - Food
+  - Damaging
   layers:
   - Default
   - TransparentFX
