@@ -54,7 +54,7 @@ public class Shrink : MonoBehaviour
         //Decrease health every second until it's 0
         while (currentHealth > 0)
         {
-            eater.GainHealth(1);
+            eater.GainHealth(2);
             currentHealth--;
             yield return new WaitForSeconds(1);
         }

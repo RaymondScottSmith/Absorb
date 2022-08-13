@@ -15,6 +15,8 @@ public class PlayerController : MonoBehaviour
     public bool readyToLaunch;
     public PhysicsMaterial2D bouncyMaterial;
 
+    private bool grabbing;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +34,7 @@ public class PlayerController : MonoBehaviour
             //Check readyToLaunch to make sure it doesn't automatically launch when we release click after stopping
             if (readyToLaunch)
             {
+                grabbing = false;
                 readyToLaunch = false;
                 moving = true;
                 //Get Mouse position
@@ -44,35 +47,34 @@ public class PlayerController : MonoBehaviour
                 //Start the player moving
                 rb.AddForce(mouseDir * baseSpeed, ForceMode2D.Impulse);
             }
+            /*
             else if (!moving)
             {
                 //Resets player when releasing mouse button after sticking
                 readyToLaunch = true;
             }
+            */
         }
-
+        if (Input.GetKeyDown(KeyCode.Space) && moving)
+        {
+            grabbing = true;
+            //Debug.Log("Grabbing should be true");
+        }
     }
 
     void OnCollisionEnter2D(Collision2D col)
     {
         
         //If we hit a bounceable object while holding down mouse and moving
-        if (col.gameObject.CompareTag("Bounceable") && Input.GetMouseButton(0) && moving)
+        if (col.gameObject.CompareTag("Bounceable") && grabbing)
         {
+            grabbing = false;
             //Calculate reverse of current velocity
             Vector2 reverseVelocity = -rb.velocity;
             //Set current velocity to zero. Stopping the player
             rb.velocity = Vector2.zero;
             moving = false;
-            /*
-            //Use raycast to determine exactly where we impacted wall
-            RaycastHit2D hit = Physics2D.Raycast(transform.position, reverseVelocity);
-            if (hit.collider != null)
-            {
-                //Move the player back if we bounced a little away from the wall
-                transform.position = hit.point;
-            }*/
-
+            readyToLaunch = true;
             transform.position = col.GetContact(0).point;
         }
     }
