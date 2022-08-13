@@ -19,28 +19,7 @@ public class PlayerShrink : Shrink
         StartCoroutine(LoseHealth());
 
     }
-
-    /*
-    private IEnumerator GainHealthOverTime(int addedHealth, GameObject food)
-    {
-        food.GetComponent<CircleCollider2D>().enabled = false;
-        food.transform.SetParent(playerParent.transform);
-        while (addedHealth > 0)
-        {
-            addedHealth--;
-            currentHealth++;
-            if (currentHealth > startingHealth)
-            {
-                currentHealth = startingHealth;
-            }
-            yield return new WaitForSeconds(1);
-        }
-
-        foodBeingEaten.Remove(food);
-        Destroy(food);
-        
-    }
-    */
+    
 
     private void FixedUpdate()
     {
@@ -73,10 +52,6 @@ public class PlayerShrink : Shrink
     {
         if (other.CompareTag("Food"))
         {
-            /*
-            foodBeingEaten.Add(other.gameObject);
-            StartCoroutine(GainHealthOverTime(10, other.gameObject));
-            */
             other.GetComponent<Shrink>().AttachToEater(this.gameObject);
         }
     }

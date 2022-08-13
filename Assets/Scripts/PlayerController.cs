@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
     private bool touchingBounceable;
     public bool readyToLaunch;
     public PhysicsMaterial2D bouncyMaterial;
-    
+
     // Start is called before the first frame update
     void Start()
     {
