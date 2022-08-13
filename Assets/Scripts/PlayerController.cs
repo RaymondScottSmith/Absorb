@@ -69,6 +69,8 @@ public class PlayerController : MonoBehaviour
         if (col.gameObject.CompareTag("Bounceable") && grabbing)
         {
             grabbing = false;
+
+            transform.up = col.GetContact(0).normal;
             //Calculate reverse of current velocity
             Vector2 reverseVelocity = -rb.velocity;
             //Set current velocity to zero. Stopping the player
