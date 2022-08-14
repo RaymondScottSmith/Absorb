@@ -29,6 +29,10 @@ public class Shrink : MonoBehaviour
     protected Collider2D shrinkCollider;
 
     private Animator animator;
+
+    private Runner runner;
+
+    private SpawnManager spawnManager;
     
 
     private void Awake()
@@ -38,6 +42,8 @@ public class Shrink : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         shrinkCollider = GetComponent<Collider2D>();
         animator = GetComponent<Animator>();
+        runner = GetComponent<Runner>();
+        spawnManager = FindObjectOfType<SpawnManager>();
 
     }
 
@@ -49,12 +55,13 @@ public class Shrink : MonoBehaviour
         //Adjust scale as health decreases
         transform.localScale = new Vector3(newScale, newScale, 0);
         //Adjust color as health decreases
-        float healthColor = (float)currentHealth / startingHealth;
-        spriteRenderer.color = foodGradient.Evaluate(healthColor);
+        
         if (beingEaten)
         {
             transform.position = attachedEater.position + attachPoint;
             transform.rotation = attachedEater.rotation;
+            float healthColor = (float)currentHealth / startingHealth;
+            spriteRenderer.color = foodGradient.Evaluate(healthColor);
 
         }
             
@@ -62,12 +69,14 @@ public class Shrink : MonoBehaviour
 
     public void AttachToEater(GameObject eater)
     {
+        spawnManager.PlayScream();
         float eaterRadius = eater.transform.localScale.x / 2;
         attachPoint = new Vector3(Random.Range(-eaterRadius, eaterRadius), Random.Range(-eaterRadius, eaterRadius), 0);
         GetComponent<Collider2D>().enabled = false;
         attachedEater = eater.transform;
         beingEaten = true;
         currentHealth = startingHealth;
+        runner.isJourneying = false;
         if (animator != null)
             animator.SetTrigger("Dying");
         StartCoroutine(BeEaten(eater.GetComponent<Shrink>()));
@@ -82,6 +91,7 @@ public class Shrink : MonoBehaviour
             currentHealth-=damageOverTime;
             yield return new WaitForSeconds(1);
         }
+        
         Destroy(gameObject);
     }
     

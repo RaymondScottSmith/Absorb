@@ -13,7 +13,7 @@ public class Runner : MonoBehaviour
 
     [SerializeField] private float speed = 5f;
 
-    private bool isJourneying = false;
+    public bool isJourneying = false;
 
     private SpriteRenderer spriteRenderer;
 
@@ -26,6 +26,7 @@ public class Runner : MonoBehaviour
     
 
     private SpawnManager spawnManager;
+    private static readonly int Climbing = Animator.StringToHash("Climbing");
 
     // Start is called before the first frame update
 
@@ -85,7 +86,7 @@ public class Runner : MonoBehaviour
                 }
             
                 // if arrived at waypoint
-                if (CloseEnough(waypoint.x, transform.position.x))
+                if (CloseEnough(waypoint.x, transform.position.x) && CloseEnough(waypoint.y, transform.position.y))
                 {
                     transform.position = waypoint;
                     ArrivedAtLadder();
@@ -94,11 +95,13 @@ public class Runner : MonoBehaviour
                 {
                     spriteRenderer.flipX = true;
                     transform.Translate(Vector2.left * Time.deltaTime * speed);
+                    waypoint = FindClosestLadder();
                 }
                 else
                 {
                     spriteRenderer.flipX = false;
                     transform.Translate(Vector2.right * Time.deltaTime * speed);
+                    waypoint = FindClosestLadder();
                 }
             }
             else if(climbState == ClimbState.ClimbingDown)
@@ -134,6 +137,7 @@ public class Runner : MonoBehaviour
         {
             climbState = ClimbState.ClimbingUp;
         }
+        runnerAnimator.SetBool(Climbing ,true);
     }
 
     private void OnTriggerEnter2D(Collider2D col)
@@ -147,6 +151,7 @@ public class Runner : MonoBehaviour
                 {
                     transform.position = col.transform.position;
                     climbState = ClimbState.NotClimbing;
+                    runnerAnimator.SetBool(Climbing, false);
                     currentFloor++;
                     if (destinationFloor != currentFloor)
                         waypoint = FindClosestLadder();
@@ -157,6 +162,7 @@ public class Runner : MonoBehaviour
                 {
                     transform.position = col.transform.position;
                     climbState = ClimbState.NotClimbing;
+                    runnerAnimator.SetBool(Climbing, false);
                     currentFloor--;
                     if (destinationFloor != currentFloor)
                         waypoint = FindClosestLadder();
