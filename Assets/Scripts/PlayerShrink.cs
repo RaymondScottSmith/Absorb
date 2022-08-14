@@ -10,11 +10,14 @@ public class PlayerShrink : Shrink
     [SerializeField]
     private Gradient playerColor;
 
+    private Leaderboard leaderboard;
+
     //private SpriteRenderer spriteRenderer;
 
     // Start is called before the first frame update
     void Start()
     {
+        leaderboard = FindObjectOfType<Leaderboard>();
         foodBeingEaten = new List<GameObject>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         //Set currentHealth to starting health
@@ -50,7 +53,7 @@ public class PlayerShrink : Shrink
             currentHealth--;
             yield return new WaitForSeconds(1);
         }
-        GameOver();
+        Die();
     }
 
     public void TakeDamage(int damage)
@@ -60,10 +63,19 @@ public class PlayerShrink : Shrink
             currentHealth = 0;
     }
 
-    public void GameOver()
+    public void Die()
     {
+        StartCoroutine(GameOver());
         Debug.Log("Game Over");
     }
+
+    private IEnumerator GameOver()
+    {
+        int test = 5;
+        yield return leaderboard.SubmitScoreRoutine(test);
+    }
+    
+    
 
     private void OnTriggerEnter2D(Collider2D other)
     {

@@ -50,7 +50,6 @@ public class Runner : MonoBehaviour
 
         if (destinationFloor != currentFloor)
         {
-            Debug.Log("Finding Ladder");
             waypoint = FindClosestLadder();
         }
     }
@@ -177,7 +176,6 @@ public class Runner : MonoBehaviour
         Transform targetLadder = new RectTransform();
         if (currentFloor > destinationFloor)
         {
-            Debug.Log("Current Floor greater than destination");
             float dist = 9000f;
             foreach (GameObject ladderTop in spawnManager.ladderTops)
             {
@@ -202,7 +200,6 @@ public class Runner : MonoBehaviour
                 }
             }
         }
-        Debug.Log(targetLadder.position);
         return targetLadder.position;
     }
 

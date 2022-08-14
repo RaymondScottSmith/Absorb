@@ -3,28 +3,29 @@ using System.Collections.Generic;
 using UnityEngine;
 using LootLocker.Requests;
 
-public class UserManager : MonoBehaviour
+public class Leaderboard : MonoBehaviour
 {
+    private const int leaderboardID = 5471;
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(LoginRoutine());
+        
     }
 
-    private IEnumerator LoginRoutine()
+    public IEnumerator SubmitScoreRoutine(int scoreToUpload)
     {
         bool done = false;
-        LootLockerSDKManager.StartGuestSession((response) =>
+        string playerID = PlayerPrefs.GetString("PlayerID");
+        LootLockerSDKManager.SubmitScore(playerID, scoreToUpload, leaderboardID, (response) =>
         {
             if (response.success)
             {
-                Debug.Log("Player was logged in");
-                PlayerPrefs.SetString("PlayerID", response.player_id.ToString());
+                Debug.Log("Successfully uploaded score");
                 done = true;
             }
             else
             {
-                Debug.Log("Could not start session");
+                Debug.Log("Failed" + response.Error);
                 done = true;
             }
         });
