@@ -9,6 +9,7 @@ TagManager:
   - Damaging
   - LadderBottom
   - LadderTop
+  - Door
   layers:
   - Default
   - TransparentFX

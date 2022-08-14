@@ -28,10 +28,15 @@ public class Runner : MonoBehaviour
     private SpawnManager spawnManager;
     private static readonly int Climbing = Animator.StringToHash("Climbing");
 
+    private Shrink myShrink;
+
+    private bool arrived;
+
     // Start is called before the first frame update
 
     public void StartJourney(Vector2 dest, int startingFloor, int destFloor, SpawnManager sm)
     {
+        myShrink = GetComponent<Shrink>();
         destinationFloor = destFloor;
         currentFloor = startingFloor;
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -47,6 +52,7 @@ public class Runner : MonoBehaviour
         else if (transform.position.x < 0)
             spriteRenderer.flipX = false;
         spawnManager = sm;
+        arrived = false;
 
         if (destinationFloor != currentFloor)
         {
@@ -55,7 +61,7 @@ public class Runner : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
 
         if (isJourneying)
@@ -67,8 +73,10 @@ public class Runner : MonoBehaviour
                 {
                     if (CloseEnough(transform.position, destination))
                     {
+                        isJourneying = false;
                         runnerAnimator.SetBool(Running, false);
-                        Destroy(gameObject);
+                        arrived = true;
+                        StartCoroutine(WaitToDespawn());
                     }
                     else if (transform.position.x > destination.x)
                     {
@@ -109,6 +117,14 @@ public class Runner : MonoBehaviour
                 transform.Translate(Vector2.up * Time.deltaTime * speed);
 
         }
+    }
+
+    private IEnumerator WaitToDespawn()
+    {
+        runnerAnimator.SetBool(Running, false);
+        yield return new WaitForSeconds(1);
+        if (!myShrink.beingEaten)
+            Destroy(gameObject);
     }
 
     private bool CloseEnough(Vector2 firstPos, Vector2 secondPos)
@@ -167,6 +183,11 @@ public class Runner : MonoBehaviour
                         waypoint = FindClosestLadder();
                 }
                 break;
+        }
+
+        if (col.CompareTag("Door") && arrived)
+        {
+            col.gameObject.GetComponent<Door>().OpenDoor();
         }
 
     }

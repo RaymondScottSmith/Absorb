@@ -14,6 +14,8 @@ public class SpawnManager : MonoBehaviour
     public GameObject[] ladderTops;
     public GameObject[] ladderBottoms;
 
+    public Door[] doors;
+
     [SerializeField] private AudioSource audioSource;
 
     [SerializeField] private AudioClip[] screams;
@@ -46,6 +48,9 @@ public class SpawnManager : MonoBehaviour
             int endingFloor = (int)Mathf.Ceil((float)(exitRoom+1) / 2);
         
             yield return new WaitForSeconds(2);
+            doors[startingRoom].OpenDoor();
+            Debug.Log("Opening from spawn");
+            yield return new WaitForSeconds(1.5f);
             Runner newRunner = Instantiate(runnerPrefab, spawnPoints[startingRoom].position, runnerPrefab.transform.rotation)
                 .GetComponent<Runner>();
             newRunner.StartJourney(spawnPoints[exitRoom].position, startingFloor, endingFloor, this);

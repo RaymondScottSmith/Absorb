@@ -18,7 +18,7 @@ public class Shrink : MonoBehaviour
     public int currentHealth;
     protected float scaleValue;
 
-    private bool beingEaten = false;
+    public bool beingEaten = false;
     private Transform attachedEater;
 
     private Vector3 attachPoint;
