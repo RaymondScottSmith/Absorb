@@ -1,16 +1,21 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using LootLocker.Requests;
+using TMPro;
 
 public class UserManager : MonoBehaviour
 {
+    
+    
     // Start is called before the first frame update
     void Start()
     {
         StartCoroutine(LoginRoutine());
     }
-
+    
+    
     private IEnumerator LoginRoutine()
     {
         bool done = false;
@@ -32,8 +37,5 @@ public class UserManager : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 }

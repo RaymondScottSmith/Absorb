@@ -11,6 +11,8 @@ public class PlayerShrink : Shrink
     private Gradient playerColor;
 
     private Leaderboard leaderboard;
+    
+    private
 
     //private SpriteRenderer spriteRenderer;
 
@@ -65,14 +67,15 @@ public class PlayerShrink : Shrink
 
     public void Die()
     {
+        leaderboard.alive = false;
         StartCoroutine(GameOver());
         Debug.Log("Game Over");
     }
 
     private IEnumerator GameOver()
     {
-        int test = 5;
-        yield return leaderboard.SubmitScoreRoutine(test);
+        yield return leaderboard.SubmitScoreRoutine((int)Mathf.Round(leaderboard.time));
+        
     }
     
     

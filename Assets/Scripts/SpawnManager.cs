@@ -49,7 +49,6 @@ public class SpawnManager : MonoBehaviour
         
             yield return new WaitForSeconds(2);
             doors[startingRoom].OpenDoor();
-            Debug.Log("Opening from spawn");
             yield return new WaitForSeconds(1.5f);
             Runner newRunner = Instantiate(runnerPrefab, spawnPoints[startingRoom].position, runnerPrefab.transform.rotation)
                 .GetComponent<Runner>();

@@ -64,7 +64,7 @@ public class Runner : MonoBehaviour
     void FixedUpdate()
     {
 
-        if (isJourneying)
+        if (isJourneying && !myShrink.beingEaten)
         {
             if (climbState == ClimbState.NotClimbing)
             {
@@ -143,16 +143,20 @@ public class Runner : MonoBehaviour
 
     private void ArrivedAtLadder()
     {
-        //If we need to go down
-        if (destinationFloor < currentFloor)
+        if (!myShrink.beingEaten)
         {
-            climbState = ClimbState.ClimbingDown;
+            //If we need to go down
+            if (destinationFloor < currentFloor)
+            {
+                climbState = ClimbState.ClimbingDown;
+            }
+            else
+            {
+                climbState = ClimbState.ClimbingUp;
+            }
+            runnerAnimator.SetBool(Climbing ,true);
         }
-        else
-        {
-            climbState = ClimbState.ClimbingUp;
-        }
-        runnerAnimator.SetBool(Climbing ,true);
+        
     }
 
     private void OnTriggerEnter2D(Collider2D col)

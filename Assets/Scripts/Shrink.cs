@@ -69,6 +69,7 @@ public class Shrink : MonoBehaviour
 
     public void AttachToEater(GameObject eater)
     {
+        runner.isJourneying = false;
         spawnManager.PlayScream();
         float eaterRadius = eater.transform.localScale.x / 2;
         attachPoint = new Vector3(Random.Range(-eaterRadius, eaterRadius), Random.Range(-eaterRadius, eaterRadius), 0);
@@ -76,7 +77,6 @@ public class Shrink : MonoBehaviour
         attachedEater = eater.transform;
         beingEaten = true;
         currentHealth = startingHealth;
-        runner.isJourneying = false;
         if (animator != null)
             animator.SetTrigger("Dying");
         StartCoroutine(BeEaten(eater.GetComponent<Shrink>()));

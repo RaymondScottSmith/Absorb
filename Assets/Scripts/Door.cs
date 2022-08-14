@@ -22,11 +22,7 @@ public class Door : MonoBehaviour
         doorAnimator = GetComponent<Animator>();
         shouldBeOpen = false;
     }
-
-    private void Update()
-    {
-        //doorAnimator.SetBool(Open, shouldBeOpen);
-    }
+    
 
     public void OpenDoor()
     {
@@ -38,7 +34,7 @@ public class Door : MonoBehaviour
 
         if (col.CompareTag("Food"))
         {
-            Debug.Log("Should be open from trigger");
+            
             doorAnimator.SetBool(Open, true);
         }
             
