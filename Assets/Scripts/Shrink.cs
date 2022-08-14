@@ -26,7 +26,7 @@ public class Shrink : MonoBehaviour
 
     [SerializeField] private Gradient foodGradient;
 
-    protected Collider2D collider;
+    protected Collider2D shrinkCollider;
 
     private Animator animator;
     
@@ -36,7 +36,7 @@ public class Shrink : MonoBehaviour
         currentHealth = startingHealth;
         scaleValue = (transform.localScale.x - minimumScale)/startingHealth;
         spriteRenderer = GetComponent<SpriteRenderer>();
-        collider = GetComponent<Collider2D>();
+        shrinkCollider = GetComponent<Collider2D>();
         animator = GetComponent<Animator>();
 
     }
