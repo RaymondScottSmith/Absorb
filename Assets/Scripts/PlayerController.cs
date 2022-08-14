@@ -36,18 +36,25 @@ public class PlayerController : MonoBehaviour
             //Check readyToLaunch to make sure it doesn't automatically launch when we release click after stopping
             if (readyToLaunch)
             {
+                
                 grabbing = false;
                 readyToLaunch = false;
                 moving = true;
                 //Get Mouse position
                 var mousePos = Camera.main.ScreenToWorldPoint (Input.mousePosition);
+                
                 //Calculate direction to mouse from gameobject
                 var mouseDir = mousePos - gameObject.transform.position;
                 mouseDir.z = 0.0f;
+                
                 //Normalize the direction to make sure distance does not affect speed
                 mouseDir.Normalize();
                 //Start the player moving
                 rb.AddForce(mouseDir * baseSpeed, ForceMode2D.Impulse);
+                //Make the player face the direction initially launched
+                Vector2 v = rb.velocity;
+                float angle = Mathf.Atan2(v.y, v.x) * Mathf.Rad2Deg;
+                transform.rotation = Quaternion.AngleAxis(angle-90, Vector3.forward);
             }
         }
         if (Input.GetKeyDown(KeyCode.Space) && moving)
@@ -60,10 +67,14 @@ public class PlayerController : MonoBehaviour
     {
         //transform.LookAt(Vector2.Reflect(rb.velocity, col.GetContact(0).normal));
         //transform.Rotate(Vector3.forward, 90);
+
+        if (moving)
+        {
+            Vector2 v = rb.velocity;
+            float angle = Mathf.Atan2(v.y, v.x) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.AngleAxis(angle-90, Vector3.forward);
+        }
         
-        Vector2 v = rb.velocity;
-        float angle = Mathf.Atan2(v.y, v.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.AngleAxis(angle-90, Vector3.forward);
         
         //If we hit a bounceable object while holding down mouse and moving
         if (col.gameObject.CompareTag("Bounceable") && grabbing)

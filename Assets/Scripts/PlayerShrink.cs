@@ -10,7 +10,7 @@ public class PlayerShrink : Shrink
     [SerializeField]
     private Gradient playerColor;
 
-    private SpriteRenderer spriteRenderer;
+    //private SpriteRenderer spriteRenderer;
 
     // Start is called before the first frame update
     void Start()
