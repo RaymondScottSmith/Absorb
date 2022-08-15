@@ -18,10 +18,22 @@ public class CameraController : MonoBehaviour
 
     private Camera mainCamera;
 
+    private Vector3 cameraOldPosition;
+
+    [SerializeField] private Vector3 cameraCenterPosition;
+
+    private AudioSource audioSource;
+
+    [SerializeField] private AudioClip loseSound;
+
+    private bool playedDeathSound;
+
     void Start()
     {
         playerShrink = FindObjectOfType<PlayerShrink>();
         mainCamera = GetComponent<Camera>();
+        audioSource = GetComponent<AudioSource>();
+        playedDeathSound = false;
     }
 
     // Update is called once per frame
@@ -29,7 +41,15 @@ public class CameraController : MonoBehaviour
     {
         if (!playerShrink.alive)
         {
+            if (!playedDeathSound)
+            {
+                playedDeathSound = true;
+                audioSource.Stop();
+                audioSource.PlayOneShot(loseSound);
+            }
+            Vector3 shrinkPos = playerShrink.transform.position;
             mainCamera.orthographicSize = 8;
+            mainCamera.transform.position = new Vector3(shrinkPos.x, shrinkPos.y, -10);
             return;
         }
         
@@ -44,17 +64,23 @@ public class CameraController : MonoBehaviour
                 transform.Translate(new Vector3(horizInput * translateMultiplier, vertInput * translateMultiplier, 0));
                 StayInBoundaries();
             }
+            cameraOldPosition = mainCamera.transform.position;
         }
         
 
         if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
         {
+            if (!isZoomedOut)
+                cameraOldPosition = mainCamera.transform.position;
+            
             isZoomedOut = true;
             mainCamera.orthographicSize = 28;
+            mainCamera.transform.position = cameraCenterPosition;
         }
         else
         {
             mainCamera.orthographicSize = 8;
+            mainCamera.transform.position = cameraOldPosition;
             isZoomedOut = false;
         }
     }

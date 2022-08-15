@@ -16,6 +16,12 @@ public class PlayerController : MonoBehaviour
     public bool readyToLaunch;
     public PhysicsMaterial2D bouncyMaterial;
 
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip bounceSound;
+    [SerializeField] private AudioClip zapSound;
+
+    private Animator animator;
+
     private bool grabbing;
 
     // Start is called before the first frame update
@@ -25,6 +31,8 @@ public class PlayerController : MonoBehaviour
         readyToLaunch = true;
         rb = GetComponent<Rigidbody2D>();
         playerShrink = GetComponent<PlayerShrink>();
+        audioSource = GetComponent<AudioSource>();
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -70,6 +78,11 @@ public class PlayerController : MonoBehaviour
 
         if (moving)
         {
+            if (!col.gameObject.CompareTag("Food") && !col.gameObject.CompareTag("Damaging"))
+            {
+                audioSource.Stop();
+                audioSource.PlayOneShot(bounceSound);
+            }
             Vector2 v = rb.velocity;
             float angle = Mathf.Atan2(v.y, v.x) * Mathf.Rad2Deg;
             transform.rotation = Quaternion.AngleAxis(angle-90, Vector3.forward);
@@ -91,10 +104,32 @@ public class PlayerController : MonoBehaviour
             transform.position = col.GetContact(0).point;
         }
 
+        
+
         if (col.gameObject.CompareTag("Damaging"))
         {
+            animator.SetTrigger("Shock");
+            audioSource.Stop();
+            audioSource.PlayOneShot(zapSound);
             playerShrink.TakeDamage(10);
+            Debug.Log("Dealt damage here"); 
+            StartCoroutine(ShockAndFall());
         }
+    }
+
+    private IEnumerator ShockAndFall()
+    {
+        rb.velocity = Vector2.zero;
+        rb.gravityScale = 5f;
+        grabbing = true;
+
+        while (grabbing)
+        {
+            yield return new WaitForSeconds(0.1f);
+        }
+        
+        
+        rb.gravityScale = 0f;
     }
 
 }

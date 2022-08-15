@@ -43,7 +43,7 @@ public class SpawnManager : MonoBehaviour
         while (player.alive)
         {
             StartCoroutine(SpawnRunner());
-            yield return new WaitForSeconds(10);
+            yield return new WaitForSeconds(5);
         }
     }
 

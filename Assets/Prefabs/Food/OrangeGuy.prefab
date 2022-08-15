@@ -150,7 +150,7 @@ MonoBehaviour:
   startingHealth: 10
   minimumScale: 0.5
   damageOverTime: 1
-  eatPerSecond: 1
+  eatPerSecond: 2
   currentHealth: 0
   beingEaten: 0
   foodGradient:

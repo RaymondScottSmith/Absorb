@@ -14,18 +14,27 @@ public class Door : MonoBehaviour
     public bool shouldBeOpen;
     private static readonly int Open = Animator.StringToHash("Open");
 
+    private AudioSource audioSource;
+
+    [SerializeField] private AudioClip openDoorSound;
+
+    [SerializeField] private AudioClip closeDoorSound;
+
 
     // Start is called before the first frame update
     void Start()
     {
         runnerCollider = GetComponent<Collider2D>();
         doorAnimator = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
         shouldBeOpen = false;
     }
     
 
     public void OpenDoor()
     {
+        audioSource.Stop();
+        audioSource.PlayOneShot(openDoorSound);
         doorAnimator.SetBool(Open, true);
     }
 
@@ -34,8 +43,8 @@ public class Door : MonoBehaviour
 
         if (col.CompareTag("Food"))
         {
-            
-            doorAnimator.SetBool(Open, true);
+
+            OpenDoor();
         }
             
     }
@@ -43,6 +52,11 @@ public class Door : MonoBehaviour
     private void OnTriggerExit2D(Collider2D other)
     {
         if (other.CompareTag("Food"))
+        {
             doorAnimator.SetBool(Open, false);
+            audioSource.Stop();
+            audioSource.PlayOneShot(closeDoorSound);
+        }
+            
     }
 }

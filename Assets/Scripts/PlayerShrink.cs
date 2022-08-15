@@ -98,7 +98,6 @@ public class PlayerShrink : Shrink
 
     private IEnumerator GameOver()
     {
-        
         Instantiate(corpsePrefab, transform.position, corpsePrefab.transform.rotation);
         yield return leaderboard.SubmitScoreRoutine((int)Mathf.Round(time));
         timeLabel.SetText("Time: " + (int)Mathf.Round(time));
