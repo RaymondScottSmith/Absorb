@@ -45,11 +45,11 @@ public class UserManager : MonoBehaviour
         {
             if (response.success)
             {
-                Debug.Log("Successfully set player name");
+                //Debug.Log("Successfully set player name");
             }
             else
             {
-                Debug.Log("Could not set player name: " + response.Error);
+                //Debug.Log("Could not set player name: " + response.Error);
             }
         });
     }

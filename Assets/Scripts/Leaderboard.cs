@@ -35,12 +35,12 @@ public class Leaderboard : MonoBehaviour
         {
             if (response.success)
             {
-                Debug.Log("Successfully uploaded score");
+                //Debug.Log("Successfully uploaded score");
                 done = true;
             }
             else
             {
-                Debug.Log("Failed" + response.Error);
+                //Debug.Log("Failed" + response.Error);
                 done = true;
             }
         });
@@ -81,7 +81,7 @@ public class Leaderboard : MonoBehaviour
             }
             else
             {
-                Debug.Log("Failed" + response.Error);
+                //Debug.Log("Failed" + response.Error);
                 done = true;
             }
         });

@@ -33,6 +33,9 @@ public class Shrink : MonoBehaviour
     private Runner runner;
 
     private SpawnManager spawnManager;
+
+    [SerializeField]
+    protected bool isTutorial;
     
 
     private void Awake()
@@ -69,8 +72,15 @@ public class Shrink : MonoBehaviour
 
     public void AttachToEater(GameObject eater)
     {
-        runner.isJourneying = false;
-        spawnManager.PlayScream();
+        if (!isTutorial)
+        {
+            runner.isJourneying = false;
+            spawnManager.PlayScream();
+        }
+        else
+        {
+            FindObjectOfType<Tutorial>().CrewWasEaten();
+        }
         float eaterRadius = eater.transform.localScale.x / 2;
         attachPoint = new Vector3(Random.Range(-eaterRadius, eaterRadius), Random.Range(-eaterRadius, eaterRadius), 0);
         GetComponent<Collider2D>().enabled = false;

@@ -126,7 +126,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5404875166731902505}
   - component: {fileID: 3454022213994991695}
-  - component: {fileID: 8130201071108680088}
   m_Layer: 0
   m_Name: StairsLong
   m_TagString: Untagged
@@ -203,17 +202,3 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &8130201071108680088
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7059327229948053195}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2e72f88ac6230343bcfebbdefb266ef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  topCollider: {fileID: 0}
-  bottomCollider: {fileID: 0}

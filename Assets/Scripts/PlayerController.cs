@@ -20,6 +20,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private AudioClip bounceSound;
     [SerializeField] private AudioClip zapSound;
 
+    [SerializeField] private bool isTutorial;
+
+    [SerializeField] private GameObject pausePanel;
+
     private Animator animator;
 
     private bool grabbing;
@@ -33,11 +37,20 @@ public class PlayerController : MonoBehaviour
         playerShrink = GetComponent<PlayerShrink>();
         audioSource = GetComponent<AudioSource>();
         animator = GetComponent<Animator>();
+        if (isTutorial)
+        {
+            //transform.position = new Vector3(0, -3, 0);
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (pausePanel != null && pausePanel.activeSelf)
+        {
+            return;
+        }
+        
         //When mouse button released
         if (Input.GetMouseButtonUp(0) )
         {
@@ -112,7 +125,6 @@ public class PlayerController : MonoBehaviour
             audioSource.Stop();
             audioSource.PlayOneShot(zapSound);
             playerShrink.TakeDamage(10);
-            Debug.Log("Dealt damage here"); 
             StartCoroutine(ShockAndFall());
         }
     }

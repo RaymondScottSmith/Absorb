@@ -136,7 +136,7 @@ public class Runner : MonoBehaviour
 
     private bool CloseEnough(float firstValue, float secondValue)
     {
-        if (MathF.Abs(firstValue - secondValue) < 0.5f)
+        if (Mathf.Abs(firstValue - secondValue) < 0.5f)
             return true;
         return false;
     }

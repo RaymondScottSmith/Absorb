@@ -23,6 +23,8 @@ public class PlayerShrink : Shrink
     [SerializeField] private GameObject corpsePrefab;
 
     [SerializeField] private GameObject losePanel;
+    
+    //[SerializeField] private bool isTutorial;
 
     //private SpriteRenderer spriteRenderer;
 
@@ -37,10 +39,13 @@ public class PlayerShrink : Shrink
         alive = true;
         time = 0;
         //Calculate scale value
-        scaleValue = (transform.localScale.x - minimumScale)/startingHealth;
+        scaleValue = (transform.localScale.x - minimumScale) / startingHealth;
         //Start the Coroutine that will decrease health over time
-        StartCoroutine(LoseHealth());
-        StartCoroutine(RunTimer());
+        if (!isTutorial)
+        {
+            StartCoroutine(LoseHealth());
+            StartCoroutine(RunTimer());
+        }
 
     }
 
@@ -52,6 +57,7 @@ public class PlayerShrink : Shrink
             yield return new WaitForSeconds(1);
             time++;
         }
+
     }
     
 
@@ -93,7 +99,6 @@ public class PlayerShrink : Shrink
         
         alive = false;
         StartCoroutine(GameOver());
-        Debug.Log("Game Over");
     }
 
     private IEnumerator GameOver()

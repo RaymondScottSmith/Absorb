@@ -28,17 +28,28 @@ public class CameraController : MonoBehaviour
 
     private bool playedDeathSound;
 
+    [SerializeField] private GameObject pausePanel;
+
     void Start()
     {
         playerShrink = FindObjectOfType<PlayerShrink>();
         mainCamera = GetComponent<Camera>();
         audioSource = GetComponent<AudioSource>();
         playedDeathSound = false;
+        pausePanel.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            pausePanel.SetActive(true);
+            Time.timeScale = 0f;
+        }
+        
+        
         if (!playerShrink.alive)
         {
             if (!playedDeathSound)
@@ -100,5 +111,11 @@ public class CameraController : MonoBehaviour
             adjustedPosition = new Vector3(adjustedPosition.x, maxDown, -10);
 
         transform.position = adjustedPosition;
+    }
+
+    public void Unpause()
+    {
+        Time.timeScale = 1f;
+        pausePanel.SetActive(false);
     }
 }

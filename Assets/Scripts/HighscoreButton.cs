@@ -32,4 +32,9 @@ public class HighscoreButton : MonoBehaviour
     {
         ScreenTransition.Instance.StartGame();
     }
+
+    public void StartTutorial()
+    {
+        ScreenTransition.Instance.LoadTutorial();
+    }
 }
