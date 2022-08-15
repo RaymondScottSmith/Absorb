@@ -19,22 +19,37 @@ public class SpawnManager : MonoBehaviour
     [SerializeField] private AudioSource audioSource;
 
     [SerializeField] private AudioClip[] screams;
+
+    private PlayerShrink player;
     
     // Start is called before the first frame update
     void Start()
     {
+        player = FindObjectOfType<PlayerShrink>();
         ladderTops = GameObject.FindGameObjectsWithTag("LadderTop");
         ladderBottoms = GameObject.FindGameObjectsWithTag("LadderBottom");
         audioSource = GetComponent<AudioSource>();
-        StartCoroutine(SpawnRunner());
+        StartCoroutine(StartSpawning());
         
+    }
+
+    private IEnumerator StartSpawning()
+    {
+        yield return new WaitForSeconds(1);
+        StartCoroutine(SpawnRunner());
+        StartCoroutine(SpawnRunner());
+
+        yield return new WaitForSeconds(10);
+        while (player.alive)
+        {
+            StartCoroutine(SpawnRunner());
+            yield return new WaitForSeconds(10);
+        }
     }
 
     private IEnumerator SpawnRunner()
     {
-        for (int i = 0; i < 10; i++)
-        {
-            int startingRoom = 0;
+        int startingRoom = 0;
             int exitRoom = 0;
         
             //Make sure the exit room is different than the starting room
@@ -46,15 +61,13 @@ public class SpawnManager : MonoBehaviour
 
             int startingFloor = (int)Mathf.Ceil((float)(startingRoom+1) / 2);
             int endingFloor = (int)Mathf.Ceil((float)(exitRoom+1) / 2);
-        
-            yield return new WaitForSeconds(2);
+            
             doors[startingRoom].OpenDoor();
             yield return new WaitForSeconds(1.5f);
             Runner newRunner = Instantiate(runnerPrefab, spawnPoints[startingRoom].position, runnerPrefab.transform.rotation)
                 .GetComponent<Runner>();
             newRunner.StartJourney(spawnPoints[exitRoom].position, startingFloor, endingFloor, this);
-        }
-        
+
     }
 
     public void PlayScream()

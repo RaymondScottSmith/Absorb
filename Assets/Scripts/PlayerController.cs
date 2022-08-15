@@ -93,7 +93,7 @@ public class PlayerController : MonoBehaviour
 
         if (col.gameObject.CompareTag("Damaging"))
         {
-            playerShrink.TakeDamage(20);
+            playerShrink.TakeDamage(10);
         }
     }
 
