@@ -11,12 +11,12 @@ public class ButtonClicks : MonoBehaviour , IPointerEnterHandler, IPointerClickH
    
     public void OnPointerEnter(PointerEventData eventData)
     {
-        clickSource.PlayOneShot(hoverSound);
+        //clickSource.PlayOneShot(hoverSound);
     }
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        clickSource.PlayOneShot(clickSound);
+        //clickSource.PlayOneShot(clickSound);
     }
 }
 

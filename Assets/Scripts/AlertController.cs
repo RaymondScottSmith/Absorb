@@ -12,12 +12,15 @@ public class AlertController : MonoBehaviour
     [SerializeField]
     private GameObject topAlert, bottomAlert, leftAlert, rightAlert;
 
+    private PlayerShrink pShrink;
+
     private bool looking = false;
     // Start is called before the first frame update
     void Start()
     {
         
         player = FindObjectOfType<PlayerController>();
+        pShrink = player.GetComponent<PlayerShrink>();
 
         camera = FindObjectOfType<Camera>();
         ResetAlerts();
@@ -26,6 +29,11 @@ public class AlertController : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
+        if (!pShrink.alive)
+        {
+            ResetAlerts();
+            return;
+        }
         if (player.GetComponent<Renderer>().isVisible)
         {
             looking = true;

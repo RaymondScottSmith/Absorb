@@ -7,14 +7,52 @@ using TMPro;
 
 public class UserManager : MonoBehaviour
 {
-    
+
+    public TMP_InputField playerNameInputfield;
+
+    //public static UserManager Instance;
+    public Leaderboard leaderboard;
+
+    /*
+    void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+            return;
+        }
+        Destroy(gameObject);
+    }
+    */
     
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(LoginRoutine());
+        leaderboard = FindObjectOfType<Leaderboard>();
+        //DontDestroyOnLoad(this);
+        StartCoroutine(SetupRoutine());
     }
-    
+
+    private IEnumerator SetupRoutine()
+    {
+        yield return LoginRoutine();
+        yield return leaderboard.FetchTopHighscoresRoutine();
+    }
+
+    public void SetPlayerName()
+    {
+        LootLockerSDKManager.SetPlayerName(playerNameInputfield.text, (response) =>
+        {
+            if (response.success)
+            {
+                Debug.Log("Successfully set player name");
+            }
+            else
+            {
+                Debug.Log("Could not set player name: " + response.Error);
+            }
+        });
+    }
     
     private IEnumerator LoginRoutine()
     {

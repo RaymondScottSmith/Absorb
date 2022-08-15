@@ -147,11 +147,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a137173927de2004d851c370bf59c3e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 20
+  startingHealth: 10
   minimumScale: 0.5
   damageOverTime: 1
-  eatPerSecond: 2
+  eatPerSecond: 1
   currentHealth: 0
+  beingEaten: 0
   foodGradient:
     serializedVersion: 2
     key0: {r: 1, g: 0, b: 0, a: 1}
@@ -195,6 +196,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {x: 0, y: 0}
   speed: 5
+  isJourneying: 0
 --- !u!50 &5302016238518379094
 Rigidbody2D:
   serializedVersion: 4

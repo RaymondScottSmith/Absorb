@@ -6,31 +6,57 @@ public class CameraController : MonoBehaviour
 {
     [SerializeField] private float scrollSpeed;
 
+    private int cameraBaseSize = 8;
+
+    private int cameraZoomedOutSize = 28;
+
     [SerializeField] private float maxLeft, maxRight, maxUp, maxDown;
 
-    // Start is called before the first frame update
+    private bool isZoomedOut = false;
+
+    private PlayerShrink playerShrink;
+
+    private Camera mainCamera;
+
     void Start()
     {
-
+        playerShrink = FindObjectOfType<PlayerShrink>();
+        mainCamera = GetComponent<Camera>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        float horizInput = Input.GetAxis("Horizontal");
-        float vertInput = Input.GetAxis("Vertical");
-
-        if (horizInput != 0 || vertInput != 0)
+        if (!playerShrink.alive)
         {
-            float translateMultiplier = scrollSpeed * Time.deltaTime;
-            transform.Translate(new Vector3(horizInput * translateMultiplier, vertInput * translateMultiplier, 0));
-            StayInBoundaries();
+            mainCamera.orthographicSize = 8;
+            return;
         }
-
         
+        if (!isZoomedOut)
+        {
+            float horizInput = Input.GetAxis("Horizontal");
+            float vertInput = Input.GetAxis("Vertical");
+
+            if (horizInput != 0 || vertInput != 0)
+            {
+                float translateMultiplier = scrollSpeed * Time.deltaTime;
+                transform.Translate(new Vector3(horizInput * translateMultiplier, vertInput * translateMultiplier, 0));
+                StayInBoundaries();
+            }
+        }
         
 
-
+        if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
+        {
+            isZoomedOut = true;
+            mainCamera.orthographicSize = 28;
+        }
+        else
+        {
+            mainCamera.orthographicSize = 8;
+            isZoomedOut = false;
+        }
     }
 
     private void StayInBoundaries()

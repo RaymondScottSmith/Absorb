@@ -7,22 +7,25 @@ using TMPro;
 
 public class Leaderboard : MonoBehaviour
 {
+    //public static Leaderboard Instance;
     private const int leaderboardID = 5471;
+    public TextMeshProUGUI playerName;
+    public TextMeshProUGUI playerScore;
 
-    public bool alive = true;
 
-    public float time = 0;
-    
-    [SerializeField]
-    private TMP_Text timeLabel;
-    
-    
-    // Start is called before the first frame update
-    void Start()
+    /*
+    void Awake()
     {
-        alive = true;
-        time = 0;
+        if (Instance == null)
+        {
+            Instance = this;
+            return;
+        }
+        Destroy(gameObject);
+        
     }
+    */
+    // Start is called before the first frame update
 
     public IEnumerator SubmitScoreRoutine(int scoreToUpload)
     {
@@ -44,13 +47,44 @@ public class Leaderboard : MonoBehaviour
         yield return new WaitWhile(() => done == false);
     }
 
-    // Update is called once per frame
-    void Update()
+    public IEnumerator FetchTopHighscoresRoutine()
     {
-        if (alive)
+        bool done = false;
+        LootLockerSDKManager.GetScoreListMain(leaderboardID, 10,0,(response) =>
         {
-            time += Time.deltaTime;
-            timeLabel.SetText("Time: " + Mathf.Round(time).ToString());
-        }
+            if (response.success)
+            {
+                string tempPlayerNames = "Name\n";
+                string tempPlayerScores = "Score\n";
+
+                LootLockerLeaderboardMember[] members = response.items;
+
+                for (int i = 0; i < members.Length; i++)
+                {
+                    if (members[i].player.name != "")
+                    {
+                        tempPlayerNames += members[i].player.name;
+                    }
+                    else
+                    {
+                        tempPlayerNames += members[i].player.id;
+                    }
+
+                    tempPlayerScores += members[i].score + "\n";
+                    tempPlayerNames += "\n";
+                }
+
+                done = true;
+                playerName.text = tempPlayerNames;
+                playerScore.text = tempPlayerScores;
+
+            }
+            else
+            {
+                Debug.Log("Failed" + response.Error);
+                done = true;
+            }
+        });
+        yield return new WaitWhile(() => done == false);
     }
 }
