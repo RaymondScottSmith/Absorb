@@ -18,9 +18,14 @@ public class Tutorial : MonoBehaviour
 
     [SerializeField] private GameObject dangers;
 
+    [SerializeField] private Animator bluePanelAnimator;
+
     private float zoomOut = 28f;
 
     private bool isReadyToZoom;
+
+    private static readonly int IsShowing = Animator.StringToHash("IsShowing");
+
     // Start is called before the first frame update
     void Start()
     {
@@ -51,6 +56,17 @@ public class Tutorial : MonoBehaviour
             tutBoxes[2].SetActive(true);
             crewMember.SetActive(true);
         }
+
+        if (isReadyToZoom && (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift)))
+        {
+            FindObjectOfType<Camera>().transform.position = cameraPos4;
+            FindObjectOfType<Camera>().orthographicSize = 28;
+        }
+        else if (isReadyToZoom && (Input.GetKeyUp(KeyCode.LeftShift) || Input.GetKeyUp(KeyCode.RightShift)))
+        {
+            FindObjectOfType<Camera>().transform.position = cameraPos3;
+            FindObjectOfType<Camera>().orthographicSize = 5.8f;
+        }
         
     }
 
@@ -80,12 +96,15 @@ public class Tutorial : MonoBehaviour
         ResetBoxes();
         tutBoxes[6].SetActive(true);
         FindObjectOfType<Camera>().transform.position = cameraPos3;
+        bluePanelAnimator.SetBool(IsShowing, true);
     }
     
     public void TalkAboutShift()
     {
+        bluePanelAnimator.SetBool(IsShowing, false);
         ResetBoxes();
         tutBoxes[7].SetActive(true);
+        isReadyToZoom = true;
     }
 
     public void TellOver()
@@ -104,9 +123,5 @@ public class Tutorial : MonoBehaviour
     {
         SceneManager.LoadScene(0);
     }
-    
-    
-    
-    
 
 }
