@@ -6,13 +6,12 @@ public class CameraController : MonoBehaviour
 {
     [SerializeField] private float scrollSpeed;
 
-    private int cameraBaseSize = 8;
+    [SerializeField]
+    private float cameraMinimumSize = 8f;
+    [SerializeField]
+    private float cameraMaximumSize = 19f;
 
-    private int cameraZoomedOutSize = 28;
-
-    [SerializeField] private float maxLeft, maxRight, maxUp, maxDown;
-
-    private bool isZoomedOut = false;
+    //private bool isZoomedOut = false;
 
     private PlayerShrink playerShrink;
 
@@ -63,7 +62,21 @@ public class CameraController : MonoBehaviour
             mainCamera.transform.position = new Vector3(shrinkPos.x, shrinkPos.y, -10);
             return;
         }
-        
+
+        transform.position = playerShrink.transform.position + (Vector3.forward * -10);
+
+        float scrollValue = -Input.mouseScrollDelta.y;
+        mainCamera.orthographicSize += scrollValue/2f;
+
+        if (mainCamera.orthographicSize > cameraMaximumSize)
+        {
+            mainCamera.orthographicSize = cameraMaximumSize;
+        }else if (mainCamera.orthographicSize < cameraMinimumSize)
+        {
+            mainCamera.orthographicSize = cameraMinimumSize;
+        }
+
+        /*
         if (!isZoomedOut)
         {
             float horizInput = Input.GetAxis("Horizontal");
@@ -94,8 +107,11 @@ public class CameraController : MonoBehaviour
             mainCamera.transform.position = cameraOldPosition;
             isZoomedOut = false;
         }
+        */
     }
+    
 
+    /*
     private void StayInBoundaries()
     {
         //Vector3 camPosition = transform.position;
@@ -118,4 +134,6 @@ public class CameraController : MonoBehaviour
         Time.timeScale = 1f;
         pausePanel.SetActive(false);
     }
+    
+    */
 }
