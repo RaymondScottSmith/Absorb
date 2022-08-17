@@ -11,7 +11,7 @@ public class CameraController : MonoBehaviour
     [SerializeField]
     private float cameraMaximumSize = 19f;
 
-    //private bool isZoomedOut = false;
+    [SerializeField] private float scrollMultiplier = 0.5f;
 
     private PlayerShrink playerShrink;
 
@@ -36,6 +36,13 @@ public class CameraController : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         playedDeathSound = false;
         pausePanel.SetActive(false);
+
+        if (PlayerPrefs.HasKey("ScrollMultiplier"))
+        {
+            scrollMultiplier = PlayerPrefs.GetFloat("ScrollMultiplier");
+        }
+        
+        Debug.Log("Scroll Multiplier is " + scrollMultiplier);
     }
 
     // Update is called once per frame
@@ -66,7 +73,7 @@ public class CameraController : MonoBehaviour
         transform.position = playerShrink.transform.position + (Vector3.forward * -10);
 
         float scrollValue = -Input.mouseScrollDelta.y;
-        mainCamera.orthographicSize += scrollValue/2f;
+        mainCamera.orthographicSize += scrollValue * scrollMultiplier;
 
         if (mainCamera.orthographicSize > cameraMaximumSize)
         {

@@ -781,10 +781,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scrollSpeed: 20
-  maxLeft: -29
-  maxRight: 29
-  maxUp: 25
-  maxDown: -23
+  cameraMinimumSize: 8
+  cameraMaximumSize: 20
+  scrollMultiplier: 0.5
   cameraCenterPosition: {x: 0, y: 0, z: -10}
   loseSound: {fileID: 8300000, guid: 35478ae9eec19b543b4e34c3ed954290, type: 3}
   pausePanel: {fileID: 1321837953}
