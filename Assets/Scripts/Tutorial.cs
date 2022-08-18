@@ -18,11 +18,11 @@ public class Tutorial : MonoBehaviour
 
     [SerializeField] private GameObject dangers;
 
-    [SerializeField] private Animator bluePanelAnimator;
-
     private float zoomOut = 28f;
 
     private bool isReadyToZoom;
+
+    private Camera mainCamera;
 
     private static readonly int IsShowing = Animator.StringToHash("IsShowing");
 
@@ -31,6 +31,7 @@ public class Tutorial : MonoBehaviour
     {
         ResetBoxes();
         tutBoxes[0].SetActive(true);
+        mainCamera = FindObjectOfType<Camera>();
     }
 
     private void ResetBoxes()
@@ -57,6 +58,7 @@ public class Tutorial : MonoBehaviour
             crewMember.SetActive(true);
         }
 
+        /*
         if (isReadyToZoom && (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift)))
         {
             FindObjectOfType<Camera>().transform.position = cameraPos4;
@@ -67,7 +69,20 @@ public class Tutorial : MonoBehaviour
             FindObjectOfType<Camera>().transform.position = cameraPos3;
             FindObjectOfType<Camera>().orthographicSize = 5.8f;
         }
+        */
+        float scrollValue = -Input.mouseScrollDelta.y;
+        if (isReadyToZoom)
+        {
+            mainCamera.orthographicSize += scrollValue * 0.5f;
+            
+            if (Input.mouseScrollDelta.y != 0)
+            {
+                tutBoxes[7].SetActive(true);
+            }
+        }
+
         
+
     }
 
     public void CrewWasEaten()
@@ -96,12 +111,11 @@ public class Tutorial : MonoBehaviour
         ResetBoxes();
         tutBoxes[6].SetActive(true);
         FindObjectOfType<Camera>().transform.position = cameraPos3;
-        bluePanelAnimator.SetBool(IsShowing, true);
+        isReadyToZoom = true;
     }
     
-    public void TalkAboutShift()
+    public void TalkAboutZoom()
     {
-        bluePanelAnimator.SetBool(IsShowing, false);
         ResetBoxes();
         tutBoxes[7].SetActive(true);
         isReadyToZoom = true;

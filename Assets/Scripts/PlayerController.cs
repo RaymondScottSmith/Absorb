@@ -41,10 +41,9 @@ public class PlayerController : MonoBehaviour
         animator = GetComponent<Animator>();
         if (isTutorial)
         {
-            //transform.position = new Vector3(0, -3, 0);
-        }
-
-        if (PlayerPrefs.HasKey("AutoStick"))
+            autoStick = false;
+        } 
+        else if (PlayerPrefs.HasKey("AutoStick"))
         {
             autoStick = PlayerPrefs.GetInt("AutoStick") == 1;
         }
