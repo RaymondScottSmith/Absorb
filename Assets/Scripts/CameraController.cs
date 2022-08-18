@@ -41,8 +41,6 @@ public class CameraController : MonoBehaviour
         {
             scrollMultiplier = PlayerPrefs.GetFloat("ScrollMultiplier");
         }
-        
-        Debug.Log("Scroll Multiplier is " + scrollMultiplier);
     }
 
     // Update is called once per frame
@@ -64,9 +62,9 @@ public class CameraController : MonoBehaviour
                 audioSource.Stop();
                 audioSource.PlayOneShot(loseSound);
             }
-            Vector3 shrinkPos = playerShrink.transform.position;
+            Vector3 corpsePos = playerShrink.corpse.transform.position;
             mainCamera.orthographicSize = 8;
-            mainCamera.transform.position = new Vector3(shrinkPos.x, shrinkPos.y, -10);
+            mainCamera.transform.position = new Vector3(corpsePos.x, corpsePos.y, -10);
             return;
         }
 

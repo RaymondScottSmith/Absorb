@@ -24,6 +24,8 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private GameObject pausePanel;
 
+    private bool autoStick;
+
     private Animator animator;
 
     private bool grabbing;
@@ -40,6 +42,11 @@ public class PlayerController : MonoBehaviour
         if (isTutorial)
         {
             //transform.position = new Vector3(0, -3, 0);
+        }
+
+        if (PlayerPrefs.HasKey("AutoStick"))
+        {
+            autoStick = PlayerPrefs.GetInt("AutoStick") == 1;
         }
     }
 
@@ -78,7 +85,12 @@ public class PlayerController : MonoBehaviour
                 transform.rotation = Quaternion.AngleAxis(angle-90, Vector3.forward);
             }
         }
-        if (Input.GetKeyDown(KeyCode.Space) && moving)
+
+        if (autoStick && moving)
+        {
+            grabbing = true;
+        }
+        else if (Input.GetKeyDown(KeyCode.Space) && moving)
         {
             grabbing = true;
         }
