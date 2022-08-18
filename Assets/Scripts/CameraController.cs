@@ -133,12 +133,12 @@ public class CameraController : MonoBehaviour
 
         transform.position = adjustedPosition;
     }
-
+*/
     public void Unpause()
     {
         Time.timeScale = 1f;
         pausePanel.SetActive(false);
     }
     
-    */
+    
 }
