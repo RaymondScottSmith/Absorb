@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting.FullSerializer;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CameraController : MonoBehaviour
 {
@@ -29,6 +31,10 @@ public class CameraController : MonoBehaviour
 
     [SerializeField] private GameObject pausePanel;
 
+    [SerializeField] private Slider scrollSlider;
+
+    private bool isScrollSlider;
+
     void Start()
     {
         playerShrink = FindObjectOfType<PlayerShrink>();
@@ -41,6 +47,17 @@ public class CameraController : MonoBehaviour
         {
             scrollMultiplier = PlayerPrefs.GetFloat("ScrollMultiplier");
         }
+
+        if (PlayerPrefs.HasKey("ScrollSlider"))
+        {
+            isScrollSlider = PlayerPrefs.GetInt("ScrollSlider") == 1;
+        }
+
+        if (!isScrollSlider)
+        {
+            scrollSlider.transform.parent.gameObject.SetActive(false);
+        }
+    
     }
 
     // Update is called once per frame
@@ -70,8 +87,16 @@ public class CameraController : MonoBehaviour
 
         transform.position = playerShrink.transform.position + (Vector3.forward * -10);
 
-        float scrollValue = -Input.mouseScrollDelta.y;
-        mainCamera.orthographicSize += scrollValue * scrollMultiplier;
+        if (isScrollSlider)
+        {
+            mainCamera.orthographicSize = scrollSlider.value;
+        }
+        else
+        {
+            float scrollValue = -Input.mouseScrollDelta.y;
+            mainCamera.orthographicSize += scrollValue * scrollMultiplier;
+        }
+        
 
         if (mainCamera.orthographicSize > cameraMaximumSize)
         {
