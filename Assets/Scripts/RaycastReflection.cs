@@ -1,6 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting.FullSerializer;
+//using Unity.VisualScripting.FullSerializer;
 using UnityEngine;
 
 public class RaycastReflection : MonoBehaviour
@@ -13,6 +13,8 @@ public class RaycastReflection : MonoBehaviour
     private Vector3 direction;
     private PlayerController player;
 
+    public bool isOverUI;
+
     private void Awake()
     {
         lineRenderer = GetComponent<LineRenderer>();
@@ -22,7 +24,7 @@ public class RaycastReflection : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButton(0) && player.readyToLaunch)
+        if (Input.GetMouseButton(0) && player.readyToLaunch && !isOverUI)
         {
             lineRenderer.enabled = true;
             Vector3 endDragPos = Camera.main.ScreenToWorldPoint (Input.mousePosition);

@@ -8,6 +8,7 @@ public class OptionsMenu : MonoBehaviour
 {
     [SerializeField] private Slider scrollSlider;
     [SerializeField] private Toggle autoStickToggle;
+    [SerializeField] private Toggle scrollSliderToggle;
 
     [SerializeField] private Slider volumeSlider;
 
@@ -36,6 +37,17 @@ public class OptionsMenu : MonoBehaviour
             PlayerPrefs.SetInt("AutoStick", 0);
         }
         
+        //Set Slider Zoom
+        if (PlayerPrefs.HasKey("ScrollSlider"))
+        {
+            scrollSliderToggle.isOn = PlayerPrefs.GetInt("ScrollSlider") == 1;
+        }
+        else
+        {
+            scrollSliderToggle.isOn = false;
+            PlayerPrefs.SetInt("ScrollSlider", 0);
+        }
+        
         //Set volume
         if (PlayerPrefs.HasKey("MasterVolume"))
         {
@@ -58,6 +70,11 @@ public class OptionsMenu : MonoBehaviour
     public void ChangeAutoStick(bool stick)
     {
         PlayerPrefs.SetInt("AutoStick", stick ? 1 : 0);
+    }
+
+    public void ChangeSliderZoom(bool sliderZoom)
+    {
+        PlayerPrefs.SetInt("ScrollSlider", sliderZoom ? 1 : 0);
     }
 
     public void MasterVolumeChanged(float newVolume)

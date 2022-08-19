@@ -1,6 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting.FullSerializer;
+//using Unity.VisualScripting.FullSerializer;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -53,11 +53,7 @@ public class CameraController : MonoBehaviour
             isScrollSlider = PlayerPrefs.GetInt("ScrollSlider") == 1;
         }
 
-        if (!isScrollSlider)
-        {
-            scrollSlider.transform.parent.gameObject.SetActive(false);
-        }
-    
+        scrollSlider.transform.parent.gameObject.SetActive(isScrollSlider);
     }
 
     // Update is called once per frame

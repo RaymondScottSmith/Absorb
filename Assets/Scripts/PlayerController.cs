@@ -1,8 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
+//using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class PlayerController : MonoBehaviour
 {
@@ -30,6 +31,10 @@ public class PlayerController : MonoBehaviour
 
     private bool grabbing;
 
+    public bool isOverUI;
+
+    private RaycastReflection raycastReflection;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -39,6 +44,7 @@ public class PlayerController : MonoBehaviour
         playerShrink = GetComponent<PlayerShrink>();
         audioSource = GetComponent<AudioSource>();
         animator = GetComponent<Animator>();
+        raycastReflection = GetComponent<RaycastReflection>();
         if (isTutorial)
         {
             autoStick = false;
@@ -52,7 +58,8 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (pausePanel != null && pausePanel.activeSelf)
+        raycastReflection.isOverUI = isOverUI;
+        if ((pausePanel != null && pausePanel.activeSelf || isOverUI))
         {
             return;
         }
