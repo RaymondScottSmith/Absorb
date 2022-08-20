@@ -36,7 +36,7 @@ public class PlayerController : MonoBehaviour
     private RaycastReflection raycastReflection;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         moving = false;
         readyToLaunch = true;
@@ -143,19 +143,19 @@ public class PlayerController : MonoBehaviour
             audioSource.Stop();
             audioSource.PlayOneShot(zapSound);
             playerShrink.TakeDamage(10);
-            StartCoroutine(ShockAndFall());
+            StartCoroutine(Fall(5f));
         }
     }
 
-    private IEnumerator ShockAndFall()
+    public IEnumerator Fall(float fallSpeed)
     {
         rb.velocity = Vector2.zero;
-        rb.gravityScale = 5f;
+        rb.gravityScale = fallSpeed;
         grabbing = true;
 
         while (grabbing)
         {
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(0.5f);
         }
         
         

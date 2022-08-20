@@ -13,15 +13,15 @@ public class Shrink : MonoBehaviour
 
     [SerializeField] protected int damageOverTime = 1;
 
-    [SerializeField] private int eatPerSecond;
+    [SerializeField] protected int eatPerSecond;
     
     public int currentHealth;
     protected float scaleValue;
 
     public bool beingEaten = false;
-    private Transform attachedEater;
+    protected Transform attachedEater;
 
-    private Vector3 attachPoint;
+    protected Vector3 attachPoint;
     protected SpriteRenderer spriteRenderer;
 
     [SerializeField] private Gradient foodGradient;
@@ -36,6 +36,8 @@ public class Shrink : MonoBehaviour
 
     [SerializeField]
     protected bool isTutorial;
+
+    
     
 
     private void Awake()
@@ -70,7 +72,7 @@ public class Shrink : MonoBehaviour
             
     }
 
-    public void AttachToEater(GameObject eater)
+    public virtual void AttachToEater(GameObject eater)
     {
         if (!isTutorial)
         {
@@ -92,7 +94,7 @@ public class Shrink : MonoBehaviour
         StartCoroutine(BeEaten(eater.GetComponent<Shrink>()));
     }
 
-    private IEnumerator BeEaten(Shrink eater)
+    protected virtual IEnumerator BeEaten(Shrink eater)
     {
         //Decrease health every second until it's 0
         while (currentHealth > 0)

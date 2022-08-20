@@ -40,7 +40,7 @@ public class RaycastReflection : MonoBehaviour
             float remainingLength = maxLength;
             for (int i = 0; i < reflections; i++)
             {
-                RaycastHit2D hit = Physics2D.Raycast(origin, velocity);
+                RaycastHit2D hit = Physics2D.Raycast(origin, velocity,900,7);
                 if (hit.collider != null)
                 {
                     
