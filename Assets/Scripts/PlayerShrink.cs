@@ -25,6 +25,8 @@ public class PlayerShrink : Shrink
     [SerializeField] private GameObject losePanel;
 
     public GameObject corpse;
+
+    private List<Shrink> currentlyEating = new List<Shrink>();
     
     //[SerializeField] private bool isTutorial;
 
@@ -76,7 +78,26 @@ public class PlayerShrink : Shrink
 
     }
 
+    public void AddFood(Shrink food)
+    {
+        currentlyEating.Add(food);
+    }
 
+    public void RemoveFood(Shrink food)
+    {
+        currentlyEating.Remove(food);
+    }
+
+    public bool CheckForKey(int keyNumber)
+    {
+        foreach (Shrink food in currentlyEating)
+        {
+            if (keyNumber == food.GetComponent<CrewShrink>().keyValue)
+                return true;
+        }
+
+        return false;
+    }
     
     private IEnumerator LoseHealth()
     {
@@ -118,7 +139,15 @@ public class PlayerShrink : Shrink
     {
         if (other.CompareTag("Food"))
         {
+            Debug.Log("Should be attaching");
             other.GetComponent<Shrink>().AttachToEater(this.gameObject);
         }
+
+        /*
+        if (other.CompareTag("Terminal"))
+        {
+            Debug.Log("We're hitting the terminal at least");
+        }
+        */
     }
 }

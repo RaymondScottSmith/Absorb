@@ -10,6 +10,7 @@ TagManager:
   - LadderBottom
   - LadderTop
   - Door
+  - Terminal
   layers:
   - Default
   - TransparentFX

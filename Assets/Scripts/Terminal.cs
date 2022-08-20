@@ -5,11 +5,15 @@ using UnityEngine;
 
 public class Terminal : MonoBehaviour
 {
-    private Collider2D collider2D;
+    protected Collider2D collider2D;
+    protected Animator animator;
+
+    [SerializeField] protected int keyValue;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         collider2D = GetComponent<Collider2D>();
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -18,8 +22,25 @@ public class Terminal : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    protected virtual void OnTriggerStay2D(Collider2D other)
     {
-        Debug.Log(other.tag);
+        if (other.CompareTag("Player"))
+        {
+            if (other.GetComponent<PlayerShrink>().CheckForKey(keyValue))
+            {
+                StartCoroutine(CorrectActivate());
+            }
+            else
+            {
+                animator.SetTrigger("Incorrect");
+            }
+        }
+    }
+
+    protected virtual IEnumerator CorrectActivate()
+    {
+        animator.SetTrigger("Correct");
+        yield return new WaitForSeconds(0.5f);
+        animator.SetBool("Activated", true);
     }
 }

@@ -4816,7 +4816,7 @@ GameObject:
   - component: {fileID: 1235427213681823901}
   - component: {fileID: 8062643920990836211}
   - component: {fileID: 5004922423288160162}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: Wires 1
   m_TagString: Damaging
   m_Icon: {fileID: 0}

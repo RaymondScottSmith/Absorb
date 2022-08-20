@@ -12,13 +12,21 @@ public class CrewShrink : Shrink
 
     public int keyValue = 0;
 
+    private PlayerShrink playerShrink;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
     }
     public override void AttachToEater(GameObject eater)
     {
+        Debug.Log("Getting hit");
+        
         rb.constraints = RigidbodyConstraints2D.None;
+        rb.gravityScale = 0;
+        playerShrink = eater.GetComponent<PlayerShrink>();
+        if (playerShrink != null)
+            playerShrink.AddFood(this);
         moveCollider.enabled = false;
         float eaterRadius = eater.transform.localScale.x / 2;
         attachPoint = new Vector3(Random.Range(-eaterRadius, eaterRadius), Random.Range(-eaterRadius, eaterRadius), 0);
@@ -31,6 +39,7 @@ public class CrewShrink : Shrink
         StartCoroutine(BeEaten(eater.GetComponent<Shrink>()));
 
         eatSymbolPrefab = Instantiate(eatSymbolPrefab, LevelManager.Instance.eatingPanel.transform);
+        
     }
 
     protected override IEnumerator BeEaten(Shrink eater)
@@ -42,6 +51,7 @@ public class CrewShrink : Shrink
             currentHealth-=damageOverTime;
             yield return new WaitForSeconds(1);
         }
+        playerShrink.RemoveFood(this);
         Destroy(eatSymbolPrefab);
         Destroy(gameObject);
     }
