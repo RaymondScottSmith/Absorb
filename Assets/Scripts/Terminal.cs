@@ -7,8 +7,11 @@ public class Terminal : MonoBehaviour
 {
     protected Collider2D collider2D;
     protected Animator animator;
+    [SerializeField] protected Triggerable triggerable;
 
     [SerializeField] protected int keyValue;
+
+    protected bool active = true;
     // Start is called before the first frame update
     void Awake()
     {
@@ -24,11 +27,13 @@ public class Terminal : MonoBehaviour
 
     protected virtual void OnTriggerStay2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && active)
         {
             if (other.GetComponent<PlayerShrink>().CheckForKey(keyValue))
             {
                 StartCoroutine(CorrectActivate());
+                triggerable.Activate();
+                active = false;
             }
             else
             {
