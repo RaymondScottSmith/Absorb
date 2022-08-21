@@ -27,6 +27,7 @@ public class PlayerShrink : Shrink
     public GameObject corpse;
 
     private List<Shrink> currentlyEating = new List<Shrink>();
+    private PlayerController player;
     
     //[SerializeField] private bool isTutorial;
 
@@ -35,6 +36,7 @@ public class PlayerShrink : Shrink
     // Start is called before the first frame update
     void Start()
     {
+        player = GetComponent<PlayerController>();
         leaderboard = FindObjectOfType<Leaderboard>();
         foodBeingEaten = new List<GameObject>();
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -104,7 +106,8 @@ public class PlayerShrink : Shrink
         //Decrease health every second until it's 0
         while (currentHealth > 0)
         {
-            currentHealth--;
+            if (player.readyToPlay)
+                currentHealth--;
             yield return new WaitForSeconds(1);
         }
         Die();

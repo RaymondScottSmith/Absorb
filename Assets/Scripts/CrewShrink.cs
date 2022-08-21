@@ -7,6 +7,9 @@ public class CrewShrink : Shrink
     [SerializeField] private Animator myAnimator;
     [SerializeField] private GameObject eatSymbolPrefab;
     [SerializeField] private Collider2D moveCollider;
+    private AudioSource audioSource;
+
+    [SerializeField] private AudioClip[] deathSounds;
 
     private Rigidbody2D rb;
 
@@ -16,12 +19,17 @@ public class CrewShrink : Shrink
 
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         rb = GetComponent<Rigidbody2D>();
     }
     public override void AttachToEater(GameObject eater)
     {
         Debug.Log("Getting hit");
-        
+        if (deathSounds.Length > 0 && audioSource != null)
+        {
+            int randSound = Random.Range(0, deathSounds.Length);
+            audioSource.PlayOneShot(deathSounds[randSound]);
+        }
         rb.constraints = RigidbodyConstraints2D.None;
         rb.gravityScale = 0;
         playerShrink = eater.GetComponent<PlayerShrink>();

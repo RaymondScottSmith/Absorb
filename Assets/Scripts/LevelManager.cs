@@ -19,11 +19,14 @@ public class LevelManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        player.GetComponent<PlayerController>().readyToLaunch = false;
         TalkScript.Instance.QueueLine("This is the first instruction.");
         TalkScript.Instance.QueueLine("This is the second instruction.");
         TalkScript.Instance.DisplayMessages();
         player.transform.position = startingPosition.position;
         BeginFall();
+        
+        
     }
 
     //For when the level begins by falling from a ceiling

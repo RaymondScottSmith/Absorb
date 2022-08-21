@@ -26,6 +26,7 @@ public class SpawnManager : MonoBehaviour
     void Start()
     {
         player = FindObjectOfType<PlayerShrink>();
+        player.GetComponent<PlayerController>().readyToPlay = true;
         ladderTops = GameObject.FindGameObjectsWithTag("LadderTop");
         ladderBottoms = GameObject.FindGameObjectsWithTag("LadderBottom");
         audioSource = GetComponent<AudioSource>();

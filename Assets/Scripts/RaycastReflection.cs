@@ -24,8 +24,10 @@ public class RaycastReflection : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButton(0) && player.readyToLaunch && !isOverUI)
+        if (player.readyToPlay)
         {
+            if (Input.GetMouseButton(0) && player.readyToLaunch && !isOverUI) 
+            {
             lineRenderer.enabled = true;
             Vector3 endDragPos = Camera.main.ScreenToWorldPoint (Input.mousePosition);
             Vector3 origin = transform.position;
@@ -77,11 +79,13 @@ public class RaycastReflection : MonoBehaviour
 
                 }
             }
-        }
+            }
 
-        if (Input.GetMouseButtonUp(0))
-        {
-            lineRenderer.enabled = false;
+            if (Input.GetMouseButtonUp(0))
+            {
+                lineRenderer.enabled = false;
+            }
         }
+        
     }
 }

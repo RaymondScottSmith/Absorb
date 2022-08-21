@@ -7,9 +7,12 @@ public class Terminal : MonoBehaviour
 {
     protected Collider2D collider2D;
     protected Animator animator;
+    protected AudioSource audioSource;
     [SerializeField] protected Triggerable triggerable;
 
     [SerializeField] protected int keyValue;
+    [SerializeField] protected AudioClip acceptSound;
+    [SerializeField] protected AudioClip rejectSound;
 
     protected bool active = true;
     // Start is called before the first frame update
@@ -17,12 +20,7 @@ public class Terminal : MonoBehaviour
     {
         collider2D = GetComponent<Collider2D>();
         animator = GetComponent<Animator>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        audioSource = GetComponent<AudioSource>();
     }
 
     protected virtual void OnTriggerStay2D(Collider2D other)
@@ -31,12 +29,16 @@ public class Terminal : MonoBehaviour
         {
             if (other.GetComponent<PlayerShrink>().CheckForKey(keyValue))
             {
+                audioSource.Stop();
+                audioSource.PlayOneShot(acceptSound);
                 StartCoroutine(CorrectActivate());
                 triggerable.Activate();
                 active = false;
             }
             else
             {
+                audioSource.Stop();
+                audioSource.PlayOneShot(rejectSound);
                 animator.SetTrigger("Incorrect");
             }
         }
