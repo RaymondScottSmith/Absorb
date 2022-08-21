@@ -12,6 +12,8 @@ public class LevelManager : MonoBehaviour
 
     public static LevelManager Instance;
 
+    [SerializeField] private Collider2D firstTriggerZone;
+
     void Awake()
     {
         Instance = this;
@@ -20,13 +22,17 @@ public class LevelManager : MonoBehaviour
     void Start()
     {
         player.GetComponent<PlayerController>().readyToLaunch = false;
-        TalkScript.Instance.QueueLine("This is the first instruction.");
-        TalkScript.Instance.QueueLine("This is the second instruction.");
-        TalkScript.Instance.DisplayMessages();
+        TalkScript.Instance.QueueLine("Eat Him");
+        
         player.transform.position = startingPosition.position;
         BeginFall();
         
         
+    }
+
+    public void StartInstructions()
+    {
+        TalkScript.Instance.DisplayMessages();
     }
 
     //For when the level begins by falling from a ceiling
@@ -46,6 +52,6 @@ public class LevelManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        //if(firstTriggerZone.Tri)
     }
 }

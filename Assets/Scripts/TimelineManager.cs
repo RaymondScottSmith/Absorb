@@ -22,6 +22,7 @@ public class TimelineManager : MonoBehaviour
         {
             isFinished = true;
             player.readyToPlay = true;
+            LevelManager.Instance.StartInstructions();
         }
     }
 }

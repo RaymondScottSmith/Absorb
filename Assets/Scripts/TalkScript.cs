@@ -12,6 +12,8 @@ public class TalkScript : MonoBehaviour
     [SerializeField] private float delayBetweenLetter = 0.5f;
     [SerializeField] private float delayBetweenLines = 5f;
     private List<string> queuedMessages = new List<string>();
+
+    private bool displaying = false;
     
     private void Awake()
     {
@@ -28,12 +30,23 @@ public class TalkScript : MonoBehaviour
         queuedMessages.Add(message);
     }
 
+    public void ClearQueue()
+    {
+        queuedMessages.Clear();
+    }
+
     public void DisplayMessages()
     {
-        if (queuedMessages.Any())
+        if (!displaying)
         {
-            StartCoroutine(DisplayLine());
+            displaying = true;
+            textBox.text = "";
+            if (queuedMessages.Any())
+            {
+                StartCoroutine(DisplayLine());
+            }
         }
+        
     }
 
     private IEnumerator DisplayLine()
@@ -45,7 +58,9 @@ public class TalkScript : MonoBehaviour
             yield return new WaitForSeconds(delayBetweenLines);
 
         }
-        
+
+        displaying = false;
+
     }
     
     

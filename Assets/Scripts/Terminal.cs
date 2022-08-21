@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class Terminal : MonoBehaviour
@@ -13,6 +14,8 @@ public class Terminal : MonoBehaviour
     [SerializeField] protected int keyValue;
     [SerializeField] protected AudioClip acceptSound;
     [SerializeField] protected AudioClip rejectSound;
+    [SerializeField] protected string[] intitialMessages;
+    [SerializeField] protected string[] afterMessages;
 
     protected bool active = true;
     // Start is called before the first frame update
@@ -34,9 +37,54 @@ public class Terminal : MonoBehaviour
                 StartCoroutine(CorrectActivate());
                 triggerable.Activate();
                 active = false;
+                TalkScript.Instance.ClearQueue();
+                foreach (string message in afterMessages)
+                {
+                    TalkScript.Instance.QueueLine(message);
+                }
+                TalkScript.Instance.DisplayMessages();
             }
             else
             {
+                /*
+                if (intitialMessages.Any())
+                {
+                    TalkScript.Instance.ClearQueue();
+                    foreach (string message in intitialMessages)
+                    {
+                        TalkScript.Instance.QueueLine(message);
+                    }
+                    TalkScript.Instance.DisplayMessages();
+                    
+                }
+                audioSource.Stop();
+                audioSource.PlayOneShot(rejectSound);
+                animator.SetTrigger("Incorrect");
+                */
+            }
+        }
+    }
+    
+    protected virtual void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Player") && active)
+        {
+            if (other.GetComponent<PlayerShrink>().CheckForKey(keyValue))
+            {
+                
+            }
+            else
+            {
+                if (intitialMessages.Any())
+                {
+                    TalkScript.Instance.ClearQueue();
+                    foreach (string message in intitialMessages)
+                    {
+                        TalkScript.Instance.QueueLine(message);
+                    }
+                    TalkScript.Instance.DisplayMessages();
+                    
+                }
                 audioSource.Stop();
                 audioSource.PlayOneShot(rejectSound);
                 animator.SetTrigger("Incorrect");
