@@ -19,6 +19,9 @@ public class LevelManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        TalkScript.Instance.QueueLine("This is the first instruction.");
+        TalkScript.Instance.QueueLine("This is the second instruction.");
+        TalkScript.Instance.DisplayMessages();
         player.transform.position = startingPosition.position;
         BeginFall();
     }
