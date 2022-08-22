@@ -142,7 +142,7 @@ public class PlayerShrink : Shrink
     {
         if (other.CompareTag("Food"))
         {
-            Debug.Log("Should be attaching");
+            //Debug.Log("Should be attaching");
             other.GetComponent<Shrink>().AttachToEater(this.gameObject);
         }
 

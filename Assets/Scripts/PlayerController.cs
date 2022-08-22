@@ -162,7 +162,7 @@ public class PlayerController : MonoBehaviour
             readyToPlay = false;
             rb.velocity = Vector2.zero;
             GetComponent<Collider2D>().enabled = false;
-            Debug.Log("Hitting exit");
+            //Debug.Log("Hitting exit");
             TimelineManager.Instance.FoundExit();
         }
     }

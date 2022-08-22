@@ -36,7 +36,7 @@ public class TimelineManager : MonoBehaviour
         }
         else if (endIsFinished && endingCutscene.state != PlayState.Playing)
         {
-            Debug.Log("End Level Here");
+            //Debug.Log("End Level Here");
             //Destroy(player.gameObject);
             Time.timeScale = 0f;
         }
