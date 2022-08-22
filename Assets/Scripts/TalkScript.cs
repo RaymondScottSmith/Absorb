@@ -14,6 +14,8 @@ public class TalkScript : MonoBehaviour
     private List<string> queuedMessages = new List<string>();
 
     private bool displaying = false;
+
+    private bool stop;
     
     private void Awake()
     {
@@ -23,6 +25,7 @@ public class TalkScript : MonoBehaviour
             return;
         }
         Destroy(this);
+        stop = false;
     }
     
     public void QueueLine(string message)
@@ -32,7 +35,21 @@ public class TalkScript : MonoBehaviour
 
     public void ClearQueue()
     {
+        stop = true;
         queuedMessages.Clear();
+        StopCoroutine(DisplayLine());
+        StopCoroutine(DisplayLetters());
+        //textBox.text = "";
+    }
+
+    public void ClearText()
+    {
+        stop = true;
+        textBox.text = "";
+        queuedMessages.Clear();
+        StopCoroutine(DisplayLine());
+        StopCoroutine(DisplayLetters());
+        textBox.text = "";
     }
 
     public void DisplayMessages()
@@ -68,12 +85,26 @@ public class TalkScript : MonoBehaviour
     {
         textBox.text = "";
         string message = queuedMessages[0];
+        
         foreach (var t in message)
         {
+            if (stop)
+            {
+                textBox.text = "";
+                stop = false;
+                yield break;
+            }
             textBox.text += t;
             yield return new WaitForSeconds(delayBetweenLetter);
         }
 
+        if (stop)
+        {
+            textBox.text = "";
+            stop = false;
+            yield break;
+        }
+        
         queuedMessages.RemoveAt(0);
 
     }

@@ -5,10 +5,20 @@ using UnityEngine.Playables;
 
 public class TimelineManager : MonoBehaviour
 {
-    private bool isFinished = false;
+    private bool startIsFinished = false;
+    private bool endIsFinished = false;
 
     private PlayerController player;
     [SerializeField] private PlayableDirector director;
+
+    public static TimelineManager Instance;
+
+    [SerializeField] private PlayableDirector endingCutscene;
+
+    void Awake()
+    {
+        Instance = this;
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -18,11 +28,27 @@ public class TimelineManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!isFinished && director.state != PlayState.Playing)
+        if (!startIsFinished && director.state != PlayState.Playing && player.readyToPlay == false)
         {
-            isFinished = true;
+            startIsFinished = true;
             player.readyToPlay = true;
             LevelManager.Instance.StartInstructions();
         }
+        else if (endIsFinished && endingCutscene.state != PlayState.Playing)
+        {
+            Debug.Log("End Level Here");
+            //Destroy(player.gameObject);
+            Time.timeScale = 0f;
+        }
     }
+
+    public void FoundExit()
+    {
+        
+        
+        endingCutscene.Play();
+        endIsFinished = true;
+    }
+    
+    
 }

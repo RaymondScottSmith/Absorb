@@ -78,6 +78,8 @@ public class Terminal : MonoBehaviour
                 if (intitialMessages.Any())
                 {
                     TalkScript.Instance.ClearQueue();
+                    TalkScript.Instance.ClearText();
+                    
                     foreach (string message in intitialMessages)
                     {
                         TalkScript.Instance.QueueLine(message);

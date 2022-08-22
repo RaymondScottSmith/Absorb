@@ -4,6 +4,7 @@ using System.Collections.Generic;
 //using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.Playables;
 
 public class PlayerController : MonoBehaviour
 {
@@ -151,6 +152,18 @@ public class PlayerController : MonoBehaviour
             audioSource.PlayOneShot(zapSound);
             playerShrink.TakeDamage(10);
             StartCoroutine(Fall(5f));
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("ExitPoint"))
+        {
+            readyToPlay = false;
+            rb.velocity = Vector2.zero;
+            GetComponent<Collider2D>().enabled = false;
+            Debug.Log("Hitting exit");
+            TimelineManager.Instance.FoundExit();
         }
     }
 
