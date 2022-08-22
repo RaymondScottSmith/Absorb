@@ -3525,6 +3525,10 @@ PlayableDirector:
     value: {fileID: 228866441}
   - key: {fileID: -3376775167737075104, guid: 6fc3503fb2371334cbea4b4454270361, type: 2}
     value: {fileID: 42636786}
+  - key: {fileID: 1136405897476176769, guid: 6fc3503fb2371334cbea4b4454270361, type: 2}
+    value: {fileID: 779942793}
+  - key: {fileID: -2596679945391050186, guid: 6fc3503fb2371334cbea4b4454270361, type: 2}
+    value: {fileID: 779942794}
   m_ExposedReferences:
     m_References: []
 --- !u!114 &1572857352
@@ -4241,6 +4245,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1131083863740002855, guid: e7ae8fc2161252d4d9f1a7e60c241b7c, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1131083863740002855, guid: e7ae8fc2161252d4d9f1a7e60c241b7c, type: 3}
       propertyPath: m_Color.b
       value: 1
       objectReference: {fileID: 0}
@@ -4250,6 +4258,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1131083863740002855, guid: e7ae8fc2161252d4d9f1a7e60c241b7c, type: 3}
       propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1131083863740002855, guid: e7ae8fc2161252d4d9f1a7e60c241b7c, type: 3}
+      propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1131083863740002904, guid: e7ae8fc2161252d4d9f1a7e60c241b7c, type: 3}

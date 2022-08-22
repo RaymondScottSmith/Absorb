@@ -21,7 +21,7 @@ public class LevelManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player.GetComponent<PlayerController>().readyToLaunch = false;
+        player.GetComponent<PlayerController>().readyToLaunch = true;
         TalkScript.Instance.QueueLine("Eat Him");
         
         player.transform.position = startingPosition.position;
@@ -38,15 +38,17 @@ public class LevelManager : MonoBehaviour
     //For when the level begins by falling from a ceiling
     void BeginFall()
     {
-        StartCoroutine(playerIntangible(1f));
-        StartCoroutine(player.GetComponent<PlayerController>().Fall(1));
+        //StartCoroutine(playerIntangible(2f));
+        //StartCoroutine(player.GetComponent<PlayerController>().Fall(3));
+        
     }
 
     private IEnumerator playerIntangible(float howLong)
     {
-        player.GetComponent<Collider2D>().enabled = false;
+        //player.GetComponent<Collider2D>().enabled = false;
         yield return new WaitForSeconds(howLong);
-        player.GetComponent<Collider2D>().enabled = true;
+        //player.GetComponent<Collider2D>().enabled = true;
+        StartCoroutine(player.GetComponent<PlayerController>().Fall(1));
     }
 
     // Update is called once per frame
