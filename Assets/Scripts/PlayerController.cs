@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using JetBrains.Annotations;
 //using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -147,12 +148,20 @@ public class PlayerController : MonoBehaviour
 
         if (col.gameObject.CompareTag("Damaging"))
         {
-            animator.SetTrigger("Shock");
+            TakeDamage(10,zapSound);
+        }
+    }
+
+    public void TakeDamage(int damage, [CanBeNull] AudioClip damageSound)
+    {
+        animator.SetTrigger("Shock");
+        if (damageSound != null)
+        {
             audioSource.Stop();
             audioSource.PlayOneShot(zapSound);
-            playerShrink.TakeDamage(10);
-            StartCoroutine(Fall(5f));
         }
+        playerShrink.TakeDamage(damage);
+        StartCoroutine(Fall(5f));
     }
 
     private void OnTriggerEnter2D(Collider2D other)
