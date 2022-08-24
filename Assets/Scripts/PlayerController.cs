@@ -185,7 +185,7 @@ public class PlayerController : MonoBehaviour
 
         while (grabbing)
         {
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(0.1f);
         }
         
         

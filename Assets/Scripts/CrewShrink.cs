@@ -19,17 +19,19 @@ public class CrewShrink : Shrink
 
     void Start()
     {
+        beingEaten = false;
         audioSource = GetComponent<AudioSource>();
         rb = GetComponent<Rigidbody2D>();
     }
     public override void AttachToEater(GameObject eater)
     {
-        Debug.Log("Getting hit");
         if (deathSounds.Length > 0 && audioSource != null)
         {
             int randSound = Random.Range(0, deathSounds.Length);
             audioSource.PlayOneShot(deathSounds[randSound]);
         }
+
+        beingEaten = true;
         rb.constraints = RigidbodyConstraints2D.None;
         rb.gravityScale = 0;
         playerShrink = eater.GetComponent<PlayerShrink>();

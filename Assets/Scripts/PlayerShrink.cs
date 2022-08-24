@@ -130,7 +130,8 @@ public class PlayerShrink : Shrink
     private IEnumerator GameOver()
     {
         corpse = Instantiate(corpsePrefab, transform.position, corpsePrefab.transform.rotation);
-        yield return leaderboard.SubmitScoreRoutine((int)Mathf.Round(time));
+        if (leaderboard != null)
+            yield return leaderboard.SubmitScoreRoutine((int)Mathf.Round(time));
         timeLabel.SetText("Time: " + (int)Mathf.Round(time));
         losePanel.GetComponent<LosePanel>().GameOver((int)Mathf.Round(time));
         gameObject.SetActive(false);

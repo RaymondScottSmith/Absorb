@@ -56,16 +56,16 @@ public class MiniRocket : MonoBehaviour
     {
         collider2D.enabled = false;
         rb.velocity = Vector2.zero;
-        if (col.gameObject.CompareTag("Player"))
-        {
-            player.TakeDamage(20,null);
-        }
-
         spriteRenderer.enabled = false;
         explosion.SetActive(true);
         yield return new WaitForSeconds(1f);
         Destroy(gameObject);
     }
 
-    
+    public void HitPlayer()
+    {
+        player.TakeDamage(20,null);
+    }
+
+
 }

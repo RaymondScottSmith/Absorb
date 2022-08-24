@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1469189291732001861
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1497461665366206493}
+  m_Layer: 6
+  m_Name: FirePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1497461665366206493
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1469189291732001861}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.3, y: -0.55, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3978452521627826541}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3978452521627826548
 GameObject:
   m_ObjectHideFlags: 0
@@ -16,6 +46,7 @@ GameObject:
   - component: {fileID: 3978452521627826550}
   - component: {fileID: 3978452521627826551}
   - component: {fileID: 5449947116010226832}
+  - component: {fileID: 1210991040483690114}
   m_Layer: 6
   m_Name: Soldier
   m_TagString: Food
@@ -30,11 +61,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3978452521627826548}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 19, y: 15.25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3978452522229518827}
+  - {fileID: 1497461665366206493}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -335,6 +367,25 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1210991040483690114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3978452521627826548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b224f727f1b9974186605823afd2da3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  allowedToShoot: 0
+  projectilePrefab: {fileID: 8166444674529034470, guid: 42b69b42793d7ad4f99ee025674e3533, type: 3}
+  fireRate: 2
+  lookRange: 15
+  circleCollider2D: {fileID: 5758240146232547637}
+  firingPoint: {fileID: 1497461665366206493}
+  firingSound: {fileID: 8300000, guid: cee7b0cf89d25164ea7422a37e8e8fe6, type: 3}
 --- !u!1 &3978452522229518825
 GameObject:
   m_ObjectHideFlags: 0
@@ -345,8 +396,10 @@ GameObject:
   m_Component:
   - component: {fileID: 3978452522229518827}
   - component: {fileID: 3978452522229518824}
+  - component: {fileID: 5758240146232547637}
+  - component: {fileID: 110112624667289789}
   m_Layer: 7
-  m_Name: GameObject
+  m_Name: WalkingCollision
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -392,3 +445,62 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.28, y: 1.34}
   m_EdgeRadius: 0
+--- !u!58 &5758240146232547637
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3978452522229518825}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 15
+--- !u!114 &110112624667289789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3978452522229518825}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 769fd338a851caf44ab09713a8e6ce31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetTag: Player
+  OnTriggerEnterEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1210991040483690114}
+        m_TargetAssemblyTypeName: ShootingFood, Assembly-CSharp
+        m_MethodName: StartLooking
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnTriggerExitEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1210991040483690114}
+        m_TargetAssemblyTypeName: ShootingFood, Assembly-CSharp
+        m_MethodName: StopLooking
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
