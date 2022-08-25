@@ -28,6 +28,8 @@ public class PlayerShrink : Shrink
 
     private List<Shrink> currentlyEating = new List<Shrink>();
     private PlayerController player;
+
+    public bool isBeingDrained;
     
     //[SerializeField] private bool isTutorial;
 
@@ -36,6 +38,7 @@ public class PlayerShrink : Shrink
     // Start is called before the first frame update
     void Start()
     {
+        isBeingDrained = false;
         player = GetComponent<PlayerController>();
         leaderboard = FindObjectOfType<Leaderboard>();
         foodBeingEaten = new List<GameObject>();
@@ -53,6 +56,12 @@ public class PlayerShrink : Shrink
             StartCoroutine(RunTimer());
         }
 
+    }
+
+    public bool IsBeingDrained
+    {
+        get => isBeingDrained;
+        set => isBeingDrained = value;
     }
 
     private IEnumerator RunTimer()
@@ -77,6 +86,7 @@ public class PlayerShrink : Shrink
         //Adjust color as health changes
         float healthColor = (float)currentHealth / startingHealth;
         spriteRenderer.color = playerColor.Evaluate(healthColor);
+        
 
     }
 
@@ -107,8 +117,17 @@ public class PlayerShrink : Shrink
         while (currentHealth > 0)
         {
             if (player.readyToPlay)
+            {
                 currentHealth--;
-            yield return new WaitForSeconds(1);
+            }
+
+            if (isBeingDrained)
+                yield return new WaitForSeconds(0.1f);
+            else
+            {
+                yield return new WaitForSeconds(1);
+            }
+            
         }
         Die();
     }
