@@ -12,7 +12,6 @@ public class InfoTrigger : MonoBehaviour
     {
         if (!triggered && other.CompareTag("Player"))
         {
-            Debug.Log("Loading message");
             TalkScript.Instance.ClearQueue();
             triggered = true;
             foreach (var message in messagesToDisplay)
