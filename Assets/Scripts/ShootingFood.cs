@@ -71,6 +71,8 @@ public class ShootingFood : MonoBehaviour
     {
         animator.SetTrigger("Shoot");
         yield return new WaitForSeconds(0.75f);
+        if (crewShrink.beingEaten)
+            yield break;
         //audioSource.PlayOneShot(firingSound);
         Instantiate(projectilePrefab, firingPoint);
     }

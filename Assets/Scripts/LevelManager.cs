@@ -12,7 +12,7 @@ public class LevelManager : MonoBehaviour
 
     public static LevelManager Instance;
 
-    [SerializeField] private Collider2D firstTriggerZone;
+    public bool startPlayerOnAwake = false;
 
     void Awake()
     {
@@ -25,6 +25,10 @@ public class LevelManager : MonoBehaviour
         TalkScript.Instance.QueueLine("Eat Him");
         
         player.transform.position = startingPosition.position;
+        if (startPlayerOnAwake)
+        {
+            player.GetComponent<PlayerController>().readyToPlay = true;
+        }
         BeginFall();
         
         

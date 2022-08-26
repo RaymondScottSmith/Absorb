@@ -113,9 +113,6 @@ public class PlayerController : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D col)
     {
-        //transform.LookAt(Vector2.Reflect(rb.velocity, col.GetContact(0).normal));
-        //transform.Rotate(Vector3.forward, 90);
-
         if (moving)
         {
             if (!col.gameObject.CompareTag("Food") && !col.gameObject.CompareTag("Damaging"))
@@ -132,6 +129,7 @@ public class PlayerController : MonoBehaviour
         //If we hit a bounceable object while holding down mouse and moving
         if (col.gameObject.CompareTag("Bounceable") && grabbing)
         {
+            Debug.Log(col.gameObject.tag);
             grabbing = false;
 
             transform.up = col.GetContact(0).normal;
