@@ -94,8 +94,16 @@ public class TalkScript : MonoBehaviour
                 stop = false;
                 yield break;
             }
-            textBox.text += t;
-            yield return new WaitForSeconds(delayBetweenLetter);
+
+            if (t == '^')
+                textBox.text += "\n";
+            else
+            {
+                textBox.text += t;
+                yield return new WaitForSeconds(delayBetweenLetter);
+            }
+            
+            
         }
 
         if (stop)
