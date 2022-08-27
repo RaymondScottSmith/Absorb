@@ -28,6 +28,7 @@ public class RaycastReflection : MonoBehaviour
         {
             if (Input.GetMouseButton(0) && player.readyToLaunch && !isOverUI) 
             {
+                Debug.Log("Should be rendering line");
             lineRenderer.enabled = true;
             Vector3 endDragPos = Camera.main.ScreenToWorldPoint (Input.mousePosition);
             Vector3 origin = transform.position;

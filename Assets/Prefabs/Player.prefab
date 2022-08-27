@@ -121,12 +121,14 @@ MonoBehaviour:
   baseSpeed: 35
   rb: {fileID: 0}
   readyToLaunch: 0
+  readyToPlay: 0
   bouncyMaterial: {fileID: 6200000, guid: 3555f168242e5f743a6e1050c66c9705, type: 2}
   audioSource: {fileID: 0}
   bounceSound: {fileID: 8300000, guid: 7a482ec3a4698d245b7a2635b8f42c5a, type: 3}
   zapSound: {fileID: 8300000, guid: 4f14b96f7a0896940bed4aaea45d9a99, type: 3}
   isTutorial: 0
   pausePanel: {fileID: 0}
+  isOverUI: 0
 --- !u!114 &1131083863740002907
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -210,6 +212,7 @@ MonoBehaviour:
   corpsePrefab: {fileID: 2844965292454645310, guid: 81ea662a22f120c43989bc00cd70d3a7, type: 3}
   losePanel: {fileID: 0}
   corpse: {fileID: 0}
+  isBeingDrained: 0
 --- !u!120 &1131083863740002904
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -249,7 +252,7 @@ LineRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 10
+  m_SortingOrder: 30
   m_Positions:
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 1}
@@ -322,6 +325,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   reflections: 1
   maxLength: 30
+  isOverUI: 0
 --- !u!50 &1131083863740002910
 Rigidbody2D:
   serializedVersion: 4

@@ -129,7 +129,7 @@ public class PlayerController : MonoBehaviour
         //If we hit a bounceable object while holding down mouse and moving
         if (col.gameObject.CompareTag("Bounceable") && grabbing)
         {
-            Debug.Log(col.gameObject.tag);
+            //Debug.Log(col.gameObject.tag);
             grabbing = false;
 
             transform.up = col.GetContact(0).normal;
