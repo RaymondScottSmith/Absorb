@@ -65,6 +65,8 @@ public class PlayerController : MonoBehaviour
     {
         if (readyToPlay)
         {
+            if (!moving)
+                rb.velocity = Vector2.zero;
             raycastReflection.isOverUI = isOverUI;
             if ((pausePanel != null && pausePanel.activeSelf || isOverUI))
             {
@@ -183,11 +185,12 @@ public class PlayerController : MonoBehaviour
 
         while (grabbing)
         {
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(0.05f);
         }
         
         
         rb.gravityScale = 0f;
+        //yield return new WaitForSeconds(0.05f);
     }
 
 }
