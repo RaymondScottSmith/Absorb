@@ -148,11 +148,11 @@ public class PlayerController : MonoBehaviour
 
         if (col.gameObject.CompareTag("Damaging"))
         {
-            TakeDamage(10,zapSound);
+            TakeDamage(10,zapSound, col);
         }
     }
 
-    public void TakeDamage(int damage, [CanBeNull] AudioClip damageSound)
+    public void TakeDamage(int damage, [CanBeNull] AudioClip damageSound, Collision2D coll = null)
     {
         animator.SetTrigger("Shock");
         if (damageSound != null)
@@ -161,7 +161,25 @@ public class PlayerController : MonoBehaviour
             audioSource.PlayOneShot(zapSound);
         }
         playerShrink.TakeDamage(damage);
-        StartCoroutine(Fall(5f));
+        
+        //rb.velocity = Vector2.zero;
+        if (coll != null)
+        {
+            //rb.velocity = -rb.velocity;
+        }
+        else
+        {
+            //StartCoroutine(Fall(5f));
+            grabbing = true;
+            moving = true;
+        }
+        
+    }
+
+    public void ChangeDirection(Vector2 newVelocity)
+    {
+        rb.velocity = Vector2.zero;
+        rb.AddForce(newVelocity.normalized * baseSpeed, ForceMode2D.Impulse);
     }
 
     private void OnTriggerEnter2D(Collider2D other)

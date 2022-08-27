@@ -22,6 +22,8 @@ public class MiniRocket : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     [SerializeField]
     private GameObject explosion;
+
+    private Vector2 originalVelocity;
     void Awake()
     {
         collider2D = GetComponent<Collider2D>();
@@ -38,6 +40,7 @@ public class MiniRocket : MonoBehaviour
 
     private void ChangeDirection()
     {
+        originalVelocity = rb.velocity;
         rb.velocity = Vector2.zero;
         Quaternion oldTransform = transform.rotation;
         transform.right = player.transform.position - transform.position;
@@ -64,7 +67,9 @@ public class MiniRocket : MonoBehaviour
 
     public void HitPlayer()
     {
+        player.ChangeDirection(originalVelocity);
         player.TakeDamage(20,null);
+        
     }
 
 

@@ -26,7 +26,7 @@ public class PlayerShrink : Shrink
 
     public GameObject corpse;
 
-    private List<Shrink> currentlyEating = new List<Shrink>();
+    public List<Shrink> currentlyEating = new List<Shrink>();
     private PlayerController player;
 
     public bool isBeingDrained;
