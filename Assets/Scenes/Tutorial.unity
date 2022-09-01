@@ -1385,7 +1385,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Title
+  m_text: Back to Title
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2859,6 +2859,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1131083863740002852, guid: e7ae8fc2161252d4d9f1a7e60c241b7c, type: 3}
       propertyPath: isTutorial
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1131083863740002852, guid: e7ae8fc2161252d4d9f1a7e60c241b7c, type: 3}
+      propertyPath: readyToPlay
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1131083863740002852, guid: e7ae8fc2161252d4d9f1a7e60c241b7c, type: 3}
+      propertyPath: readyToLaunch
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1131083863740002854, guid: e7ae8fc2161252d4d9f1a7e60c241b7c, type: 3}
