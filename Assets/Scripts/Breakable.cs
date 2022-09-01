@@ -11,6 +11,11 @@ public class Breakable : MonoBehaviour
     
     [SerializeField] private Collider2D bounceSurface;
 
+    private AudioSource audioSource;
+
+    [SerializeField] private AudioClip hitSound;
+    [SerializeField] private AudioClip breakSound;
+
     private SpriteRenderer spriteRenderer;
 
     private ParticleSystem particleSystem;
@@ -23,6 +28,8 @@ public class Breakable : MonoBehaviour
         {
             bounceSurface.enabled = true;
         }
+
+        audioSource = GetComponent<AudioSource>();
         particleSystem = GetComponentInChildren<ParticleSystem>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         if (sprites.Count > 0)
@@ -35,6 +42,8 @@ public class Breakable : MonoBehaviour
     {
         if (col.gameObject.CompareTag("Player"))
         {
+            if (audioSource != null)
+                audioSource.PlayOneShot(hitSound);
             numSurvivable--;
             if (sprites.Count > 0)
             {
@@ -56,6 +65,8 @@ public class Breakable : MonoBehaviour
         }
         if (col.CompareTag("Player"))
         {
+            if (audioSource != null)
+                audioSource.PlayOneShot(breakSound);
             StartCoroutine(Break());
         }
     }
