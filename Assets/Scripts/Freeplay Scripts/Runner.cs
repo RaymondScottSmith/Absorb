@@ -20,7 +20,6 @@ public class Runner : MonoBehaviour
     private Animator runnerAnimator;
 
     private static readonly int Running = Animator.StringToHash("Running");
-    private bool isAtWrongHeight = false;
 
     private ClimbState climbState = ClimbState.NotClimbing;
     

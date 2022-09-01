@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class Terminal : MonoBehaviour
 {
-    protected Collider2D collider2D;
+    //protected Collider2D collider2D;
     protected Animator animator;
     protected AudioSource audioSource;
     [SerializeField] protected Triggerable triggerable;
@@ -21,7 +21,7 @@ public class Terminal : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        collider2D = GetComponent<Collider2D>();
+        //collider2D = GetComponent<Collider2D>();
         animator = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
     }

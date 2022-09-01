@@ -2861,6 +2861,10 @@ PrefabInstance:
       propertyPath: isTutorial
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1131083863740002852, guid: e7ae8fc2161252d4d9f1a7e60c241b7c, type: 3}
+      propertyPath: readyToPlay
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1131083863740002854, guid: e7ae8fc2161252d4d9f1a7e60c241b7c, type: 3}
       propertyPath: m_RootOrder
       value: 4

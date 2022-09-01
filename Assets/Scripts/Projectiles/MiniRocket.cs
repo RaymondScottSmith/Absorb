@@ -18,7 +18,7 @@ public class MiniRocket : MonoBehaviour
 
     private Vector3 holder;
 
-    private Collider2D collider2D;
+    private Collider2D rocketCollider;
     private SpriteRenderer spriteRenderer;
     [SerializeField]
     private GameObject explosion;
@@ -26,7 +26,7 @@ public class MiniRocket : MonoBehaviour
     private Vector2 originalVelocity;
     void Awake()
     {
-        collider2D = GetComponent<Collider2D>();
+        rocketCollider = GetComponent<Collider2D>();
         player = FindObjectOfType<PlayerController>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
@@ -57,7 +57,7 @@ public class MiniRocket : MonoBehaviour
 
     private IEnumerator Explode(Collision2D col)
     {
-        collider2D.enabled = false;
+        GetComponent<Collider2D>().enabled = false;
         rb.velocity = Vector2.zero;
         spriteRenderer.enabled = false;
         explosion.SetActive(true);

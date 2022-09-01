@@ -44,7 +44,7 @@ public class PlayerController : MonoBehaviour
     {
         moving = false;
         readyToLaunch = true;
-        readyToPlay = false;
+        //readyToPlay = false;
         rb = GetComponent<Rigidbody2D>();
         playerShrink = GetComponent<PlayerShrink>();
         audioSource = GetComponent<AudioSource>();
