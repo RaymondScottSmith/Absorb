@@ -160,6 +160,10 @@ public class CameraController : MonoBehaviour
         Time.timeScale = 1f;
         pausePanel.SetActive(false);
     }
-    
+
+    public void BackToMenu()
+    {
+        ScreenTransition.Instance.BackToMenu();
+    }
     
 }
