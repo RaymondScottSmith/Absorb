@@ -31,6 +31,7 @@ public class PlayerShrink : Shrink
 
     public bool isBeingDrained;
     
+    
     //[SerializeField] private bool isTutorial;
 
     //private SpriteRenderer spriteRenderer;
