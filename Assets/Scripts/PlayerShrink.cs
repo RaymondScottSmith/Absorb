@@ -138,9 +138,10 @@ public class PlayerShrink : Shrink
     {
         while (currentHealth > 0)
         {
+            yield return new WaitForSeconds(.1f);
             if (!isBeingDrained || currentHealth <= 0) continue;
-            currentHealth -= 10;
-            yield return new WaitForSeconds(1);
+            currentHealth -= 1;
+            
         }
        
     }

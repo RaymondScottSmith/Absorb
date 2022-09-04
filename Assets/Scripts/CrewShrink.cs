@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class CrewShrink : Shrink
 {
@@ -17,6 +18,9 @@ public class CrewShrink : Shrink
 
     private PlayerShrink playerShrink;
 
+    [SerializeField] private float eatenEventDelay;
+    public UnityEvent WhenEaten;
+
     void Start()
     {
         beingEaten = false;
@@ -31,6 +35,7 @@ public class CrewShrink : Shrink
             audioSource.PlayOneShot(deathSounds[randSound]);
         }
 
+        StartCoroutine(WhenEatenCoroutine());
         beingEaten = true;
         rb.constraints = RigidbodyConstraints2D.None;
         rb.gravityScale = 0;
@@ -50,6 +55,12 @@ public class CrewShrink : Shrink
 
         eatSymbolPrefab = Instantiate(eatSymbolPrefab, LevelManager.Instance.eatingPanel.transform);
         
+    }
+
+    private IEnumerator WhenEatenCoroutine()
+    {
+        yield return new WaitForSeconds(eatenEventDelay);
+        WhenEaten.Invoke();
     }
 
     protected override IEnumerator BeEaten(Shrink eater)
