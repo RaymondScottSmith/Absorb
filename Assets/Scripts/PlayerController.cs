@@ -113,14 +113,20 @@ public class PlayerController : MonoBehaviour
         
     }
 
+    public void PlaySquishSound()
+    {
+        //audioSource.Stop();
+        audioSource.PlayOneShot(bounceSound);
+    }
+
     void OnCollisionEnter2D(Collision2D col)
     {
         if (moving)
         {
             if (!col.gameObject.CompareTag("Food") && !col.gameObject.CompareTag("Damaging"))
             {
-                audioSource.Stop();
-                audioSource.PlayOneShot(bounceSound);
+                //audioSource.Stop();
+                PlaySquishSound();
             }
             Vector2 v = rb.velocity;
             float angle = Mathf.Atan2(v.y, v.x) * Mathf.Rad2Deg;
