@@ -18,7 +18,7 @@ public class Breakable : MonoBehaviour
 
     private SpriteRenderer spriteRenderer;
 
-    private ParticleSystem particleSystem;
+    private ParticleSystem breakParticleSystem;
 
     private bool readyToBreak;
     // Start is called before the first frame update
@@ -30,7 +30,7 @@ public class Breakable : MonoBehaviour
         }
 
         audioSource = GetComponent<AudioSource>();
-        particleSystem = GetComponentInChildren<ParticleSystem>();
+        breakParticleSystem = GetComponentInChildren<ParticleSystem>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         if (sprites.Count > 0)
         {
@@ -74,7 +74,7 @@ public class Breakable : MonoBehaviour
     private IEnumerator Break()
     {
         spriteRenderer.enabled = false;
-        particleSystem.Play();
+        breakParticleSystem.Play();
         yield return new WaitForSeconds(1);
         Destroy(gameObject);
 
