@@ -44,7 +44,7 @@ public class PlayerController : MonoBehaviour
     {
         moving = false;
         readyToLaunch = true;
-        readyToPlay = false;
+        //readyToPlay = false;
         rb = GetComponent<Rigidbody2D>();
         playerShrink = GetComponent<PlayerShrink>();
         audioSource = GetComponent<AudioSource>();
@@ -113,14 +113,20 @@ public class PlayerController : MonoBehaviour
         
     }
 
+    public void PlaySquishSound()
+    {
+        //audioSource.Stop();
+        audioSource.PlayOneShot(bounceSound);
+    }
+
     void OnCollisionEnter2D(Collision2D col)
     {
         if (moving)
         {
             if (!col.gameObject.CompareTag("Food") && !col.gameObject.CompareTag("Damaging"))
             {
-                audioSource.Stop();
-                audioSource.PlayOneShot(bounceSound);
+                //audioSource.Stop();
+                PlaySquishSound();
             }
             Vector2 v = rb.velocity;
             float angle = Mathf.Atan2(v.y, v.x) * Mathf.Rad2Deg;
@@ -148,11 +154,11 @@ public class PlayerController : MonoBehaviour
 
         if (col.gameObject.CompareTag("Damaging"))
         {
-            TakeDamage(10,zapSound);
+            TakeDamage(10,zapSound, col);
         }
     }
 
-    public void TakeDamage(int damage, [CanBeNull] AudioClip damageSound)
+    public void TakeDamage(int damage, [CanBeNull] AudioClip damageSound, Collision2D coll = null)
     {
         animator.SetTrigger("Shock");
         if (damageSound != null)
@@ -161,7 +167,25 @@ public class PlayerController : MonoBehaviour
             audioSource.PlayOneShot(zapSound);
         }
         playerShrink.TakeDamage(damage);
-        StartCoroutine(Fall(5f));
+        
+        //rb.velocity = Vector2.zero;
+        if (coll != null)
+        {
+            //rb.velocity = -rb.velocity;
+        }
+        else
+        {
+            //StartCoroutine(Fall(5f));
+            grabbing = true;
+            moving = true;
+        }
+        
+    }
+
+    public void ChangeDirection(Vector2 newVelocity)
+    {
+        rb.velocity = Vector2.zero;
+        rb.AddForce(newVelocity.normalized * baseSpeed, ForceMode2D.Impulse);
     }
 
     private void OnTriggerEnter2D(Collider2D other)

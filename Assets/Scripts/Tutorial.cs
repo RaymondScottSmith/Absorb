@@ -18,8 +18,6 @@ public class Tutorial : MonoBehaviour
 
     [SerializeField] private GameObject dangers;
 
-    private float zoomOut = 28f;
-
     private bool isReadyToZoom;
 
     private Camera mainCamera;

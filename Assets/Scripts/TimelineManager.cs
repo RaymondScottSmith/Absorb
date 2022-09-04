@@ -44,8 +44,15 @@ public class TimelineManager : MonoBehaviour
 
     public void FoundExit()
     {
+
+        //Get rid of any remaining food sticking to player
+        PlayerShrink playerShrink = player.GetComponent<PlayerShrink>();
+        foreach (Shrink food in playerShrink.currentlyEating)
+        {
+            Destroy(food.gameObject);
+        }
         
-        
+        //Start the ending cutscene
         endingCutscene.Play();
         endIsFinished = true;
     }
