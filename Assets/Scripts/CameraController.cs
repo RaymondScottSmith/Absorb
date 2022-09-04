@@ -32,6 +32,8 @@ public class CameraController : MonoBehaviour
     [SerializeField] private GameObject pausePanel;
 
     [SerializeField] private Slider scrollSlider;
+    
+    [SerializeField] private GameObject skyBox;
 
     private bool isScrollSlider;
 
@@ -92,8 +94,9 @@ public class CameraController : MonoBehaviour
             float scrollValue = -Input.mouseScrollDelta.y;
             mainCamera.orthographicSize += scrollValue * scrollMultiplier;
         }
-        
 
+        
+        
         if (mainCamera.orthographicSize > cameraMaximumSize)
         {
             mainCamera.orthographicSize = cameraMaximumSize;
@@ -101,39 +104,12 @@ public class CameraController : MonoBehaviour
         {
             mainCamera.orthographicSize = cameraMinimumSize;
         }
-
-        /*
-        if (!isZoomedOut)
-        {
-            float horizInput = Input.GetAxis("Horizontal");
-            float vertInput = Input.GetAxis("Vertical");
-
-            if (horizInput != 0 || vertInput != 0)
-            {
-                float translateMultiplier = scrollSpeed * Time.deltaTime;
-                transform.Translate(new Vector3(horizInput * translateMultiplier, vertInput * translateMultiplier, 0));
-                StayInBoundaries();
-            }
-            cameraOldPosition = mainCamera.transform.position;
-        }
         
-
-        if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
+        if (skyBox != null)
         {
-            if (!isZoomedOut)
-                cameraOldPosition = mainCamera.transform.position;
-            
-            isZoomedOut = true;
-            mainCamera.orthographicSize = 28;
-            mainCamera.transform.position = cameraCenterPosition;
+            float camSize = mainCamera.orthographicSize/cameraMinimumSize;
+            skyBox.transform.localScale = new Vector3(camSize, camSize, 1);
         }
-        else
-        {
-            mainCamera.orthographicSize = 8;
-            mainCamera.transform.position = cameraOldPosition;
-            isZoomedOut = false;
-        }
-        */
     }
     
 

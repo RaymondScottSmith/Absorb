@@ -178,7 +178,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3de3b62d7004484479d4dbcd621d01eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 10
+  startingHealth: 15
   minimumScale: 0.5
   damageOverTime: 1
   eatPerSecond: 2
@@ -385,7 +385,6 @@ MonoBehaviour:
   lookRange: 15
   circleCollider2D: {fileID: 5758240146232547637}
   firingPoint: {fileID: 1497461665366206493}
-  firingSound: {fileID: 8300000, guid: cee7b0cf89d25164ea7422a37e8e8fe6, type: 3}
 --- !u!1 &3978452522229518825
 GameObject:
   m_ObjectHideFlags: 0
@@ -474,6 +473,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetTag: Player
+  triggerOnce: 0
   OnTriggerEnterEvent:
     m_PersistentCalls:
       m_Calls:

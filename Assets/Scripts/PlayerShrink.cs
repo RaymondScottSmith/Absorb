@@ -57,6 +57,7 @@ public class PlayerShrink : Shrink
             StartCoroutine(RunTimer());
         }
 
+        StartCoroutine(HandleDrain());
     }
 
     public bool IsBeingDrained
@@ -131,6 +132,17 @@ public class PlayerShrink : Shrink
             
         }
         Die();
+    }
+
+    private IEnumerator HandleDrain()
+    {
+        while (currentHealth > 0)
+        {
+            if (!isBeingDrained || currentHealth <= 0) continue;
+            currentHealth -= 10;
+            yield return new WaitForSeconds(1);
+        }
+       
     }
 
     public void TakeDamage(int damage)
