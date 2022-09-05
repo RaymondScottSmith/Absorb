@@ -39,6 +39,8 @@ public class PlayerController : MonoBehaviour
 
     private RaycastReflection raycastReflection;
 
+    [SerializeField] private int damageFromHazards = 10;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -63,6 +65,10 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (pausePanel.activeSelf)
+        {
+            return;
+        }
         if (readyToPlay)
         {
             if (!moving)
@@ -72,6 +78,9 @@ public class PlayerController : MonoBehaviour
             {
                 return;
             }
+
+            if (Input.GetMouseButtonDown(0))
+                readyToLaunch = true;
         
             //When mouse button released
             if (Input.GetMouseButtonUp(0) )
@@ -154,7 +163,7 @@ public class PlayerController : MonoBehaviour
 
         if (col.gameObject.CompareTag("Damaging"))
         {
-            TakeDamage(10,zapSound, col);
+            TakeDamage(damageFromHazards,zapSound, col);
         }
     }
 

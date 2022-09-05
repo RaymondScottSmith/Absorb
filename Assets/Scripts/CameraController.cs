@@ -65,6 +65,7 @@ public class CameraController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             pausePanel.SetActive(true);
+            playerShrink.GetComponent<PlayerController>().readyToPlay = false;
             Time.timeScale = 0f;
         }
         
@@ -133,8 +134,12 @@ public class CameraController : MonoBehaviour
 */
     public void Unpause()
     {
-        Time.timeScale = 1f;
+        playerShrink.GetComponent<PlayerController>().readyToPlay = true;
+        playerShrink.GetComponent<PlayerController>().readyToLaunch = false;
+        
         pausePanel.SetActive(false);
+        Time.timeScale = 1f;
+        
     }
     
     

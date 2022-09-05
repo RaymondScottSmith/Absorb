@@ -23,6 +23,10 @@ public class MiniRocket : MonoBehaviour
     [SerializeField]
     private GameObject explosion;
 
+    private AudioSource myAudioSource;
+
+    private ShootingFood source;
+
     private Vector2 originalVelocity;
     void Awake()
     {
@@ -30,12 +34,20 @@ public class MiniRocket : MonoBehaviour
         player = FindObjectOfType<PlayerController>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
+        myAudioSource = GetComponent<AudioSource>();
     }
     // Start is called before the first frame update
     void Start()
     {
         InvokeRepeating("ChangeDirection", 0f, updateTime);
         
+    }
+
+    public void SetSource(ShootingFood firingObject)
+    {
+        
+        source = firingObject;
+        transform.SetParent(null);
     }
 
     private void ChangeDirection()
@@ -50,6 +62,7 @@ public class MiniRocket : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D col)
     {
+        myAudioSource.Stop();
         CancelInvoke();
         StartCoroutine(Explode(col));
 
@@ -61,6 +74,7 @@ public class MiniRocket : MonoBehaviour
         rb.velocity = Vector2.zero;
         spriteRenderer.enabled = false;
         explosion.SetActive(true);
+        source.ReadyWeapon();
         yield return new WaitForSeconds(1f);
         Destroy(gameObject);
     }

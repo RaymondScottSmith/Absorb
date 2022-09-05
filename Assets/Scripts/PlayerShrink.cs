@@ -143,7 +143,7 @@ public class PlayerShrink : Shrink
             currentHealth -= 1;
             
         }
-       
+        Die();
     }
 
     public void TakeDamage(int damage)
@@ -155,7 +155,10 @@ public class PlayerShrink : Shrink
 
     public void Die()
     {
-        
+        foreach (Shrink food in currentlyEating)
+        {
+           Destroy(food.gameObject); 
+        }
         alive = false;
         StartCoroutine(GameOver());
     }

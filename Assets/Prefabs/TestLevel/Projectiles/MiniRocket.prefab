@@ -134,6 +134,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetTag: Player
+  triggerOnce: 0
   OnTriggerEnterEvent:
     m_PersistentCalls:
       m_Calls:
@@ -348,8 +349,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 30
-  maxTurn: 30
-  updateTime: 0.5
+  maxTurn: 45
+  updateTime: 0.25
   explosion: {fileID: 8166444674214347935}
 --- !u!50 &8166444674529034465
 Rigidbody2D:
@@ -408,18 +409,18 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: cee7b0cf89d25164ea7422a37e8e8fe6, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 98ae610c1fdc9c642b6408ae162aef92, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.75
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 10
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0

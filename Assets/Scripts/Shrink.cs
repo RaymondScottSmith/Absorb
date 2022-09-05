@@ -110,6 +110,8 @@ public class Shrink : MonoBehaviour
     public void GainHealth(int health)
     {
         currentHealth += health;
+        if (currentHealth > startingHealth)
+            currentHealth = startingHealth;
     }
     
 }

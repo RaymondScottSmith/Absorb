@@ -21,11 +21,13 @@ public class ShootingFood : MonoBehaviour
     private PlayerController player;
     
     private CrewShrink crewShrink;
+    private bool alreadyFired;
     
 
     // Start is called before the first frame update
     void Start()
     {
+        alreadyFired = false;
         crewShrink = GetComponent<CrewShrink>();
         animator = GetComponent<Animator>();
         player = FindObjectOfType<PlayerController>();
@@ -60,11 +62,16 @@ public class ShootingFood : MonoBehaviour
         }
         RaycastHit2D hit = Physics2D.Raycast(transform.position, player.transform.position - transform.position);
 
-        if (hit.collider.CompareTag("Player"))
+        if (hit.collider.CompareTag("Player") && !alreadyFired)
         {
             StartCoroutine(ShootProjectile());
         }
 
+    }
+
+    public void ReadyWeapon()
+    {
+        alreadyFired = false;
     }
 
     private IEnumerator ShootProjectile()
@@ -74,6 +81,8 @@ public class ShootingFood : MonoBehaviour
         if (crewShrink.beingEaten)
             yield break;
         //audioSource.PlayOneShot(firingSound);
-        Instantiate(projectilePrefab, firingPoint);
+        alreadyFired = true;
+        GameObject projectile = Instantiate(projectilePrefab, firingPoint);
+        projectile.GetComponent<MiniRocket>().SetSource(this);
     }
 }
