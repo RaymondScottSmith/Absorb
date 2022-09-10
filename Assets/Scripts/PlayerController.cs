@@ -79,7 +79,7 @@ public class PlayerController : MonoBehaviour
                 return;
             }
 
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonDown(0) && !moving)
                 readyToLaunch = true;
         
             //When mouse button released
