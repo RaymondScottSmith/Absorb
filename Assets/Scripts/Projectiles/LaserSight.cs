@@ -8,6 +8,8 @@ public class LaserSight : MonoBehaviour
     private Vector3 direction;
 
     [SerializeField] private Transform startPosition;
+
+    [SerializeField] private GameObject redDotLight;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,12 +21,13 @@ public class LaserSight : MonoBehaviour
     {
         lineRenderer.positionCount = 1;
         lineRenderer.SetPosition(0,startPosition.position);
-        RaycastHit2D hit = Physics2D.Raycast(startPosition.position, Vector3.right, 900,
+        RaycastHit2D hit = Physics2D.Raycast(startPosition.position, transform.right, 900,
             ~(LayerMask.GetMask("CrewColliders", "Ignore Raycast")));
         if (hit.collider != null)
         {
             lineRenderer.positionCount += 1;
             lineRenderer.SetPosition(lineRenderer.positionCount - 1, hit.point);
+            redDotLight.transform.position = hit.point;
         }
         
     }
