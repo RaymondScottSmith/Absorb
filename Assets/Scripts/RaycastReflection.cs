@@ -13,6 +13,9 @@ public class RaycastReflection : MonoBehaviour
     private Vector3 direction;
     private PlayerController player;
 
+    [SerializeField]
+    private CircleCollider2D myCircleCollider;
+
     public bool isOverUI;
 
     private void Awake()
@@ -32,26 +35,36 @@ public class RaycastReflection : MonoBehaviour
             Vector3 endDragPos = Camera.main.ScreenToWorldPoint (Input.mousePosition);
             Vector3 origin = transform.position;
             Vector3 velocity = (endDragPos - origin);
+            
             velocity.Normalize();
             //Debug.Log("32: velocity: " + velocity);
             // RaycastHit2D hit = Physics2D.Raycast(transform.position, velocity);
 
+            
             lineRenderer.positionCount = 1;
             lineRenderer.SetPosition(0,origin);
+            float scale = gameObject.transform.localScale.x;
             
             float remainingLength = maxLength;
             for (int i = 0; i < reflections; i++)
             {
-                RaycastHit2D hit = Physics2D.Raycast(origin, velocity, 900,
+                
+                RaycastHit2D hit = Physics2D.CircleCast(origin, myCircleCollider.radius * scale, velocity, 900,
                     ~(LayerMask.GetMask("CrewColliders", "Ignore Raycast")));
                 if (hit.collider != null)
                 {
-                    
+
                     if (Vector3.Distance(origin, hit.point)>= remainingLength)
                     {
                         Vector3 newDirection = (Vector3)hit.point - origin;
                         newDirection.Normalize();
                         hit.point = (Vector3)origin + (newDirection * remainingLength);
+                    }
+
+                    if (hit.distance < 1)
+                    {
+                        player.readyToLaunch = false;
+                        return;
                     }
                     
                     lineRenderer.positionCount += 1;

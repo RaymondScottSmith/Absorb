@@ -40,6 +40,7 @@ public class PlayerController : MonoBehaviour
     private RaycastReflection raycastReflection;
 
     [SerializeField] private int damageFromHazards = 10;
+    
 
     // Start is called before the first frame update
     void Awake()
@@ -54,7 +55,7 @@ public class PlayerController : MonoBehaviour
         raycastReflection = GetComponent<RaycastReflection>();
         if (isTutorial)
         {
-            autoStick = false;
+            autoStick = true;
         } 
         else if (PlayerPrefs.HasKey("AutoStick"))
         {
@@ -98,14 +99,18 @@ public class PlayerController : MonoBehaviour
                     //Calculate direction to mouse from gameobject
                     var mouseDir = mousePos - gameObject.transform.position;
                     mouseDir.z = 0.0f;
-                
+                    
                     //Normalize the direction to make sure distance does not affect speed
                     mouseDir.Normalize();
                     //Start the player moving
+                    Vector2 test = mouseDir * baseSpeed;
+                    //if (Mathf.Atan2(test.y, test.x) * Mathf.Rad2Deg < 179)
                     rb.AddForce(mouseDir * baseSpeed, ForceMode2D.Impulse);
                     //Make the player face the direction initially launched
                     Vector2 v = rb.velocity;
+                    
                     float angle = Mathf.Atan2(v.y, v.x) * Mathf.Rad2Deg;
+                    
                     transform.rotation = Quaternion.AngleAxis(angle-90, Vector3.forward);
                 }
             }

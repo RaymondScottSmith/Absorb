@@ -18,6 +18,8 @@ GameObject:
   - component: {fileID: 1131083863740002910}
   - component: {fileID: 1103273278}
   - component: {fileID: 1103273279}
+  - component: {fileID: 6058852373697542537}
+  - component: {fileID: 7231948798762874368}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -58,7 +60,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a361e4da2fe186b42841d7caf06b336c, type: 2}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -129,6 +131,7 @@ MonoBehaviour:
   isTutorial: 0
   pausePanel: {fileID: 0}
   isOverUI: 0
+  damageFromHazards: 20
 --- !u!114 &1131083863740002907
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -141,7 +144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 362d455f164d45b45af018876c0833cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 30
+  startingHealth: 100
   minimumScale: 0.75
   damageOverTime: 1
   eatPerSecond: 0
@@ -176,7 +179,7 @@ MonoBehaviour:
     m_Mode: 0
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
-  isTutorial: 0
+  isTutorial: 1
   playerColor:
     serializedVersion: 2
     key0: {r: 0.29885054, g: 1, b: 0, a: 1}
@@ -212,6 +215,7 @@ MonoBehaviour:
   corpsePrefab: {fileID: 2844965292454645310, guid: 81ea662a22f120c43989bc00cd70d3a7, type: 3}
   losePanel: {fileID: 0}
   corpse: {fileID: 0}
+  currentlyEating: []
   isBeingDrained: 0
 --- !u!120 &1131083863740002904
 LineRenderer:
@@ -324,7 +328,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reflections: 1
-  maxLength: 30
+  maxLength: 60
+  myCircleCollider: {fileID: 1131083863740002848}
   isOverUI: 0
 --- !u!50 &1131083863740002910
 Rigidbody2D:
@@ -462,3 +467,37 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!61 &6058852373697542537
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1131083863740002849}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.1851852, y: 1.1851852}
+    newSize: {x: 1.75, y: 1.875}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!81 &7231948798762874368
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1131083863740002849}
+  m_Enabled: 1
