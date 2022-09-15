@@ -37,13 +37,16 @@ public class CameraController : MonoBehaviour
 
     private bool isScrollSlider;
 
+    private Animator animator;
+
     void Start()
     {
         playerShrink = FindObjectOfType<PlayerShrink>();
-        mainCamera = GetComponent<Camera>();
-        audioSource = GetComponent<AudioSource>();
+        mainCamera = GetComponentInChildren<Camera>();
+        audioSource = GetComponentInChildren<AudioSource>();
         playedDeathSound = false;
         pausePanel.SetActive(false);
+        animator = GetComponentInChildren<Animator>();
 
         if (PlayerPrefs.HasKey("ScrollMultiplier"))
         {
@@ -112,8 +115,12 @@ public class CameraController : MonoBehaviour
             skyBox.transform.localScale = new Vector3(camSize, camSize, 1);
         }
     }
-    
 
+
+    public void ShakeScreen()
+    {
+        animator.SetTrigger("ShakeIt");
+    }
     /*
     private void StayInBoundaries()
     {

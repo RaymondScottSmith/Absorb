@@ -34,6 +34,16 @@ public class StationaryTurret : MonoBehaviour
     private bool isShooting;
 
     [SerializeField] private AudioClip playerDamageSound;
+
+    private CameraController camController;
+
+    [SerializeField] private float maxTurn = -90f;
+
+    [SerializeField] private float minTurn;
+
+    private Quaternion firstPos;
+
+    [SerializeField] private int hitsToKill = 3;
     
     
     // Start is called before the first frame update
@@ -42,7 +52,9 @@ public class StationaryTurret : MonoBehaviour
         isShooting = false;
         player = FindObjectOfType<PlayerController>();
         animator = GetComponentInParent<Animator>();
+        firstPos = transform.rotation;
         //audioSource = GetComponentInParent<AudioSource>();
+        camController = FindObjectOfType<CameraController>();
         LookingMode();
     }
 
@@ -76,6 +88,13 @@ public class StationaryTurret : MonoBehaviour
             transform.rotation = Quaternion.RotateTowards(oldTransform, transform.rotation, 180);
             transform.eulerAngles = new Vector3(0, 180, -transform.rotation.eulerAngles.z);
 
+            float zAngle = transform.rotation.eulerAngles.z;
+            //Debug.Log(transform.rotation.eulerAngles.z);
+            if (!((zAngle > 0 && zAngle < 90) || (zAngle <= 360 && zAngle > 270)))
+            {
+                Debug.Log("Should be restricting here");
+                transform.rotation = oldTransform;
+            }
             if (oldTransform != transform.rotation && !servoAudio.isPlaying)
             {
                 servoAudio.Play();
@@ -84,8 +103,9 @@ public class StationaryTurret : MonoBehaviour
             //transform.rotation = Quaternion.RotateTowards(oldTransform, transform.rotation,45);
             Debug.Log("In Spotted Mode");
         }
-        else
+        else if (!isShooting)
         {
+            animator.SetTrigger("OutOfRange");
             isShooting = false;
             //shootingAudio.loop = false;
             //animator.SetBool("Firing", false);
@@ -93,34 +113,54 @@ public class StationaryTurret : MonoBehaviour
             eyeLight.color = blueColor;
             coneLight.color = blueColor;
             spotLight.color = blueColor;
+            if (transform.rotation != firstPos)
+            {
+                servoAudio.Play();
+            }
+            transform.rotation = firstPos;
             //Debug.Log("In Looking Mode");
         }
     }
-    
-    private IEnum
+
+    private IEnumerator ShowDamage()
+    {
+        yield return new WaitForSeconds(0.25f);
+        camController.ShakeScreen();
+        player.TakeDamage(damageAmount/2, null);
+        yield return new WaitForSeconds(0.25f);
+        player.TakeDamage(damageAmount/2, null, null, false);
+        camController.ShakeScreen();
+    }
     
     private IEnumerator ShootPlayer()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(1.5f);
         RaycastHit2D hit = Physics2D.Raycast(transform.position, 
             player.transform.position - transform.position, 
             40, ~(LayerMask.GetMask("CrewColliders", "Ignore Raycast")));
         
         if (!hit.collider.CompareTag("Player") || !playerInRange)
         {
+            isShooting = false;
+            animator.SetTrigger("OutOfRange");
             yield break;
         }
-            
-        
+
+        StartCoroutine(ShowDamage());
+        /*
         if (!shootingAudio.isPlaying)
         {
             shootingAudio.loop = true;
             shootingAudio.Play();
         }
+        */
+        shootingAudio.Play();
         animator.SetTrigger("Fire");
-        player.TakeDamage(damageAmount, playerDamageSound);
+        
+        
         Debug.Log("Taking damage");
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.5f);
+        
         shootingAudio.loop = false;
         isShooting = false;
         

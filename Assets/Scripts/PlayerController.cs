@@ -172,9 +172,10 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void TakeDamage(int damage, [CanBeNull] AudioClip damageSound, Collision2D coll = null)
+    public void TakeDamage(int damage, [CanBeNull] AudioClip damageSound, Collision2D coll = null, bool useAnimation = true)
     {
-        animator.SetTrigger("Shock");
+        if (useAnimation)
+            animator.SetTrigger("Shock");
         if (damageSound == null)
         {
             audioSource.Stop();
