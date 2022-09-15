@@ -175,10 +175,15 @@ public class PlayerController : MonoBehaviour
     public void TakeDamage(int damage, [CanBeNull] AudioClip damageSound, Collision2D coll = null)
     {
         animator.SetTrigger("Shock");
-        if (damageSound != null)
+        if (damageSound == null)
         {
             audioSource.Stop();
             audioSource.PlayOneShot(zapSound);
+        }
+        else
+        {
+            audioSource.Stop();
+            audioSource.PlayOneShot(damageSound);
         }
         playerShrink.TakeDamage(damage);
         
