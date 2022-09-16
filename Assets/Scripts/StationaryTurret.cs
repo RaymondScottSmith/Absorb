@@ -44,6 +44,8 @@ public class StationaryTurret : MonoBehaviour
     private Quaternion firstPos;
 
     [SerializeField] private int hitsToKill = 3;
+
+    [SerializeField] private bool facingRight = true;
     
     
     // Start is called before the first frame update
@@ -60,10 +62,11 @@ public class StationaryTurret : MonoBehaviour
 
     public void SpottedMode()
     {
+        Debug.Log("In Spotted Mode");
         playerInRange = true;
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         RaycastHit2D hit = Physics2D.Raycast(transform.position, 
             player.transform.position - transform.position, 
@@ -71,6 +74,7 @@ public class StationaryTurret : MonoBehaviour
         
         if (playerInRange && hit.collider.CompareTag("Player"))
         {
+            
 
             if (!isShooting)
             {
@@ -85,26 +89,47 @@ public class StationaryTurret : MonoBehaviour
             int yRot = 180;
             transform.right = (player.transform.position - transform.position);
             
-            transform.rotation = Quaternion.RotateTowards(oldTransform, transform.rotation, 180);
-            transform.eulerAngles = new Vector3(0, 180, -transform.rotation.eulerAngles.z);
-
-            float zAngle = transform.rotation.eulerAngles.z;
+            
+            
             //Debug.Log(transform.rotation.eulerAngles.z);
-            if (!((zAngle > 0 && zAngle < 90) || (zAngle <= 360 && zAngle > 270)))
+            if (facingRight)
             {
-                Debug.Log("Should be restricting here");
-                transform.rotation = oldTransform;
+                //Debug.Log("Old Transform: " + oldTransform + " transform.rotation: " + transform.rotation);
+                transform.rotation = Quaternion.RotateTowards(oldTransform, transform.rotation, 180);
+                transform.eulerAngles = new Vector3(0, 180, -transform.rotation.eulerAngles.z);
+
+                float zAngle = transform.rotation.eulerAngles.z;
+                if (!((zAngle > 0 && zAngle < 90) || (zAngle <= 360 && zAngle > 270)))
+                {
+                    Debug.Log("Should be restricting here");
+                    transform.rotation = oldTransform;
+                }
             }
+            else
+            {
+                transform.rotation = Quaternion.RotateTowards(oldTransform, transform.rotation, 180);
+                transform.eulerAngles = new Vector3(0, 0, (transform.rotation.eulerAngles.z + 180));
+
+                float zAngle = transform.rotation.eulerAngles.z;
+                if (!((zAngle > 0 && zAngle < 90) || (zAngle <= 360 && zAngle > 270)))
+                {
+                    Debug.Log("Should be restricting here");
+                    transform.rotation = oldTransform;
+                }
+            }
+            
+            
+           
             if (oldTransform != transform.rotation && !servoAudio.isPlaying)
             {
                 servoAudio.Play();
             }
             //transform.right = -(player.transform.position - transform.position);
             //transform.rotation = Quaternion.RotateTowards(oldTransform, transform.rotation,45);
-            Debug.Log("In Spotted Mode");
         }
         else if (!isShooting)
         {
+            Debug.Log("Should be turning blue");
             animator.SetTrigger("OutOfRange");
             isShooting = false;
             //shootingAudio.loop = false;
@@ -168,12 +193,10 @@ public class StationaryTurret : MonoBehaviour
 
     public void LookingMode()
     {
+        Debug.Log("Should be in looking mode");
         playerInRange = false;
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 }

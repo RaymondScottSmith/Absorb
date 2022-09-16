@@ -74,7 +74,8 @@ public class Breakable : MonoBehaviour
     private IEnumerator Break()
     {
         spriteRenderer.enabled = false;
-        breakParticleSystem.Play();
+        if (breakParticleSystem != null)
+            breakParticleSystem.Play();
         yield return new WaitForSeconds(1);
         Destroy(gameObject);
 
