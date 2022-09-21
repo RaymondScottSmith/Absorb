@@ -46,17 +46,30 @@ public class StationaryTurret : MonoBehaviour
     [SerializeField] private int hitsToKill = 3;
 
     [SerializeField] private bool facingRight = true;
+
+    [SerializeField] private CapsuleCollider2D capsColl;
+
+    [SerializeField] private AudioClip explosionSound;
+    [SerializeField] private AudioClip clangSound;
+
+    [SerializeField] private List<SpriteRenderer> turretSprites;
+
+    private bool isDead;
+
+    private ParticleSystem gearExplosion;
     
     
     // Start is called before the first frame update
     void Start()
     {
         isShooting = false;
+        isDead = false;
         player = FindObjectOfType<PlayerController>();
         animator = GetComponentInParent<Animator>();
         firstPos = transform.rotation;
         //audioSource = GetComponentInParent<AudioSource>();
         camController = FindObjectOfType<CameraController>();
+        gearExplosion = GetComponentInChildren<ParticleSystem>();
         LookingMode();
     }
 
@@ -68,6 +81,8 @@ public class StationaryTurret : MonoBehaviour
 
     private void Update()
     {
+        if (isDead)
+            return;
         RaycastHit2D hit = Physics2D.Raycast(transform.position, 
             player.transform.position - transform.position, 
             40, ~(LayerMask.GetMask("CrewColliders", "Ignore Raycast")));
@@ -172,18 +187,9 @@ public class StationaryTurret : MonoBehaviour
         }
 
         StartCoroutine(ShowDamage());
-        /*
-        if (!shootingAudio.isPlaying)
-        {
-            shootingAudio.loop = true;
-            shootingAudio.Play();
-        }
-        */
         shootingAudio.Play();
         animator.SetTrigger("Fire");
         
-        
-        Debug.Log("Taking damage");
         yield return new WaitForSeconds(0.5f);
         
         shootingAudio.loop = false;
@@ -198,5 +204,52 @@ public class StationaryTurret : MonoBehaviour
     }
 
     // Update is called once per frame
-    
+
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.gameObject.CompareTag("Player"))
+        {
+            ContactPoint2D[] fContacts = new ContactPoint2D[1];
+            col.GetContacts(fContacts);
+            if (fContacts[0].otherCollider == capsColl && !isDead)
+            {
+                servoAudio.PlayOneShot(clangSound);
+                StartCoroutine(damageFlash());
+                
+                hitsToKill--;
+                if (hitsToKill <= 0)
+                {
+                    transform.rotation = firstPos;
+                    isDead = true;
+                    animator.SetTrigger("Die");
+                    shootingAudio.PlayOneShot(explosionSound);
+                }
+                else
+                {
+                    animator.SetTrigger("Damaged");
+                }
+            }
+        }
+        
+    }
+
+    private IEnumerator damageFlash()
+    {
+        //Vector3 startPos = gameObject.transform.position;
+        //float yPos = startPos.y;
+        //gameObject.transform.position = new Vector3(startPos.x, startPos.y - 1, startPos.z);
+        gearExplosion.Play();
+        foreach (SpriteRenderer renderer in turretSprites)
+        {
+            renderer.color = Color.red;
+        }
+        yield return new WaitForSeconds(0.5f);
+        foreach (SpriteRenderer renderer in turretSprites)
+        {
+            renderer.color = Color.white;
+        }
+
+        //gameObject.transform.position = startPos;
+
+    }
 }

@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField]
     private Rigidbody2D rb;
-    private bool moving;
+    public bool moving;
     private bool touchingBounceable;
     private PlayerShrink playerShrink;
     public bool readyToLaunch;
@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
     public PhysicsMaterial2D bouncyMaterial;
 
     [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip squishSound;
     [SerializeField] private AudioClip bounceSound;
     [SerializeField] private AudioClip zapSound;
 
@@ -130,8 +131,10 @@ public class PlayerController : MonoBehaviour
     public void PlaySquishSound()
     {
         //audioSource.Stop();
-        audioSource.PlayOneShot(bounceSound);
+        audioSource.PlayOneShot(squishSound);
     }
+    
+    
 
     void OnCollisionEnter2D(Collision2D col)
     {
@@ -139,8 +142,16 @@ public class PlayerController : MonoBehaviour
         {
             if (!col.gameObject.CompareTag("Food") && !col.gameObject.CompareTag("Damaging"))
             {
+                if (col.gameObject.CompareTag("NoStick"))
+                {
+                    audioSource.PlayOneShot(bounceSound);
+                }
+                else
+                {
+                    PlaySquishSound();
+                }
                 //audioSource.Stop();
-                PlaySquishSound();
+                
             }
             Vector2 v = rb.velocity;
             float angle = Mathf.Atan2(v.y, v.x) * Mathf.Rad2Deg;

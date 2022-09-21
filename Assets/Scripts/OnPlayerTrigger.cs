@@ -31,7 +31,6 @@ public class OnPlayerTrigger : MonoBehaviour
     {
         if (collision.gameObject.CompareTag(targetTag))
         {
-            Debug.Log("Exiting Trigger Volume");
             OnTriggerExitEvent?.Invoke();
         }
     }
