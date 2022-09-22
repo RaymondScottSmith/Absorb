@@ -15,4 +15,6 @@ public class AnimatorExtension : MonoBehaviour
     public void SetBoolTrue(string name) => animator_.SetBool(name, true);
  
     public void SetBoolFalse(string name) => animator_.SetBool(name, false);
+
+    public void SetTrigger(string trigger) => animator_.SetTrigger(trigger);
 }

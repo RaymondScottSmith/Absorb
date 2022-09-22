@@ -144,7 +144,6 @@ public class StationaryTurret : MonoBehaviour
         }
         else if (!isShooting)
         {
-            Debug.Log("Should be turning blue");
             animator.SetTrigger("OutOfRange");
             isShooting = false;
             //shootingAudio.loop = false;

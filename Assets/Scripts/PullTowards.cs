@@ -27,6 +27,8 @@ public class PullTowards : MonoBehaviour
 
     private AudioSource activeSound;
 
+    [SerializeField] private List<Light2D> sideLights;
+
     private void Awake()
     {
         activeSound = GetComponent<AudioSource>();
@@ -69,6 +71,10 @@ public class PullTowards : MonoBehaviour
         pullLights.gameObject.SetActive(true);
         spotlight.intensity = 2f;
         spotlight.color = Color.green;
+        foreach (Light2D sidelight in sideLights)
+        {
+            sidelight.color = Color.green;
+        }
 
     }
 
@@ -80,6 +86,10 @@ public class PullTowards : MonoBehaviour
         pullLights.gameObject.SetActive(false);
         spotlight.intensity = 2.85f;
         spotlight.color = Color.red;
+        foreach (Light2D sidelight in sideLights)
+        {
+            sidelight.color = Color.red;
+        }
     }
 
     public void TurnOff()
@@ -89,6 +99,22 @@ public class PullTowards : MonoBehaviour
         pushLights.gameObject.SetActive(false);
         pullLights.gameObject.SetActive(false);
         spotlight.intensity = 0f;
+    }
+
+    public void SwitchAttractRepulse()
+    {
+        switch (gravityState)
+        {
+            case GravityState.Pull:
+                TurnRepulseOn();
+                break;
+            case GravityState.Push:
+                TurnAttractOn();
+                break;
+            default:
+                TurnAttractOn();
+                break;
+        }
     }
 
     public void SetState(GravityState newState)
