@@ -49,7 +49,7 @@ MonoBehaviour:
   m_LightType: 2
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
-  m_Color: {r: 1, g: 0.10400232, b: 0, a: 1}
+  m_Color: {r: 0, g: 0.9898858, b: 1, a: 1}
   m_Intensity: 2.85
   m_LightVolumeOpacity: 0
   m_ApplyToSortingLayers: 00000000
@@ -89,7 +89,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   towardsEmitter: 1
   targetTag: Player
-  strength: 2
+  strength: 3
   gravityState: 0
   pullLights: {fileID: 4524403129845691357}
   pushLights: {fileID: 4524403129634851496}
@@ -399,7 +399,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.00000023841858, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -410,7 +410,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3, y: 0.8125}
+  m_Size: {x: 4.150396, y: 0.8125}
   m_EdgeRadius: 0
 --- !u!50 &4524403129597468204
 Rigidbody2D:
@@ -5986,7 +5986,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.12549019, g: 0.93333334, b: 0.23194653, a: 1}
+      maxColor: {r: 0.12549019, g: 0.9249868, b: 0.93333334, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}

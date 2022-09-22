@@ -9,7 +9,7 @@ public class CameraController : MonoBehaviour
     [SerializeField] private float scrollSpeed;
 
     [SerializeField]
-    private float cameraMinimumSize = 8f;
+    public float cameraMinimumSize = 8f;
     [SerializeField]
     private float cameraMaximumSize = 19f;
 
@@ -34,6 +34,8 @@ public class CameraController : MonoBehaviour
     [SerializeField] private Slider scrollSlider;
     
     [SerializeField] private GameObject skyBox;
+
+    public float bgSizeMultiplier = 1f;
 
     private bool isScrollSlider;
 
@@ -112,7 +114,7 @@ public class CameraController : MonoBehaviour
         if (skyBox != null)
         {
             float camSize = mainCamera.orthographicSize/cameraMinimumSize;
-            skyBox.transform.localScale = new Vector3(camSize, camSize, 1);
+            skyBox.transform.localScale = new Vector3(camSize * bgSizeMultiplier, camSize * bgSizeMultiplier, 1);
         }
     }
 

@@ -70,10 +70,10 @@ public class PullTowards : MonoBehaviour
         pushLights.gameObject.SetActive(false);
         pullLights.gameObject.SetActive(true);
         spotlight.intensity = 2f;
-        spotlight.color = Color.green;
+        spotlight.color = Color.cyan;
         foreach (Light2D sidelight in sideLights)
         {
-            sidelight.color = Color.green;
+            sidelight.color = Color.cyan;
         }
 
     }
