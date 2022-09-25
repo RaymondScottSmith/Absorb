@@ -198,7 +198,6 @@ public class StationaryTurret : MonoBehaviour
 
     public void LookingMode()
     {
-        Debug.Log("Should be in looking mode");
         playerInRange = false;
     }
 

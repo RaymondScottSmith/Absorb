@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4188657830256424514}
   - component: {fileID: 1695805440934394880}
   - component: {fileID: 6709107996303892719}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: Explosion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -263,7 +263,7 @@ GameObject:
   - component: {fileID: 8166444674529034465}
   - component: {fileID: 8166444674529034477}
   - component: {fileID: 7687249342910532455}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: MiniRocket
   m_TagString: Untagged
   m_Icon: {fileID: 0}

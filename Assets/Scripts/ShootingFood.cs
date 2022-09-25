@@ -33,6 +33,7 @@ public class ShootingFood : MonoBehaviour
         player = FindObjectOfType<PlayerController>();
         circleCollider2D.radius = lookRange;
         InvokeRepeating("AimAndShoot", 0f, fireRate);
+        Physics2D.queriesStartInColliders = false;
     }
 
     public void StartLooking()
@@ -60,8 +61,10 @@ public class ShootingFood : MonoBehaviour
         {
             transform.rotation = Quaternion.Euler(0, 0, 0);
         }
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, player.transform.position - transform.position);
-
+        
+        int layerMask = ~(LayerMask.GetMask("Player") + LayerMask.GetMask("CrewColliders"));
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, player.transform.position - transform.position, 500, layerMask);
+        Debug.Log(hit.collider.tag);
         if (hit.collider.CompareTag("Player") && !alreadyFired)
         {
             StartCoroutine(ShootProjectile());

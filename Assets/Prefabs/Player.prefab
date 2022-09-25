@@ -1,5 +1,118 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &903363957
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 903363958}
+  - component: {fileID: 903363961}
+  - component: {fileID: 903363960}
+  - component: {fileID: 903363959}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &903363958
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 903363957}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.94, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1131083863740002854}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &903363961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 903363957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 769fd338a851caf44ab09713a8e6ce31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetTag: NoStick
+  triggerOnce: 0
+  OnTriggerEnterEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1131083863740002852}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: PlaySquishSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnTriggerExitEvent:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &903363960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 903363957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 769fd338a851caf44ab09713a8e6ce31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetTag: Bounceable
+  triggerOnce: 0
+  OnTriggerEnterEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1131083863740002852}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: PlaySquishSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnTriggerExitEvent:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!58 &903363959
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 903363957}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.4
 --- !u!1 &1131083863740002849
 GameObject:
   m_ObjectHideFlags: 0
@@ -36,8 +149,9 @@ Transform:
   m_GameObject: {fileID: 1131083863740002849}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.83, y: 0.79, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
-  m_Children: []
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 903363958}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -122,11 +236,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseSpeed: 35
   rb: {fileID: 0}
+  moving: 0
   readyToLaunch: 0
   readyToPlay: 0
   bouncyMaterial: {fileID: 6200000, guid: 3555f168242e5f743a6e1050c66c9705, type: 2}
   audioSource: {fileID: 0}
-  bounceSound: {fileID: 8300000, guid: 7a482ec3a4698d245b7a2635b8f42c5a, type: 3}
+  squishSound: {fileID: 8300000, guid: 7a482ec3a4698d245b7a2635b8f42c5a, type: 3}
+  bounceSound: {fileID: 8300000, guid: 9cc3092d375d4b747976ffa43e6eb210, type: 3}
   zapSound: {fileID: 8300000, guid: 4f14b96f7a0896940bed4aaea45d9a99, type: 3}
   isTutorial: 0
   pausePanel: {fileID: 0}
@@ -145,7 +261,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingHealth: 100
-  minimumScale: 0.75
+  minimumScale: 0.5
   damageOverTime: 1
   eatPerSecond: 0
   currentHealth: 0
@@ -214,7 +330,7 @@ MonoBehaviour:
   timeLabel: {fileID: 0}
   corpsePrefab: {fileID: 2844965292454645310, guid: 81ea662a22f120c43989bc00cd70d3a7, type: 3}
   losePanel: {fileID: 0}
-  corpse: {fileID: 0}
+  corpse: {fileID: 2844965292454645310, guid: 81ea662a22f120c43989bc00cd70d3a7, type: 3}
   currentlyEating: []
   isBeingDrained: 0
 --- !u!120 &1131083863740002904
@@ -370,7 +486,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 198
+  Priority: 0
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500

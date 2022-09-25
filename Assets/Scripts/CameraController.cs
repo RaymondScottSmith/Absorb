@@ -60,7 +60,8 @@ public class CameraController : MonoBehaviour
             isScrollSlider = PlayerPrefs.GetInt("ScrollSlider") == 1;
         }
 
-        scrollSlider.transform.parent.gameObject.SetActive(isScrollSlider);
+        if (scrollSlider != null)
+            scrollSlider.transform.parent.gameObject.SetActive(isScrollSlider);
     }
 
     // Update is called once per frame
