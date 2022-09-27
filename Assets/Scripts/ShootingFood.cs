@@ -64,7 +64,7 @@ public class ShootingFood : MonoBehaviour
         
         int layerMask = ~(LayerMask.GetMask("Player") + LayerMask.GetMask("CrewColliders"));
         RaycastHit2D hit = Physics2D.Raycast(transform.position, player.transform.position - transform.position, 500, layerMask);
-        Debug.Log(hit.collider.tag);
+        //Debug.Log(hit.collider.tag);
         if (hit.collider.CompareTag("Player") && !alreadyFired)
         {
             StartCoroutine(ShootProjectile());

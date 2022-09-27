@@ -17,6 +17,14 @@ public class RunningFood : MonoBehaviour
     private Animator animator;
 
     private SpriteRenderer spriteRenderer;
+
+    [SerializeField] private float speed = 1f;
+
+    private bool isRunningRight;
+
+    private Vector3 rayDirection = Vector3.right;
+
+    [SerializeField] private Transform rayLocation;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,39 +32,75 @@ public class RunningFood : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         if (isActiveOnStart)
         {
-            isRunning = true;
+            StartRunning();
         }
     }
 
-    
+    public void StopRunning()
+    {
+        isRunning = false;
+    }
     public void StartRunning()
     {
+        float targetX = runningFrom.transform.position.x;
         isRunning = true;
+        if (targetX > transform.position.x)
+        {
+            isRunningRight = false;
+            rayDirection = Vector3.left;
+        }
+        else
+        {
+            isRunningRight = true;
+            rayDirection = Vector3.right;
+        }
+        
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
+        int layerMask = ~(LayerMask.GetMask("Player") + LayerMask.GetMask("CrewColliders"));
+        RaycastHit2D hit = Physics2D.Raycast(rayLocation.position, rayDirection, 2f, layerMask);
+
+        if (hit.collider != null)
+        {
+            SwitchDirection();
+            Debug.Log("Hit: " + hit.collider.name);
+        }
+            
+        
+        
         if (isRunning && !isCowering)
         {
-            float targetX = runningFrom.transform.position.x;
-            
-            if (targetX > transform.position.x)
-            {
-                spriteRenderer.flipX = true;
-                Debug.Log("To the Right of me");
-            }
-            else if (targetX < transform.position.x)
-            {
-                Debug.Log("To the Left of me");
-                spriteRenderer.flipX = false;
-            } 
+            animator.SetBool("Running", true);
+            transform.position = transform.position + (rayDirection * speed * Time.deltaTime);
+        }
+        else
+        {
+            animator.SetBool("Running", false);
         }
 
         if (isCowering)
         {
-            
+            Debug.Log("Should be cowering");
         }
         
+    }
+
+    private void SwitchDirection()
+    {
+        if (isRunningRight)
+        {
+            isRunningRight = false;
+            spriteRenderer.flipX = true;
+            rayDirection = Vector3.left;
+        }
+        else
+        {
+            isRunningRight = true;
+            spriteRenderer.flipX = false;
+            rayDirection = Vector3.right;
+        }
     }
 }
