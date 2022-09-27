@@ -348,8 +348,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15349873846cb694eac89c765c901444, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 30
-  maxTurn: 45
+  speed: 35
+  maxTurn: 30
   updateTime: 0.25
   explosion: {fileID: 8166444674214347935}
 --- !u!50 &8166444674529034465

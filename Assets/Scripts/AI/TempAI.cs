@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Pathfinding;
+using UnityEngine.Events;
 
 public class TempAI : MonoBehaviour
 {
@@ -20,6 +21,8 @@ public class TempAI : MonoBehaviour
     public bool reachedEndOfPath;
 
     public bool isPursuing;
+    
+    public UnityEvent OnWaypointReachedEvent;
 
     // Start is called before the first frame update
     void Start()
@@ -119,7 +122,7 @@ public class TempAI : MonoBehaviour
         Vector3 dir = (path.vectorPath[currentWaypoint] - transform.position).normalized;
         //Multiply the direction by our desired speed to get a velocity
         Vector3 velocity = dir * speed * speedFactor;
-
+        
         //Move the agent using CharacterController
         //SimpleMove takes a velocity in meters/second. So don't multiply by Time.deltaTime
         //controller.SimpleMove(velocity);

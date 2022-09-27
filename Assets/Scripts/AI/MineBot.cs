@@ -14,10 +14,10 @@ public class MineBot : MonoBehaviour
 
     private GameObject target;
 
-    [SerializeField] private SpriteRenderer midBar;
-    [SerializeField] private SpriteRenderer circleSprite;
-    [SerializeField] private Light2D midLight;
-    [SerializeField] private Light2D circleLight;
+    //[SerializeField] private SpriteRenderer midBar;
+    //[SerializeField] private SpriteRenderer circleSprite;
+    //[SerializeField] private Light2D midLight;
+    //[SerializeField] private Light2D circleLight;
     private bool isExploding;
 
     private float currentDistance;
@@ -33,15 +33,20 @@ public class MineBot : MonoBehaviour
     [SerializeField] private AudioClip explosionSound;
 
     private CameraController camController;
+
+    private bool isFacingRight;
+
+    private PlayerController player;
     
     // Start is called before the first frame update
     void Start()
     {
         myAI = GetComponent<TempAI>();
-        passiveColor = midBar.color;
+        ///passiveColor = midBar.color;
         audioSource = GetComponent<AudioSource>();
         animator = GetComponent<Animator>();
         camController = FindObjectOfType<CameraController>();
+        isFacingRight = true;
     }
     
     private void OnTriggerEnter2D(Collider2D collision)
@@ -61,7 +66,7 @@ public class MineBot : MonoBehaviour
             isInRange = false;
             isPursuing = false;
             myAI.StopPursuit();
-            UpdateColors(passiveColor);
+            //UpdateColors(passiveColor);
         }
     }
     // Update is called once per frame
@@ -72,19 +77,32 @@ public class MineBot : MonoBehaviour
             if (!isPursuing)
             {
                 RaycastHit2D hit = Physics2D.Raycast(transform.position, target.transform.position - transform.position);
-
+                
                 if (hit.collider.CompareTag("Player"))
                 {
+                    player = hit.collider.GetComponent<PlayerController>();
                     StartBeeping();
                     isPursuing = true;
                     myAI.StartMoving(hit.collider.transform);
-                    UpdateColors(Color.yellow);
+                    //UpdateColors(Color.yellow);
                 }
             }
             else
             {
+                float playerX = player.gameObject.transform.position.x;
+                if (playerX < transform.position.x && isFacingRight)
+                {
+                    
+                    isFacingRight = false;
+                    animator.SetBool("FacingRight", true);
+                }
+                else if (playerX > transform.position.x && !isFacingRight)
+                {
+                    isFacingRight = true;
+                    animator.SetBool("FacingRight", false);
+                }
                 currentDistance = Vector3.Distance(transform.position, target.transform.position);
-                UpdateColors(Color.Lerp(Color.red, Color.yellow, currentDistance/10f));
+                //UpdateColors(Color.Lerp(Color.red, Color.yellow, currentDistance/10f));
             }
         }
 
@@ -131,11 +149,5 @@ public class MineBot : MonoBehaviour
         Destroy(gameObject);
     }
 
-    private void UpdateColors(Color newColor)
-    {
-        midBar.color = newColor;
-        midLight.color = newColor;
-        circleLight.color = newColor;
-        circleSprite.color = newColor;
-    }
+    
 }

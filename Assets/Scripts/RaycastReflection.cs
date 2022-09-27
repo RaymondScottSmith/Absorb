@@ -61,7 +61,7 @@ public class RaycastReflection : MonoBehaviour
                         hit.point = (Vector3)origin + (newDirection * remainingLength);
                     }
 
-                    if (hit.distance < 1)
+                    if (hit.distance < 0.1)
                     {
                         player.readyToLaunch = false;
                         return;

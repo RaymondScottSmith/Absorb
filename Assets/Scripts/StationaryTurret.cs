@@ -54,6 +54,8 @@ public class StationaryTurret : MonoBehaviour
 
     [SerializeField] private List<SpriteRenderer> turretSprites;
 
+    [SerializeField] private float maxRange = 100f;
+
     private bool isDead;
 
     private ParticleSystem gearExplosion;
@@ -85,7 +87,7 @@ public class StationaryTurret : MonoBehaviour
             return;
         RaycastHit2D hit = Physics2D.Raycast(transform.position, 
             player.transform.position - transform.position, 
-            40, ~(LayerMask.GetMask("CrewColliders", "Ignore Raycast")));
+            maxRange, ~(LayerMask.GetMask("CrewColliders", "Ignore Raycast", "Player")));
         
         if (playerInRange && hit.collider.CompareTag("Player"))
         {
