@@ -98,6 +98,7 @@ MonoBehaviour:
   - {fileID: 4524403129929169888}
   - {fileID: 4524403130221016404}
   - {fileID: 4524403130070301924}
+  pullWhenImmobile: 0
 --- !u!61 &4524403128685912297
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -136,7 +137,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 071e3599e162cf545908bc454aa35932, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.2
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 1
   Mute: 0

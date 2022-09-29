@@ -29,6 +29,8 @@ public class PullTowards : MonoBehaviour
 
     [SerializeField] private List<Light2D> sideLights;
 
+    [SerializeField] private bool pullWhenImmobile;
+
     private void Awake()
     {
         activeSound = GetComponent<AudioSource>();
@@ -127,10 +129,14 @@ public class PullTowards : MonoBehaviour
         if (isActing && target != null && gravityState != GravityState.Off)
         {
             PlayerController player = target.GetComponent<PlayerController>();
-            if (player != null && !player.moving)
+            if (player != null)
             {
-                return;
+                if (!pullWhenImmobile && !player.moving)
+                {
+                    return;
+                }
             }
+            
             switch (towardsEmitter)
             {
                 case Direction.Up:

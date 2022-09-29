@@ -37,6 +37,8 @@ public class MineBot : MonoBehaviour
     private bool isFacingRight;
 
     private PlayerController player;
+
+    [SerializeField] private bool detectPlayerThroughWalls;
     
     // Start is called before the first frame update
     void Start()
