@@ -42,7 +42,8 @@ public class CrewShrink : Shrink
         playerShrink = eater.GetComponent<PlayerShrink>();
         if (playerShrink != null)
             playerShrink.AddFood(this);
-        moveCollider.enabled = false;
+        if (moveCollider != null)
+            moveCollider.enabled = false;
         float eaterRadius = eater.transform.localScale.x / 2;
         attachPoint = new Vector3(Random.Range(-eaterRadius, eaterRadius), Random.Range(-eaterRadius, eaterRadius), 0);
         GetComponent<Collider2D>().enabled = false;

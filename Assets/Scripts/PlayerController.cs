@@ -41,6 +41,8 @@ public class PlayerController : MonoBehaviour
     private RaycastReflection raycastReflection;
 
     [SerializeField] private int damageFromHazards = 10;
+
+    private GameObject grabbedSurface;
     
 
     // Start is called before the first frame update
@@ -74,7 +76,18 @@ public class PlayerController : MonoBehaviour
         if (readyToPlay)
         {
             if (!moving)
-                rb.velocity = Vector2.zero;
+            {
+                if (grabbedSurface != null && !grabbedSurface.activeInHierarchy)
+                {
+                    StartCoroutine(Fall(3f));
+                }
+                else
+                {
+                    rb.velocity = Vector2.zero;
+                }
+                
+            }
+                
             raycastReflection.isOverUI = isOverUI;
             if ((pausePanel != null && pausePanel.activeSelf || isOverUI))
             {
@@ -173,6 +186,7 @@ public class PlayerController : MonoBehaviour
             moving = false;
             readyToLaunch = true;
             transform.position = col.GetContact(0).point;
+            grabbedSurface = col.gameObject;
         }
 
         

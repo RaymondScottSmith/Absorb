@@ -25,9 +25,12 @@ public class RunningFood : MonoBehaviour
     private Vector3 rayDirection = Vector3.right;
 
     [SerializeField] private Transform rayLocation;
+
+    private Shrink shrink;
     // Start is called before the first frame update
     void Start()
     {
+        shrink = GetComponent<Shrink>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         if (isActiveOnStart)
@@ -60,6 +63,10 @@ public class RunningFood : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        if (shrink != null && shrink.beingEaten)
+        {
+            return;
+        }
         int layerMask = ~(LayerMask.GetMask("Player") + LayerMask.GetMask("CrewColliders"));
         RaycastHit2D hit = Physics2D.Raycast(rayLocation.position, rayDirection, 2f, layerMask);
 

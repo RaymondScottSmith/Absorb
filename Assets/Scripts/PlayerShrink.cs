@@ -112,6 +112,24 @@ public class PlayerShrink : Shrink
 
         return false;
     }
+
+    public void DeleteKey(int keyNumber)
+    {
+        List<Shrink> toRemove = new List<Shrink>();
+        foreach (Shrink food in currentlyEating)
+        {
+            if (keyNumber == food.GetComponent<CrewShrink>().keyValue)
+            {
+                Destroy(food.gameObject);
+                toRemove.Add(food);
+            }
+        }
+
+        if (toRemove.Count > 0)
+        {
+            currentlyEating.RemoveAll(x => toRemove.Contains(x));
+        }
+    }
     
     private IEnumerator LoseHealth()
     {
