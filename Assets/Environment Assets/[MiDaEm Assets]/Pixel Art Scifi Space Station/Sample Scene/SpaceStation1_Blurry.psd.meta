@@ -1,7 +1,157 @@
 fileFormatVersion: 2
 guid: 185c237f73ff73b48aa29bfbfc895280
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -2308258195597448658
+    second: SpaceStation1_Blurry_0
+  - first:
+      213: 765254147027667952
+    second: SpaceStation1_Blurry_1
+  - first:
+      213: -6766222781596474005
+    second: SpaceStation1_Blurry_2
+  - first:
+      213: -8135227362109395982
+    second: SpaceStation1_Blurry_3
+  - first:
+      213: 2554093500018160291
+    second: SpaceStation1_Blurry_4
+  - first:
+      213: -7173597268378799669
+    second: SpaceStation1_Blurry_5
+  - first:
+      213: 2972584065828780403
+    second: SpaceStation1_Blurry_6
+  - first:
+      213: 9179730997166530677
+    second: SpaceStation1_Blurry_7
+  - first:
+      213: 980775009190888821
+    second: SpaceStation1_Blurry_8
+  - first:
+      213: 8335754044445534403
+    second: SpaceStation1_Blurry_9
+  - first:
+      213: 8681376268899521615
+    second: SpaceStation1_Blurry_10
+  - first:
+      213: 7890215723418146868
+    second: SpaceStation1_Blurry_11
+  - first:
+      213: 2500660345721351507
+    second: SpaceStation1_Blurry_12
+  - first:
+      213: -2874995278516499996
+    second: SpaceStation1_Blurry_13
+  - first:
+      213: 7360926941628711957
+    second: SpaceStation1_Blurry_14
+  - first:
+      213: -4367601040308652446
+    second: SpaceStation1_Blurry_15
+  - first:
+      213: 8006073880235915041
+    second: SpaceStation1_Blurry_16
+  - first:
+      213: -3015776284468886931
+    second: SpaceStation1_Blurry_17
+  - first:
+      213: -3865319082959711585
+    second: SpaceStation1_Blurry_18
+  - first:
+      213: -7666411975195378643
+    second: SpaceStation1_Blurry_19
+  - first:
+      213: 116648573903985718
+    second: SpaceStation1_Blurry_20
+  - first:
+      213: 4951156751874172778
+    second: SpaceStation1_Blurry_21
+  - first:
+      213: -1162908003602653224
+    second: SpaceStation1_Blurry_22
+  - first:
+      213: 6357572458338814789
+    second: SpaceStation1_Blurry_23
+  - first:
+      213: -9042166377825331846
+    second: SpaceStation1_Blurry_24
+  - first:
+      213: 2135032445358940304
+    second: SpaceStation1_Blurry_25
+  - first:
+      213: 5141194021819629129
+    second: SpaceStation1_Blurry_26
+  - first:
+      213: 3833463099043570373
+    second: SpaceStation1_Blurry_27
+  - first:
+      213: -1947254604417992423
+    second: SpaceStation1_Blurry_28
+  - first:
+      213: 5419560557144532264
+    second: SpaceStation1_Blurry_29
+  - first:
+      213: 6303640636948318950
+    second: SpaceStation1_Blurry_30
+  - first:
+      213: -1798053208371645555
+    second: SpaceStation1_Blurry_31
+  - first:
+      213: 4756676346720851743
+    second: SpaceStation1_Blurry_32
+  - first:
+      213: 3635726796225232201
+    second: SpaceStation1_Blurry_33
+  - first:
+      213: 1075494929907800726
+    second: SpaceStation1_Blurry_34
+  - first:
+      213: 568023338050242020
+    second: SpaceStation1_Blurry_35
+  - first:
+      213: 5659006363442540140
+    second: SpaceStation1_Blurry_36
+  - first:
+      213: 6458963103879624431
+    second: SpaceStation1_Blurry_37
+  - first:
+      213: -5575509147931319920
+    second: SpaceStation1_Blurry_38
+  - first:
+      213: 8038447098455311346
+    second: SpaceStation1_Blurry_39
+  - first:
+      213: 7517624448278871510
+    second: SpaceStation1_Blurry_40
+  - first:
+      213: 7977731404398546913
+    second: SpaceStation1_Blurry_41
+  - first:
+      213: -3900579241558025711
+    second: SpaceStation1_Blurry_42
+  - first:
+      213: -8341506755469066594
+    second: SpaceStation1_Blurry_43
+  - first:
+      213: -4866774957488119551
+    second: SpaceStation1_Blurry_44
+  - first:
+      213: 3453513389367908205
+    second: SpaceStation1_Blurry_45
+  - first:
+      213: 5026972745758830774
+    second: SpaceStation1_Blurry_46
+  - first:
+      213: -1228262964786065310
+    second: SpaceStation1_Blurry_47
+  - first:
+      213: 6632960762680937526
+    second: SpaceStation1_Blurry_48
+  - first:
+      213: -464437655207770419
+    second: SpaceStation1_Blurry_49
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -41,12 +191,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -75,9 +225,1095 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: SpaceStation1_Blurry_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 223
+        width: 384
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2aa789966b67ffd0800000000000000
+      internalID: -2308258195597448658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceStation1_Blurry_1
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 390
+        width: 72
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fb8a7c979abe9a00800000000000000
+      internalID: 765254147027667952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceStation1_Blurry_2
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 369
+        width: 10
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6569c7aa3c8912a0800000000000000
+      internalID: -6766222781596474005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceStation1_Blurry_3
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 375
+        width: 10
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fb6e6201ddd91f80800000000000000
+      internalID: -8135227362109395982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceStation1_Blurry_4
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 369
+        width: 10
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a277bf8186f17320800000000000000
+      internalID: 2554093500018160291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceStation1_Blurry_5
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 349
+        width: 10
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc1b190ba43427c90800000000000000
+      internalID: -7173597268378799669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceStation1_Blurry_6
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 355
+        width: 10
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 379f5bc557db04920800000000000000
+      internalID: 2972584065828780403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceStation1_Blurry_7
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 349
+        width: 10
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 570e0c3a4b4f46f70800000000000000
+      internalID: 9179730997166530677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceStation1_Blurry_8
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 329
+        width: 10
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 575476baca96c9d00800000000000000
+      internalID: 980775009190888821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceStation1_Blurry_9
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 335
+        width: 10
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c8a332832c8ea370800000000000000
+      internalID: 8335754044445534403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceStation1_Blurry_10
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 329
+        width: 10
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f44134d78b17a7870800000000000000
+      internalID: 8681376268899521615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceStation1_Blurry_11
+      rect:
+        serializedVersion: 2
+        x: 424
+        y: 309
+        width: 10
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4385a83756daf7d60800000000000000
+      internalID: 7890215723418146868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceStation1_Blurry_12
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 315
+        width: 10
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35d60aad55124b220800000000000000
+      internalID: 2500660345721351507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceStation1_Blurry_13
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 309
+        width: 6
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e9491dc607f918d0800000000000000
+      internalID: -2874995278516499996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceStation1_Blurry_14
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 260
+        width: 51
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 514c165bd04472660800000000000000
+      internalID: 7360926941628711957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceStation1_Blurry_15
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 195
+        width: 34
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 266b6cf8ef92363c0800000000000000
+      internalID: -4367601040308652446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceStation1_Blurry_16
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 212
+        width: 68
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 127befca6c94b1f60800000000000000
+      internalID: 8006073880235915041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceStation1_Blurry_17
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 124
+        width: 29
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d624f22927fc526d0800000000000000
+      internalID: -3015776284468886931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceStation1_Blurry_18
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 184
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f92d5acf5c0ab5ac0800000000000000
+      internalID: -3865319082959711585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceStation1_Blurry_19
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 134
+        width: 31
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2cbdac4dee6b9590800000000000000
+      internalID: -7666411975195378643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceStation1_Blurry_20
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 125
+        width: 55
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63c5a1b824b6e9100800000000000000
+      internalID: 116648573903985718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceStation1_Blurry_21
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 171
+        width: 74
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a67acbe55da06b440800000000000000
+      internalID: 4951156751874172778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceStation1_Blurry_22
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 97
+        width: 46
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8df1ec205558cdfe0800000000000000
+      internalID: -1162908003602653224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceStation1_Blurry_23
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 97
+        width: 52
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54b871d8772aa3850800000000000000
+      internalID: 6357572458338814789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceStation1_Blurry_24
+      rect:
+        serializedVersion: 2
+        x: 445
+        y: 145
+        width: 24
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a759db93695c38280800000000000000
+      internalID: -9042166377825331846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceStation1_Blurry_25
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 150
+        width: 36
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 090ad8972b821ad10800000000000000
+      internalID: 2135032445358940304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceStation1_Blurry_26
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 137
+        width: 39
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94ebbef39b0395740800000000000000
+      internalID: 5141194021819629129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceStation1_Blurry_27
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 156
+        width: 27
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c26f06c062333530800000000000000
+      internalID: 3833463099043570373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceStation1_Blurry_28
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 134
+        width: 9
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 919fb681146f9f4e0800000000000000
+      internalID: -1947254604417992423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceStation1_Blurry_29
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 138
+        width: 6
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8256157dc95263b40800000000000000
+      internalID: 5419560557144532264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceStation1_Blurry_30
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 145
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ea850dd2c70b7750800000000000000
+      internalID: 6303640636948318950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceStation1_Blurry_31
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 135
+        width: 4
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d83b1cb22280c07e0800000000000000
+      internalID: -1798053208371645555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceStation1_Blurry_32
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 19
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f179cc57feb130240800000000000000
+      internalID: 4756676346720851743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceStation1_Blurry_33
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 116
+        width: 49
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94dbf5d1242b47230800000000000000
+      internalID: 3635726796225232201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceStation1_Blurry_34
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 88
+        width: 74
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69a53e6c0fcecee00800000000000000
+      internalID: 1075494929907800726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceStation1_Blurry_35
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 99
+        width: 39
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e5cd98673602e700800000000000000
+      internalID: 568023338050242020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceStation1_Blurry_36
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 108
+        width: 53
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6eeaaa0e44d88e40800000000000000
+      internalID: 5659006363442540140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceStation1_Blurry_37
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 88
+        width: 23
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe67910d8b8d2a950800000000000000
+      internalID: 6458963103879624431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceStation1_Blurry_38
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 87
+        width: 32
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 091ec9368ffcf92b0800000000000000
+      internalID: -5575509147931319920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceStation1_Blurry_39
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 62
+        width: 38
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f3c239eb0d4e8f60800000000000000
+      internalID: 8038447098455311346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceStation1_Blurry_40
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 90
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6dd347a0b97f35860800000000000000
+      internalID: 7517624448278871510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceStation1_Blurry_41
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 79
+        width: 31
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ef47a8c17896be60800000000000000
+      internalID: 7977731404398546913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceStation1_Blurry_42
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 60
+        width: 27
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11adba098db5ed9c0800000000000000
+      internalID: -3900579241558025711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceStation1_Blurry_43
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 32
+        width: 66
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9ebeb41dc30d3c80800000000000000
+      internalID: -8341506755469066594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceStation1_Blurry_44
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 65
+        width: 49
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 101672126fdb57cb0800000000000000
+      internalID: -4866774957488119551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceStation1_Blurry_45
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 56
+        width: 70
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d67545051285def20800000000000000
+      internalID: 3453513389367908205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceStation1_Blurry_46
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 22
+        width: 44
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b07686041563c540800000000000000
+      internalID: 5026972745758830774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceStation1_Blurry_47
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 27
+        width: 80
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2609825575554fee0800000000000000
+      internalID: -1228262964786065310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceStation1_Blurry_48
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 31
+        width: 40
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63c83b4bba20d0c50800000000000000
+      internalID: 6632960762680937526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceStation1_Blurry_49
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 6
+        width: 85
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc6860dc96cfd89f0800000000000000
+      internalID: -464437655207770419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -90,7 +1326,7 @@ TextureImporter:
     secondaryTextures: []
   spritePackingTag: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
+  pSDShowRemoveMatteOption: 1
   userData: 
   assetBundleName: 
   assetBundleVariant: 

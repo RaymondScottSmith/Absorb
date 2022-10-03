@@ -9,7 +9,7 @@ using UnityEngine.Playables;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private float baseSpeed = 1;
+    public float baseSpeed = 1;
 
     [SerializeField]
     private Rigidbody2D rb;
@@ -193,6 +193,7 @@ public class PlayerController : MonoBehaviour
 
         if (col.gameObject.CompareTag("Damaging"))
         {
+            Debug.Log("Should be taking damage");
             TakeDamage(damageFromHazards,zapSound, col);
         }
     }

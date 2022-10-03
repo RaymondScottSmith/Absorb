@@ -1,12 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
-using UnityEngine.Experimental.Rendering.Universal;
 
-public class MineBot : MonoBehaviour
+public class MineV2 : MonoBehaviour
 {
-
     private TempAI myAI;
 
     private bool isPursuing;
@@ -22,7 +19,8 @@ public class MineBot : MonoBehaviour
 
     private float currentDistance;
 
-    private Color passiveColor;
+    [SerializeField] private float explosionTimer = 5f;
+    private float timeRemaining;
 
     private AudioSource audioSource;
 
@@ -38,63 +36,70 @@ public class MineBot : MonoBehaviour
 
     private PlayerController player;
 
-    [SerializeField] private bool detectPlayerThroughWalls;
+    [SerializeField] private bool timedExplosion;
 
+    private Rigidbody2D rb;
+
+    private bool wasBounced;
+    
     // Start is called before the first frame update
     void Start()
     {
+        
+        wasBounced = false;
+        rb = GetComponent<Rigidbody2D>();
         myAI = GetComponent<TempAI>();
         ///passiveColor = midBar.color;
         audioSource = GetComponent<AudioSource>();
         animator = GetComponent<Animator>();
         camController = FindObjectOfType<CameraController>();
-        isFacingRight = true;
+        isFacingRight = false;
+
+        player = FindObjectOfType<PlayerController>();
+        timeRemaining = explosionTimer;
+        //StartBeeping();
+        myAI.StartMoving(player.transform);
+        isPursuing = true;
+        InvokeRepeating("ExplodeFromTimer", explosionTimer, 10f);
+    }
+
+    private void ExplodeFromTimer()
+    {
+        /*
+        if (wasBounced)
+            return;
+            */
+        StartCoroutine(Explode());
     }
     
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (isExploding && collision.gameObject.CompareTag("Player"))
         {
-            target = collision.gameObject;
-            if (!isInRange)
-                isInRange = true;
+            //This is so we don't get hit for damage every frame
+            isExploding = false;
+            player.TakeDamage(explosionDamage,null);
+            
+            player.ChangeDirection((transform.position - player.gameObject.transform.position) * 10f);
         }
     }
     
-    private void OnTriggerExit2D(Collider2D collision)
+
+    void Update()
     {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            isInRange = false;
-            isPursuing = false;
-            myAI.StopPursuit();
-            //UpdateColors(passiveColor);
-        }
+        timeRemaining -= Time.deltaTime;
     }
+    
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (isInRange && !isExploding)
+        /*
+        if (!isExploding)
         {
-            if (!isPursuing)
-            {
-                RaycastHit2D hit = Physics2D.Raycast(transform.position, target.transform.position - transform.position);
                 
-                if (hit.collider.CompareTag("Player"))
-                {
-                    player = hit.collider.GetComponent<PlayerController>();
-                    StartBeeping();
-                    isPursuing = true;
-                    myAI.StartMoving(hit.collider.transform);
-                    //UpdateColors(Color.yellow);
-                }
-            }
-            else
-            {
-                float playerX = player.gameObject.transform.position.x;
+                float playerX = player.transform.position.x;
                 if (playerX < transform.position.x && isFacingRight)
                 {
-                    
                     isFacingRight = false;
                     animator.SetBool("FacingRight", true);
                 }
@@ -103,30 +108,47 @@ public class MineBot : MonoBehaviour
                     isFacingRight = true;
                     animator.SetBool("FacingRight", false);
                 }
-                currentDistance = Vector3.Distance(transform.position, target.transform.position);
+                currentDistance = Vector3.Distance(transform.position, player.transform.position);
+                if (currentDistance <= 1.5f)
+                {
+                    myAI.StopPursuit();
+                    isPursuing = false;
+                }
+                else if (isPursuing == false)
+                {
+                    myAI.StartMoving(player.transform);
+                }
                 //UpdateColors(Color.Lerp(Color.red, Color.yellow, currentDistance/10f));
-            }
         }
+        */
 
     }
+    
 
     private void StartBeeping()
     {
-        StartCoroutine(Beep());
+        //StartCoroutine(Beep());
     }
 
+    /*
     private IEnumerator Beep()
     {
+        /*
         float timeDist = currentDistance / 20f;
         //Debug.Log(timeDist);
         yield return new WaitForSeconds(timeDist);
 
         if (!isPursuing || isExploding)
             yield break;
+        
+        yield return new WaitForSeconds(timeRemaining / explosionTimer);
+        //timeRemaining -= Time.deltaTime;
+        if (wasBounced)
+            yield break;
         audioSource.Play();
         StartCoroutine(Beep());
     }
-    
+    */
     void OnCollisionEnter2D(Collision2D col)
     {
         if (col.gameObject.CompareTag("Player") && !isExploding)
@@ -140,16 +162,22 @@ public class MineBot : MonoBehaviour
             StartCoroutine(Explode());
         }
     }
+    
+    public void ChangeDirection(Vector2 newVelocity, float newSpeed)
+    {
+        rb.velocity = Vector2.zero;
+        rb.AddForce(newVelocity.normalized * newSpeed, ForceMode2D.Impulse);
+    }
 
     private IEnumerator Explode()
     {
+        myAI.StopPursuit();
+        isExploding = true;
         animator.SetTrigger("Explode");
         audioSource.Stop();
         audioSource.PlayOneShot(explosionSound);
-        camController.ShakeScreen();
+        //camController.ShakeScreen();
         yield return new WaitForSeconds(1.3f);
         Destroy(gameObject);
     }
-
-    
 }
