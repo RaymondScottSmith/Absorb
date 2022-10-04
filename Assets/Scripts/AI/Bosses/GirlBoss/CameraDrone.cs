@@ -62,7 +62,7 @@ public class CameraDrone : MonoBehaviour
             else if (Mathf.Abs(distanceToBoss - distance) > 0.1f)
             {
                 Debug.Log(distance);
-                transform.position = centerPosition + Vector3.up * distanceToBoss;
+                //transform.position = centerPosition + Vector3.up * distanceToBoss;
             }
 
             animator.SetBool("FacingRight", transform.position.x < gBossRotateCenter.transform.position.x);

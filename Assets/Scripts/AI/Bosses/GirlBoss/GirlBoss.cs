@@ -33,6 +33,9 @@ public class GirlBoss : MonoBehaviour
     private float velocity;
 
     public float xVelocity;
+
+    [SerializeField]
+    private List<Transform> ladders;
     // Start is called before the first frame update
     private void Start()
     {
@@ -42,6 +45,12 @@ public class GirlBoss : MonoBehaviour
         mySprite = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
         isGrounded = true;
+    }
+
+    public Transform GetRandomLadder()
+    {
+        int num = Random.Range(0, ladders.Count);
+        return ladders[num];
     }
 
     private void FixedUpdate()
@@ -121,6 +130,25 @@ public class GirlBoss : MonoBehaviour
             isFlipped = false;
         }
         else if (transform.position.x < player.transform.position.x && !isFlipped)
+        {
+            transform.localScale = flipped;
+            transform.Rotate(0f, 180f, 0f);
+            isFlipped = true;
+        }
+    }
+    
+    public void LookAtTarget(Vector2 target)
+    {
+        Vector3 flipped = transform.localScale;
+        flipped.z *= -1f;
+
+        if (transform.position.x > target.x && isFlipped)
+        {
+            transform.localScale = flipped;
+            transform.Rotate(0f, 180f, 0f);
+            isFlipped = false;
+        }
+        else if (transform.position.x < target.x && !isFlipped)
         {
             transform.localScale = flipped;
             transform.Rotate(0f, 180f, 0f);
