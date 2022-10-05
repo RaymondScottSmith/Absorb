@@ -7,6 +7,8 @@ public class GirlBoss : MonoBehaviour
 
     [SerializeField] private AudioClip painSound;
     [SerializeField] private AudioClip kickSound;
+    [SerializeField] private AudioClip laserSound;
+    [SerializeField] private AudioClip gruntSound;
     private AudioSource myAudio;
     private bool isCollidingDrone;
 
@@ -36,15 +38,29 @@ public class GirlBoss : MonoBehaviour
 
     [SerializeField]
     private List<Transform> ladders;
+
+    [SerializeField]
+    private LineRenderer crouchLine;
+
+    [SerializeField] private Transform arenaCenter;
+
+    public GB_State bossState;
+
+    public bool isClimbing = false;
+
+    public bool isFacingPlayer = false;
     // Start is called before the first frame update
     private void Start()
     {
+        bossState = GB_State.Stage2;
         myAudio = GetComponent<AudioSource>();
         myAnimator = GetComponent<Animator>();
         player = GameObject.FindGameObjectWithTag("Player");
         mySprite = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
         isGrounded = true;
+        isClimbing = false;
+        isFacingPlayer = false;
     }
 
     public Transform GetRandomLadder()
@@ -53,19 +69,19 @@ public class GirlBoss : MonoBehaviour
         return ladders[num];
     }
 
+    public void SwitchFacingPlayer()
+    {
+        isFacingPlayer = !isFacingPlayer;
+    }
+
     private void FixedUpdate()
     {
+        if (isFacingPlayer)
+        {
+            LookAtPlayer();
+        }
         float vPos;
         velocity += (gravity * gravityScale)/10f * Time.deltaTime;
-        /*
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
-        {
-            Debug.Log("Should be jumping");
-            velocity = 0.25f;
-            vPos = rb.position.y + velocity;
-            rb.MovePosition(new Vector3(rb.position.x, vPos));
-        }
-        */
         vPos = rb.position.y + velocity;
         float xPos;
         if (!isFlipped)
@@ -75,7 +91,7 @@ public class GirlBoss : MonoBehaviour
             xPos = rb.position.x - (xVelocity* Time.deltaTime);
         }
         //Gravity force
-        if (!isGrounded)
+        if (!isGrounded && !isClimbing)
         {
             Debug.Log("XVelocity: " + xVelocity);
             Debug.Log("XPos: " + xPos);
@@ -99,19 +115,46 @@ public class GirlBoss : MonoBehaviour
         
         xVelocity = 5f;
     }
+    public void JumpForward()
+    {
+        
+        float vPos;
+        velocity = 0.3f;
+        vPos = rb.position.y + velocity;
+        
+        float xPos = rb.position.x - velocity;
+        //rb.MovePosition(new Vector3(rb.position.x, vPos));
+        rb.MovePosition(new Vector3(rb.position.x, vPos));
+        if (transform.position.x < arenaCenter.position.x)
+        {
+            if (isFlipped)
+                xVelocity = -5f;
+            else
+            {
+                xVelocity = 5f;
+            }
+        }
+        else
+        {
+            if (isFlipped)
+                xVelocity = 5f;
+            else
+            {
+                xVelocity = -5f;
+            }
+        }
+    }
 
     private void Update()
     {
         RaycastHit2D hit = Physics2D.Raycast(groundSensor.position, Vector2.down, 0.5f);
         if (hit.collider != null)
         {
-            Debug.Log("Hitting Ground");
             isGrounded = true;
             //xVelocity = 0f;
         }
         else
         {
-            Debug.Log("Not Hitting Ground");
             isGrounded = false;
         }
 
@@ -120,6 +163,7 @@ public class GirlBoss : MonoBehaviour
 
     public void LookAtPlayer()
     {
+        Debug.Log("Should be facing player");
         Vector3 flipped = transform.localScale;
         flipped.z *= -1f;
 
@@ -134,6 +178,20 @@ public class GirlBoss : MonoBehaviour
             transform.localScale = flipped;
             transform.Rotate(0f, 180f, 0f);
             isFlipped = true;
+        }
+    }
+
+    public void FireCrouchedLaser()
+    {
+        Vector2 facingDirection = Vector2.left;
+        if (isFlipped)
+            facingDirection = Vector2.right;
+        RaycastHit2D hit = Physics2D.Raycast(groundSensor.position, facingDirection, 100f,1 << LayerMask.NameToLayer("Obstacle"));
+        if (hit.collider != null)
+        {
+            Debug.Log("Distance to hit object: " + hit.distance);
+            crouchLine.SetPosition(1,Vector3.zero);
+            crouchLine.SetPosition(0, new Vector3(hit.distance-1f,0,0));
         }
     }
     
@@ -161,13 +219,21 @@ public class GirlBoss : MonoBehaviour
         myAudio.PlayOneShot(kickSound);
     }
 
+    public void PlayLaserSound()
+    {
+        myAudio.PlayOneShot(laserSound);
+    }
+
+    public void PlayGruntSound()
+    {
+        myAudio.PlayOneShot(gruntSound);
+    }
+
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Drone") && !isCollidingDrone)
         {
             CameraDrone cd = collision.GetComponent<CameraDrone>();
-            Debug.Log(cd.isReturning);
-            Debug.Log(cd.isRotating);
             if (!cd.isRotating && !cd.isReturning)
             {
                 isCollidingDrone = true;
@@ -190,6 +256,7 @@ public class GirlBoss : MonoBehaviour
 
 public enum GB_State
 {
-    KickPlan,
-    CornershotPlan
+    None,
+    Stage1,
+    Stage2
 }

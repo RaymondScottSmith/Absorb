@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -21,7 +22,7 @@ public class RunToKick : StateMachineBehaviour
     public float gravityScale = 1;
     public float jumpForce = 5;
     private float velocity;
-    
+    private Vector2 target = Vector2.zero;
     
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -30,42 +31,56 @@ public class RunToKick : StateMachineBehaviour
         rb = animator.GetComponent<Rigidbody2D>();
         cd = animator.GetComponentInChildren<CameraDrone>();
         gb = animator.GetComponent<GirlBoss>();
-
+        
+        switch (gb.bossState)
+        {
+            case GB_State.Stage2:
+                target = gb.GetRandomLadder().position;
+                gb.LookAtTarget(target);
+                target = new Vector2(target.x, rb.position.y);
+                break;
+            default:
+                break;
+        }
+        
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        gb.LookAtPlayer();
         
-        Vector2 target = new Vector2(player.position.x, rb.position.y);
-        Vector2 newPos = Vector2.MoveTowards(rb.position, target, speed * Time.fixedDeltaTime);
-        rb.MovePosition(newPos);
-        //cd.GetComponent<Rigidbody2D>().AddForce(rb.velocity);
-        
-        
-        /*
-        Vector3 dir;
-        if (player.position.x > gb.transform.position.x)
-            dir = Vector3.right;
-        else
+        switch (gb.bossState)
         {
-            dir = Vector3.left;
-        }
-        Vector3 velocity = dir * speed;
+            case GB_State.Stage1:
+                gb.LookAtPlayer();
+        
+                target = new Vector2(player.position.x, rb.position.y);
+                Vector2 newPos = Vector2.MoveTowards(rb.position, target, speed * Time.fixedDeltaTime);
+                rb.MovePosition(newPos);
 
-        gb.transform.position += velocity * Time.deltaTime;
-        */
+                if (Vector3.Distance(player.position, rb.gameObject.transform.position) < attackDistance)
+                {
+                    //rb.velocity = Vector3.zero;
+                    animator.SetTrigger("KickAttack");
+                }
+                else if (Mathf.Abs(player.position.x - rb.position.x) <= 1f)
+                {
+                    animator.SetTrigger("EndRun");
+                }
+
+                break;
+            case GB_State.Stage2:
+                Vector2 ladderPos = Vector2.MoveTowards(rb.position, target, speed * Time.fixedDeltaTime);
+                rb.MovePosition(ladderPos);
+                if (Math.Abs(target.x - rb.transform.position.x) < 0.1f)
+                {
+                    animator.SetTrigger("StartClimbing");
+                }
+                break;
+            default:
+                break;
+        }
         
-        if (Vector3.Distance(player.position, rb.gameObject.transform.position) < attackDistance)
-        {
-            //rb.velocity = Vector3.zero;
-            animator.SetTrigger("KickAttack");
-        }
-        else if (Mathf.Abs(player.position.x - rb.position.x) <= 1f)
-        {
-            animator.SetTrigger("EndRun");
-        }
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
