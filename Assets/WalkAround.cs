@@ -23,6 +23,7 @@ public class WalkAround : StateMachineBehaviour
     public float gravityScale = 1;
     public float jumpForce = 5;
     private float velocity;
+    private bool isWalkingRight;
 
     private Vector2 target;
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
@@ -32,10 +33,21 @@ public class WalkAround : StateMachineBehaviour
         rb = animator.GetComponent<Rigidbody2D>();
         cd = animator.GetComponentInChildren<CameraDrone>();
         gb = animator.GetComponent<GirlBoss>();
-        target = gb.GetRandomLadder().position;
-        gb.LookAtTarget(target);
-        target = new Vector2(target.x, rb.position.y);
-        Debug.Log("Target's X: " + target.x);
+        if (gb.bossState == GB_State.Stage3)
+        {
+            isWalkingRight = true;
+            target = gb.ladders[3].transform.position;
+            target = new Vector2(target.x, rb.position.y);
+            gb.LookAtTarget(target);
+        }
+        else
+        {
+            target = gb.GetRandomLadder().position;
+            gb.LookAtTarget(target);
+            target = new Vector2(target.x, rb.position.y);
+            Debug.Log("Target's X: " + target.x);
+        }
+        
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -54,10 +66,29 @@ public class WalkAround : StateMachineBehaviour
             animator.SetTrigger("KickAttack");
         }
         */
-
+        
         if (Math.Abs(target.x - rb.transform.position.x) < 0.1f)
         {
-            animator.SetTrigger("EndWalk");
+            if (gb.bossState != GB_State.Stage3)
+            {
+                animator.SetTrigger("EndWalk");
+            }
+            else
+            {
+                if (isWalkingRight)
+                {
+                    target = gb.ladders[0].transform.position;
+                    
+                }
+                else
+                {
+                    target = gb.ladders[3].transform.position;
+                }
+                target = new Vector2(target.x, rb.position.y);
+                isWalkingRight = !isWalkingRight;
+                gb.LookAtTarget(target);
+            }
+
         }
     }
 

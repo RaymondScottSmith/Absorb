@@ -17,6 +17,8 @@ public class CameraDrone : MonoBehaviour
 
     public float returnSpeed = 1f;
 
+    public float moveSpeed = 2f;
+
     private Animator animator;
 
     private PlayerController player;
@@ -29,8 +31,12 @@ public class CameraDrone : MonoBehaviour
 
     private AudioSource audioSource;
 
+    [SerializeField] private GirlBoss gb;
+
     [SerializeField]
     private Rigidbody2D bossRigidbody;
+
+    private bool isMovingLeft;
     // Start is called before the first frame update
     void Start()
     {
@@ -38,11 +44,47 @@ public class CameraDrone : MonoBehaviour
         isRotating = true;
         rb = GetComponent<Rigidbody2D>();
         audioSource = GetComponent<AudioSource>();
+        isMovingLeft = true;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
+        if (!isReturning && gb.bossState == GB_State.Stage3)
+        {
+            isRotating = false;
+            float yPos = gb.arenaCenter.position.y;
+            float xPos = 0f;
+            Vector3 target = Vector3.zero;
+            if (isMovingLeft)
+            {
+                
+                xPos = gb.ladders[0].position.x;
+                target = new Vector3(xPos, yPos, 0);
+                transform.Translate((target - transform.position)
+                    .normalized * moveSpeed * Time.deltaTime);
+                if (Vector3.Distance(target, transform.position) < 1f)
+                    animator.SetBool("FacingRight", true);
+            }
+            else
+            {
+                
+                xPos = gb.ladders[3].position.x;
+                target = new Vector3(xPos, yPos, 0);
+                transform.Translate((target - transform.position)
+                    .normalized * moveSpeed * Time.deltaTime);
+                if (Vector3.Distance(target, transform.position) < 1f)
+                    animator.SetBool("FacingRight", false);
+            }
+            
+
+            if (Vector3.Distance(target, transform.position) < 0.1f)
+            {
+                isMovingLeft = !isMovingLeft;
+            }
+
+
+        }
         if (isRotating)
         {
             
@@ -70,19 +112,36 @@ public class CameraDrone : MonoBehaviour
 
         if (isReturning)
         {
-            if (Vector2.Distance(transform.position, gBossRotateCenter.transform.position) > distanceToBoss)
+            if (gb.bossState != GB_State.Stage3)
             {
-                transform.Translate((gBossRotateCenter.transform.position - transform.position).normalized * returnSpeed);
+                if (Vector2.Distance(transform.position, gBossRotateCenter.transform.position) > distanceToBoss)
+                {
+                    transform.Translate((gBossRotateCenter.transform.position - transform.position).normalized * returnSpeed * Time.deltaTime);
+                }
+                else if (Vector2.Distance(transform.position, gBossRotateCenter.transform.position) < distanceToBoss)
+                {
+                    rb.velocity = Vector2.zero;
+                    rb.bodyType = RigidbodyType2D.Kinematic;
+                    transform.position = gBossRotateCenter.transform.position + new Vector3(0, distanceToBoss, 0);
+                    isReturning = false;
+                    isRotating = true;
+                    GetComponent<Collider2D>().enabled = true;
+                }
             }
-            else if (Vector2.Distance(transform.position, gBossRotateCenter.transform.position) < distanceToBoss)
-            {
-                rb.velocity = Vector2.zero;
-                rb.bodyType = RigidbodyType2D.Kinematic;
-                transform.position = gBossRotateCenter.transform.position + new Vector3(0, distanceToBoss, 0);
-                isReturning = false;
-                isRotating = true;
-                GetComponent<Collider2D>().enabled = true;
+            else
+            { //Return to top float position
+                Vector3 target = new Vector3(rb.position.x, gb.arenaCenter.position.y);
+                transform.Translate((target - transform.position)
+                    .normalized * returnSpeed * Time.deltaTime);
+
+                if (Vector3.Distance(target, transform.position) <= 0.1f)
+                {
+                    isReturning = false;
+                    GetComponent<Collider2D>().enabled = true;
+                }
+                
             }
+            
         }
         
     }

@@ -37,12 +37,12 @@ public class GirlBoss : MonoBehaviour
     public float xVelocity;
 
     [SerializeField]
-    private List<Transform> ladders;
+    public List<Transform> ladders;
 
     [SerializeField]
     private LineRenderer crouchLine;
 
-    [SerializeField] private Transform arenaCenter;
+    [SerializeField] public Transform arenaCenter;
 
     public GB_State bossState;
 
@@ -52,7 +52,7 @@ public class GirlBoss : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        bossState = GB_State.Stage2;
+        bossState = GB_State.Stage3;
         myAudio = GetComponent<AudioSource>();
         myAnimator = GetComponent<Animator>();
         player = GameObject.FindGameObjectWithTag("Player");
@@ -67,6 +67,7 @@ public class GirlBoss : MonoBehaviour
     {
         int num = Random.Range(0, ladders.Count);
         return ladders[num];
+        //return ladders[0];
     }
 
     public void SwitchFacingPlayer()
@@ -76,29 +77,7 @@ public class GirlBoss : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (isFacingPlayer)
-        {
-            LookAtPlayer();
-        }
-        float vPos;
-        velocity += (gravity * gravityScale)/10f * Time.deltaTime;
-        vPos = rb.position.y + velocity;
-        float xPos;
-        if (!isFlipped)
-            xPos = rb.position.x + (xVelocity* Time.deltaTime);
-        else
-        {
-            xPos = rb.position.x - (xVelocity* Time.deltaTime);
-        }
-        //Gravity force
-        if (!isGrounded && !isClimbing)
-        {
-            Debug.Log("XVelocity: " + xVelocity);
-            Debug.Log("XPos: " + xPos);
-            
-            rb.MovePosition(new Vector3(xPos, vPos));
-            
-        }
+        
             
         
     }
@@ -150,12 +129,40 @@ public class GirlBoss : MonoBehaviour
         RaycastHit2D hit = Physics2D.Raycast(groundSensor.position, Vector2.down, 0.5f);
         if (hit.collider != null)
         {
+            if (!isGrounded)
+                transform.localPosition = new Vector2(transform.localPosition.x, -.21f);
             isGrounded = true;
-            //xVelocity = 0f;
+            //Adjust to ground level
+            
+            
         }
         else
         {
             isGrounded = false;
+        }
+        
+        if (isFacingPlayer)
+        {
+            LookAtPlayer();
+        }
+        float vPos;
+        velocity += (gravity * gravityScale)/10f * Time.deltaTime;
+        vPos = rb.position.y + velocity;
+        float xPos;
+        if (!isFlipped)
+            xPos = rb.position.x + (xVelocity* Time.deltaTime);
+        else
+        {
+            xPos = rb.position.x - (xVelocity* Time.deltaTime);
+        }
+        //Gravity force
+        if (!isGrounded && !isClimbing)
+        {
+            Debug.Log("XVelocity: " + xVelocity);
+            Debug.Log("XPos: " + xPos);
+            
+            rb.MovePosition(new Vector3(xPos, vPos));
+            
         }
 
         
@@ -258,5 +265,6 @@ public enum GB_State
 {
     None,
     Stage1,
-    Stage2
+    Stage2,
+    Stage3
 }

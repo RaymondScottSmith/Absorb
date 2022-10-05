@@ -25,7 +25,10 @@ public class Idle_Behaviour : StateMachineBehaviour
         timeToIdle = Random.Range(minIdleTime, maxIdleTime);
         player = GameObject.FindGameObjectWithTag("Player").transform;
         rb = animator.GetComponent<Rigidbody2D>();
-
+        if (gb.bossState == GB_State.Stage3)
+        {
+            animator.SetTrigger("Walk");
+        }
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
