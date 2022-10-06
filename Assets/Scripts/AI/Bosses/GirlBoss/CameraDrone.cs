@@ -39,6 +39,8 @@ public class CameraDrone : MonoBehaviour
     private bool isMovingLeft;
 
     public bool isStage3;
+
+    private bool isClockwise;
     // Start is called before the first frame update
     void Start()
     {
@@ -48,6 +50,7 @@ public class CameraDrone : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         isMovingLeft = false;
         isStage3 = false;
+        isClockwise = true;
     }
 
     // Update is called once per frame
@@ -90,8 +93,12 @@ public class CameraDrone : MonoBehaviour
         }
         if (isRotating)
         {
-            
-            transform.RotateAround(gBossRotateCenter.transform.position, axis, angle);
+            if (isClockwise)
+                transform.RotateAround(gBossRotateCenter.transform.position, axis, angle);
+            else
+            {
+                transform.RotateAround(gBossRotateCenter.transform.position, axis, -angle);
+            }
             transform.rotation = Quaternion.Euler(Vector3.zero);
             float radius = 1.5f;
             Vector3 centerPosition = gBossRotateCenter.transform.position;
@@ -104,13 +111,14 @@ public class CameraDrone : MonoBehaviour
                 fromOriginToObject *= radius / distance;
                 transform.position = centerPosition + fromOriginToObject;
             }
-            else if (Mathf.Abs(distanceToBoss - distance) > 0.1f)
+            //if (isClockwise)
+                animator.SetBool("FacingRight", transform.position.x < gBossRotateCenter.transform.position.x);
+            /*
+            else
             {
-                //Debug.Log(distance);
-                //transform.position = centerPosition + Vector3.up * distanceToBoss;
+                animator.SetBool("FacingRight", transform.position.x > gBossRotateCenter.transform.position.x);
             }
-
-            animator.SetBool("FacingRight", transform.position.x < gBossRotateCenter.transform.position.x);
+            */
         }
 
         if (isReturning)
@@ -179,6 +187,7 @@ public class CameraDrone : MonoBehaviour
             //ChangeDirection((transform.position - player.gameObject.transform.position) * 10f, player.baseSpeed);
             isRotating = false;
             StartCoroutine(BounceTimer());
+            isClockwise = !isClockwise;
             //isExploding = true;
             //isPursuing = false;
             //wasBounced = true;
