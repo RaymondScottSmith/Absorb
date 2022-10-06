@@ -153,11 +153,15 @@ public class MineV2 : MonoBehaviour
     {
         if (col.gameObject.CompareTag("Player") && !isExploding)
         {
+            
             PlayerController player = col.gameObject.GetComponent<PlayerController>();
             isExploding = true;
             isPursuing = false;
             myAI.StopPursuit();
-            player.TakeDamage(explosionDamage,null);
+            if (!isExploding)
+                player.TakeDamage(explosionDamage,null);
+            
+            isExploding = true;
             player.ChangeDirection(col.contacts[0].normal * 10f);
             StartCoroutine(Explode());
         }
@@ -171,8 +175,9 @@ public class MineV2 : MonoBehaviour
 
     private IEnumerator Explode()
     {
+        
         myAI.StopPursuit();
-        isExploding = true;
+        
         animator.SetTrigger("Explode");
         audioSource.Stop();
         audioSource.PlayOneShot(explosionSound);

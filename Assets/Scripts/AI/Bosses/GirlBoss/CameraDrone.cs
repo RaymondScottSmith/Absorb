@@ -37,6 +37,8 @@ public class CameraDrone : MonoBehaviour
     private Rigidbody2D bossRigidbody;
 
     private bool isMovingLeft;
+
+    public bool isStage3;
     // Start is called before the first frame update
     void Start()
     {
@@ -44,13 +46,14 @@ public class CameraDrone : MonoBehaviour
         isRotating = true;
         rb = GetComponent<Rigidbody2D>();
         audioSource = GetComponent<AudioSource>();
-        isMovingLeft = true;
+        isMovingLeft = false;
+        isStage3 = false;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (!isReturning && gb.bossState == GB_State.Stage3)
+        if (!isReturning && isStage3)
         {
             isRotating = false;
             float yPos = gb.arenaCenter.position.y;
@@ -103,7 +106,7 @@ public class CameraDrone : MonoBehaviour
             }
             else if (Mathf.Abs(distanceToBoss - distance) > 0.1f)
             {
-                Debug.Log(distance);
+                //Debug.Log(distance);
                 //transform.position = centerPosition + Vector3.up * distanceToBoss;
             }
 
@@ -112,7 +115,7 @@ public class CameraDrone : MonoBehaviour
 
         if (isReturning)
         {
-            if (gb.bossState != GB_State.Stage3)
+            if (!isStage3)
             {
                 if (Vector2.Distance(transform.position, gBossRotateCenter.transform.position) > distanceToBoss)
                 {

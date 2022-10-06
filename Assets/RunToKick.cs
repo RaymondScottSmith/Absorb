@@ -76,6 +76,12 @@ public class RunToKick : StateMachineBehaviour
                 {
                     animator.SetTrigger("StartClimbing");
                 }
+                else if (Vector3.Distance(player.position, rb.gameObject.transform.position) < attackDistance)
+                {
+                    //rb.velocity = Vector3.zero;
+                    animator.SetTrigger("KickAttack");
+                }
+                
                 break;
             default:
                 break;

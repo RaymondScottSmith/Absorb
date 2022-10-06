@@ -35,6 +35,8 @@ public class WalkAround : StateMachineBehaviour
         gb = animator.GetComponent<GirlBoss>();
         if (gb.bossState == GB_State.Stage3)
         {
+            gb.UpdateCamera();
+            Debug.Log("Starting stage 3 walk");
             isWalkingRight = true;
             target = gb.ladders[3].transform.position;
             target = new Vector2(target.x, rb.position.y);
@@ -54,8 +56,8 @@ public class WalkAround : StateMachineBehaviour
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         //gb.LookAtPlayer();
-        
-        
+
+        target = new Vector2(target.x, rb.position.y);
         Vector2 newPos = Vector2.MoveTowards(rb.position, target, speed * Time.fixedDeltaTime);
         rb.MovePosition(newPos);
 

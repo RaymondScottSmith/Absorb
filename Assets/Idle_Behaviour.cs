@@ -27,7 +27,7 @@ public class Idle_Behaviour : StateMachineBehaviour
         rb = animator.GetComponent<Rigidbody2D>();
         if (gb.bossState == GB_State.Stage3)
         {
-            animator.SetTrigger("Walk");
+            animator.SetTrigger("Stage3Setup");
         }
     }
 

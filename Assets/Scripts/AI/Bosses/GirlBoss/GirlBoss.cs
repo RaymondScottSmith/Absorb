@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
+using UnityEngine.Playables;
 
 public class GirlBoss : MonoBehaviour
 {
@@ -25,7 +27,14 @@ public class GirlBoss : MonoBehaviour
 
     public bool isGrounded;
 
+    public int maxHealth = 3;
+
+    public int health;
+
     [SerializeField] private Transform groundSensor;
+
+    [SerializeField] private PlayableDirector playableDirector;
+    [SerializeField] private CameraDrone cameraDrone;
     
     
     public Rigidbody2D rb;
@@ -52,7 +61,8 @@ public class GirlBoss : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        bossState = GB_State.Stage3;
+        health = maxHealth;
+        //bossState = GB_State.Stage3;
         myAudio = GetComponent<AudioSource>();
         myAnimator = GetComponent<Animator>();
         player = GameObject.FindGameObjectWithTag("Player");
@@ -70,16 +80,20 @@ public class GirlBoss : MonoBehaviour
         //return ladders[0];
     }
 
+    public void PlayStage3Intro()
+    {
+        playableDirector.Play();
+        bossState = GB_State.Stage3;
+    }
+
     public void SwitchFacingPlayer()
     {
         isFacingPlayer = !isFacingPlayer;
     }
 
-    private void FixedUpdate()
+    public void UpdateCamera()
     {
-        
-            
-        
+        cameraDrone.isStage3 = true;
     }
 
     public void JumpBack()
@@ -126,6 +140,11 @@ public class GirlBoss : MonoBehaviour
 
     private void Update()
     {
+        if (transform.localPosition.y < -1f)
+        {
+            transform.localPosition = new Vector3(transform.localPosition.x, -.03f, 0);
+        }
+        
         RaycastHit2D hit = Physics2D.Raycast(groundSensor.position, Vector2.down, 0.5f);
         if (hit.collider != null)
         {
@@ -158,8 +177,8 @@ public class GirlBoss : MonoBehaviour
         //Gravity force
         if (!isGrounded && !isClimbing)
         {
-            Debug.Log("XVelocity: " + xVelocity);
-            Debug.Log("XPos: " + xPos);
+            //Debug.Log("XVelocity: " + xVelocity);
+            //Debug.Log("XPos: " + xPos);
             
             rb.MovePosition(new Vector3(xPos, vPos));
             

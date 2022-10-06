@@ -626,7 +626,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosionTimer: 10
-  explosionDamage: 20
+  explosionDamage: 10
   explosionSound: {fileID: 8300000, guid: 6fe43732418d86c4f9f75bf2a3c33e58, type: 3}
   timedExplosion: 0
 --- !u!1 &387921144851077285
