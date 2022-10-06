@@ -25,9 +25,10 @@ public class LosePanel : MonoBehaviour
 
     private IEnumerator ShowPanel(int time)
     {
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(1f);
         losePanel.SetActive(true);
         timeText.text = "Your Time: " + time;
+        Time.timeScale = 0f;
     }
 
     public void StartNewGame()

@@ -21,6 +21,7 @@ public class PlayerShrink : Shrink
     private TMP_Text timeLabel;
 
     [SerializeField] private GameObject corpsePrefab;
+    [SerializeField] private Sprite corpseSprite;
 
     [SerializeField] private GameObject losePanel;
 
@@ -76,18 +77,26 @@ public class PlayerShrink : Shrink
         }
 
     }
-    
 
+
+    private void Update()
+    {
+        
+    }
     private void FixedUpdate()
     {
         //Calculate the new scale
-        float newScale = scaleValue * currentHealth + minimumScale;
+        if (alive)
+        {
+            float newScale = scaleValue * currentHealth + minimumScale;
             
-        //Adjust scale as health changes
-        transform.localScale = new Vector3(newScale, newScale, 0);
-        //Adjust color as health changes
-        float healthColor = (float)currentHealth / startingHealth;
-        spriteRenderer.color = playerColor.Evaluate(healthColor);
+            //Adjust scale as health changes
+            transform.localScale = new Vector3(newScale, newScale, 0);
+            //Adjust color as health changes
+            float healthColor = (float)currentHealth / startingHealth;
+            spriteRenderer.color = playerColor.Evaluate(healthColor);
+        }
+            
         
 
     }
@@ -183,12 +192,17 @@ public class PlayerShrink : Shrink
 
     private IEnumerator GameOver()
     {
-        corpse = Instantiate(corpsePrefab, transform.position, corpsePrefab.transform.rotation);
+        //corpse = Instantiate(corpsePrefab, transform.position, corpsePrefab.transform.rotation);
+        GetComponent<SpriteRenderer>().sprite = corpseSprite;
+        gameObject.transform.localScale = Vector3.one * 2f;
+        GetComponent<CircleCollider2D>().radius = 0.15f;
         if (leaderboard != null)
             yield return leaderboard.SubmitScoreRoutine((int)Mathf.Round(time));
-        timeLabel.SetText("Time: " + (int)Mathf.Round(time));
+        //timeLabel.SetText("Time: " + (int)Mathf.Round(time));
         losePanel.GetComponent<LosePanel>().GameOver((int)Mathf.Round(time));
-        gameObject.SetActive(false);
+        //yield return new WaitForSeconds(1f);
+        //Time.timeScale = 0f;
+        //gameObject.SetActive(false);
     }
     
     
