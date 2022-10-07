@@ -13,6 +13,9 @@ public class CameraController : MonoBehaviour
     [SerializeField]
     private float cameraMaximumSize = 19f;
 
+    [SerializeField] private float bossCameraSize = 12.75f;
+    [SerializeField] private float bossCameraMin = 11.6f;
+
     [SerializeField] private float scrollMultiplier = 0.5f;
 
     private PlayerShrink playerShrink;
@@ -40,6 +43,10 @@ public class CameraController : MonoBehaviour
     private bool isScrollSlider;
 
     private Animator animator;
+
+    public bool isBossChamber;
+
+    [SerializeField] private float bossChamberYPos = -14.7f;
 
     void Start()
     {
@@ -90,7 +97,12 @@ public class CameraController : MonoBehaviour
             return;
         }
 
-        transform.position = playerShrink.transform.position + (Vector3.forward * -10);
+        if (!isBossChamber)
+            transform.position = playerShrink.transform.position + (Vector3.forward * -10);
+        else
+        {
+            transform.position = new Vector3(playerShrink.transform.position.x, bossChamberYPos, -10f);
+        }
 
         if (isScrollSlider)
         {
@@ -102,12 +114,20 @@ public class CameraController : MonoBehaviour
             mainCamera.orthographicSize += scrollValue * scrollMultiplier;
         }
 
-        
-        
-        if (mainCamera.orthographicSize > cameraMaximumSize)
+        if (isBossChamber)
+        {
+            if (mainCamera.orthographicSize > bossCameraSize)
+                mainCamera.orthographicSize = bossCameraSize;
+            else if (mainCamera.orthographicSize < bossCameraMin)
+            {
+                mainCamera.orthographicSize = bossCameraMin;
+            }
+        }
+        else if (mainCamera.orthographicSize > cameraMaximumSize)
         {
             mainCamera.orthographicSize = cameraMaximumSize;
-        }else if (mainCamera.orthographicSize < cameraMinimumSize)
+        }
+        else if (mainCamera.orthographicSize < cameraMinimumSize)
         {
             mainCamera.orthographicSize = cameraMinimumSize;
         }

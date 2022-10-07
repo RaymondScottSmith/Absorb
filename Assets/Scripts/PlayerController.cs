@@ -43,7 +43,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private int damageFromHazards = 10;
 
     private GameObject grabbedSurface;
-    
 
     // Start is called before the first frame update
     void Awake()
@@ -64,6 +63,27 @@ public class PlayerController : MonoBehaviour
         {
             autoStick = PlayerPrefs.GetInt("AutoStick") == 1;
         }
+    }
+
+    public void HoldPlayerInPlace()
+    {
+        StartCoroutine(PauseAgainstWall());
+    }
+
+    private IEnumerator PauseAgainstWall()
+    {
+        while (moving)
+            yield return new WaitForSeconds(0.1f);
+        readyToLaunch = false;
+        readyToPlay = false;
+        GetComponent<CircleCollider2D>().enabled = false;
+    }
+
+    public void ReleasePlayer()
+    {
+        readyToLaunch = true;
+        readyToPlay = true;
+        GetComponent<CircleCollider2D>().enabled = true;
     }
 
     // Update is called once per frame

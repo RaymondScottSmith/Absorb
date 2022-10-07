@@ -10,7 +10,7 @@ public class WalkAround : StateMachineBehaviour
     
     public float speed = 2.5f;
 
-    private Transform player;
+    private GameObject player;
 
     private Rigidbody2D rb;
 
@@ -25,14 +25,17 @@ public class WalkAround : StateMachineBehaviour
     private float velocity;
     private bool isWalkingRight;
 
+    private GB_Spawner mineSpawner;
+
     private Vector2 target;
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+        player = GameObject.FindGameObjectWithTag("Player");
         rb = animator.GetComponent<Rigidbody2D>();
         cd = animator.GetComponentInChildren<CameraDrone>();
         gb = animator.GetComponent<GirlBoss>();
+        mineSpawner = FindObjectOfType<GB_Spawner>();
         if (gb.bossState == GB_State.Stage3)
         {
             gb.UpdateCamera();
@@ -58,16 +61,34 @@ public class WalkAround : StateMachineBehaviour
         //gb.LookAtPlayer();
 
         target = new Vector2(target.x, rb.position.y);
+        if (rb.position.x < target.x)
+        {
+            isWalkingRight = true;
+        }
+        else
+        {
+            isWalkingRight = false;
+        }
         Vector2 newPos = Vector2.MoveTowards(rb.position, target, speed * Time.fixedDeltaTime);
         rb.MovePosition(newPos);
 
-        /*
-        if (Vector3.Distance(target, rb.gameObject.transform.position) < attackDistance)
+        
+        if (Vector3.Distance(player.transform.position, rb.gameObject.transform.position) < attackDistance)
         {
+            if (isWalkingRight && player.transform.position.x > rb.position.x)
+            {
+                Debug.Log("Right, playerX: " + player.transform.position.x + ", BossX: " + rb.position.x);
+                animator.SetTrigger("KickAttack");
+            }
+            else if (!isWalkingRight && player.transform.position.x < rb.position.x)
+            {
+                Debug.Log("Left, playerX: " + player.transform.position.x + ", BossX: " + rb.position.x);
+                animator.SetTrigger("KickAttack");
+            }
             //rb.velocity = Vector3.zero;
-            animator.SetTrigger("KickAttack");
+            
         }
-        */
+        
         
         if (Math.Abs(target.x - rb.transform.position.x) < 0.1f)
         {

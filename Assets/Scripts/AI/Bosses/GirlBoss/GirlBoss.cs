@@ -53,6 +53,8 @@ public class GirlBoss : MonoBehaviour
 
     [SerializeField] public Transform arenaCenter;
 
+    [SerializeField] private GB_Spawner spawner;
+
     public GB_State bossState;
 
     public bool isClimbing = false;
@@ -136,6 +138,21 @@ public class GirlBoss : MonoBehaviour
                 xVelocity = -5f;
             }
         }
+    }
+
+    public void PausePlayer()
+    {
+        if (spawner != null)
+        {
+            spawner.ClearMines();
+        }
+        player.GetComponent<PlayerController>().HoldPlayerInPlace();
+        
+    }
+
+    public void StartStage3Mines()
+    {
+        spawner.UpdateStage(GB_Spawner.GB_Stage.Stage3);
     }
 
     private void Update()
@@ -260,13 +277,17 @@ public class GirlBoss : MonoBehaviour
         if (collision.gameObject.CompareTag("Drone") && !isCollidingDrone)
         {
             CameraDrone cd = collision.GetComponent<CameraDrone>();
-            if (!cd.isRotating && !cd.isReturning)
+            if (!cd.isRotating)
             {
-                isCollidingDrone = true;
-                myAudio.PlayOneShot(painSound);
-                myAnimator.SetTrigger("Hurt");
-                cd.ReverseVelocity();
-                cd.GetComponent<Collider2D>().enabled = false;
+                if (!cd.isReturning || bossState == GB_State.Stage3)
+                {
+                    isCollidingDrone = true;
+                    myAudio.PlayOneShot(painSound);
+                    myAnimator.SetTrigger("Hurt");
+                    cd.ReverseVelocity();
+                    cd.GetComponent<Collider2D>().enabled = false;
+                }
+                
             }
         }
     }

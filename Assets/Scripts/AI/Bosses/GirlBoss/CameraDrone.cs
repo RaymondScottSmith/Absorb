@@ -188,22 +188,8 @@ public class CameraDrone : MonoBehaviour
             isRotating = false;
             StartCoroutine(BounceTimer());
             isClockwise = !isClockwise;
-            //isExploding = true;
-            //isPursuing = false;
-            //wasBounced = true;
-            //myAI.StopPursuit();
-            //player.TakeDamage(explosionDamage,null);
-            //player.ChangeDirection(col.contacts[0].normal * 10f);
-            //StartCoroutine(Explode());
+            
         }
-
-        /*
-        if (wasBounced == true && !col.gameObject.CompareTag("Player"))
-        {
-            rb.velocity = Vector2.zero;
-            StartCoroutine(Explode());
-        }
-        */
 
     }
     

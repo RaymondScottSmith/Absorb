@@ -11,12 +11,16 @@ public class Stage3Setup : StateMachineBehaviour
     private Rigidbody2D rb;
 
     public float speed = 3f;
+
+    private PlayerController player;
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        player = FindObjectOfType<PlayerController>();
         gb = animator.GetComponent<GirlBoss>();
         rb = animator.GetComponent<Rigidbody2D>();
         startPos = new Vector3(gb.ladders[2].position.x, gb.transform.position.y,0);
+        player.GetComponent<CircleCollider2D>().enabled = false;
         gb.LookAtTarget(startPos);
     }
 

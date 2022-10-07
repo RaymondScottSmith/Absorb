@@ -41,6 +41,8 @@ public class MineV2 : MonoBehaviour
     private Rigidbody2D rb;
 
     private bool wasBounced;
+
+    private GB_Spawner gbSpawner;
     
     // Start is called before the first frame update
     void Start()
@@ -83,6 +85,11 @@ public class MineV2 : MonoBehaviour
             player.ChangeDirection((transform.position - player.gameObject.transform.position) * 10f);
         }
     }
+
+    public void AssignSpawner(GB_Spawner spawner)
+    {
+        gbSpawner = spawner;
+    }
     
 
     void Update()
@@ -93,34 +100,6 @@ public class MineV2 : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        /*
-        if (!isExploding)
-        {
-                
-                float playerX = player.transform.position.x;
-                if (playerX < transform.position.x && isFacingRight)
-                {
-                    isFacingRight = false;
-                    animator.SetBool("FacingRight", true);
-                }
-                else if (playerX > transform.position.x && !isFacingRight)
-                {
-                    isFacingRight = true;
-                    animator.SetBool("FacingRight", false);
-                }
-                currentDistance = Vector3.Distance(transform.position, player.transform.position);
-                if (currentDistance <= 1.5f)
-                {
-                    myAI.StopPursuit();
-                    isPursuing = false;
-                }
-                else if (isPursuing == false)
-                {
-                    myAI.StartMoving(player.transform);
-                }
-                //UpdateColors(Color.Lerp(Color.red, Color.yellow, currentDistance/10f));
-        }
-        */
 
     }
     
@@ -173,11 +152,17 @@ public class MineV2 : MonoBehaviour
         rb.AddForce(newVelocity.normalized * newSpeed, ForceMode2D.Impulse);
     }
 
+    public void ForceExplosion()
+    {
+        isExploding = true;
+        StartCoroutine(Explode());
+    }
+
     private IEnumerator Explode()
     {
         
         myAI.StopPursuit();
-        
+        gbSpawner.RemoveMine(this);
         animator.SetTrigger("Explode");
         audioSource.Stop();
         audioSource.PlayOneShot(explosionSound);

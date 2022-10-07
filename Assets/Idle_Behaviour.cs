@@ -25,7 +25,7 @@ public class Idle_Behaviour : StateMachineBehaviour
         timeToIdle = Random.Range(minIdleTime, maxIdleTime);
         player = GameObject.FindGameObjectWithTag("Player").transform;
         rb = animator.GetComponent<Rigidbody2D>();
-        if (gb.bossState == GB_State.Stage3)
+        if (gb.bossState == GB_State.Stage3 && gb.health == gb.maxHealth)
         {
             animator.SetTrigger("Stage3Setup");
         }
@@ -59,6 +59,9 @@ public class Idle_Behaviour : StateMachineBehaviour
                     {
                         animator.SetTrigger("RunToKick");
                     }
+                    break;
+                case GB_State.Stage3:
+                    animator.SetTrigger("Walk");
                     break;
                 default:
                     break;

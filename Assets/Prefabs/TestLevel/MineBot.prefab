@@ -420,7 +420,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetPosition: {fileID: 0}
-  speed: 3
+  speed: 2.5
   nextWaypointDistance: 0.25
   reachedEndOfPath: 0
   isPursuing: 0
