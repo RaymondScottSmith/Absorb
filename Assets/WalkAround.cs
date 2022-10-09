@@ -28,16 +28,29 @@ public class WalkAround : StateMachineBehaviour
     private GB_Spawner mineSpawner;
 
     private Vector2 target;
+    private AudioSource audioSource;
+
+    public AudioClip walkSound;
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        
         player = GameObject.FindGameObjectWithTag("Player");
         rb = animator.GetComponent<Rigidbody2D>();
         cd = animator.GetComponentInChildren<CameraDrone>();
         gb = animator.GetComponent<GirlBoss>();
         mineSpawner = FindObjectOfType<GB_Spawner>();
+
+        if (gb.bossState != GB_State.None)
+        {
+            audioSource = animator.GetComponent<AudioSource>();
+            audioSource.loop = true;
+            audioSource.clip = walkSound;
+            audioSource.Play();
+        }
         if (gb.bossState == GB_State.Stage3)
         {
+            gb.GetComponent<SpriteRenderer>().flipX = false;
             gb.UpdateCamera();
             Debug.Log("Starting stage 3 walk");
             isWalkingRight = true;
@@ -116,10 +129,11 @@ public class WalkAround : StateMachineBehaviour
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
-    //override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    
-    //}
+    override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    {
+        audioSource.loop = false;
+        audioSource.Stop();
+    }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()
     //override public void OnStateMove(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)

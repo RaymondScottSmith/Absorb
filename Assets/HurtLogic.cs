@@ -29,6 +29,13 @@ public class HurtLogic : StateMachineBehaviour
         {
             if (gb.bossState == GB_State.Stage1)
                 gb.bossState = GB_State.Stage2;
+            else if (gb.bossState == GB_State.Stage3)
+            {
+                gb.bossState = GB_State.None;
+                animator.SetBool("Dead", true);
+                gb.DeathCutscene();
+                return;
+            }
             else if (gb.bossState == GB_State.Stage2)
             {
                 gb.bossState = GB_State.Stage3;

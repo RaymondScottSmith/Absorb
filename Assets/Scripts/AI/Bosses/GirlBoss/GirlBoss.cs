@@ -11,6 +11,7 @@ public class GirlBoss : MonoBehaviour
     [SerializeField] private AudioClip kickSound;
     [SerializeField] private AudioClip laserSound;
     [SerializeField] private AudioClip gruntSound;
+    [SerializeField]
     private AudioSource myAudio;
     private bool isCollidingDrone;
 
@@ -54,15 +55,21 @@ public class GirlBoss : MonoBehaviour
     [SerializeField] public Transform arenaCenter;
 
     [SerializeField] private GB_Spawner spawner;
+    [SerializeField] private ParticleSystem particleSystem;
 
     public GB_State bossState;
 
     public bool isClimbing = false;
 
     public bool isFacingPlayer = false;
+
+    private bool isDead;
+
+    [SerializeField] private PlayableDirector deathCutscene;
     // Start is called before the first frame update
     private void Start()
     {
+        particleSystem = GetComponentInChildren<ParticleSystem>();
         health = maxHealth;
         //bossState = GB_State.Stage3;
         myAudio = GetComponent<AudioSource>();
@@ -75,6 +82,16 @@ public class GirlBoss : MonoBehaviour
         isFacingPlayer = false;
     }
 
+    public void BreakShield()
+    {
+        particleSystem.Play();
+    }
+    public void BeginStage1()
+    {
+        bossState = GB_State.Stage1;
+        //isFlipped = true;
+        mySprite.flipX = true;
+    }
     public Transform GetRandomLadder()
     {
         int num = Random.Range(0, ladders.Count);
@@ -154,12 +171,40 @@ public class GirlBoss : MonoBehaviour
     {
         spawner.UpdateStage(GB_Spawner.GB_Stage.Stage3);
     }
+    
+    public void StopAllSound()
+    {
+        myAudio.Stop();
+    }
+
+    public void ChangeStage(GB_State newState)
+    {
+        bossState = newState;
+    }
+
+    public void DeathCutscene()
+    {
+        spawner.UpdateStage(GB_Spawner.GB_Stage.Off);
+        deathCutscene.Play();
+        isDead = true;
+        rb.constraints = RigidbodyConstraints2D.FreezeAll;
+    }
 
     private void Update()
     {
-        if (transform.localPosition.y < -1f)
+        
+
+        
+        if (bossState != GB_State.Stage3 && bossState != GB_State.None)
+            mySprite.flipX = true;
+            
+        if (transform.localPosition.y < -1f && !isDead)
         {
             transform.localPosition = new Vector3(transform.localPosition.x, -.03f, 0);
+        }
+        else if (transform.localPosition.y < -2f)
+        {
+            transform.localPosition = new Vector3(transform.localPosition.x, -1.4f, 0);
         }
         
         RaycastHit2D hit = Physics2D.Raycast(groundSensor.position, Vector2.down, 0.5f);
@@ -289,6 +334,10 @@ public class GirlBoss : MonoBehaviour
                 }
                 
             }
+        }
+        else if (collision.gameObject.CompareTag("Player") && isDead)
+        {
+            Debug.Log("Demo Completed!");
         }
     }
 

@@ -22,7 +22,7 @@ public class GB_Spawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        UpdateStage(GB_Stage.Stage1);
+        UpdateStage(stage);
     }
 
     // Update is called once per frame
@@ -47,6 +47,7 @@ public class GB_Spawner : MonoBehaviour
         switch (newStage)
         {
             case GB_Stage.Off:
+                ClearMines();
                 break;
             case GB_Stage.Stage1:
                 Debug.Log("Starting stage 1 now");

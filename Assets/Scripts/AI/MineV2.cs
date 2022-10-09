@@ -43,16 +43,19 @@ public class MineV2 : MonoBehaviour
     private bool wasBounced;
 
     private GB_Spawner gbSpawner;
+
+    private bool wasPaused = false;
     
     // Start is called before the first frame update
     void Start()
     {
-        
+        wasPaused = false;
         wasBounced = false;
         rb = GetComponent<Rigidbody2D>();
         myAI = GetComponent<TempAI>();
         ///passiveColor = midBar.color;
         audioSource = GetComponent<AudioSource>();
+        
         animator = GetComponent<Animator>();
         camController = FindObjectOfType<CameraController>();
         isFacingRight = false;
@@ -94,6 +97,16 @@ public class MineV2 : MonoBehaviour
 
     void Update()
     {
+        if (Time.timeScale == 0)
+        {
+            audioSource.Stop();
+            wasPaused = true;
+        }
+        else if (wasPaused)
+        {
+            audioSource.Play();
+            wasPaused = false;
+        }
         timeRemaining -= Time.deltaTime;
     }
     

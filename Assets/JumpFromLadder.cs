@@ -6,11 +6,16 @@ public class JumpFromLadder : StateMachineBehaviour
 {
     private Rigidbody2D rb;
     private GirlBoss gb;
+
+    private AudioSource audioSource;
+
+    public AudioClip landSound;
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         gb = animator.GetComponent<GirlBoss>();
         rb = animator.GetComponent<Rigidbody2D>();
+        audioSource = animator.GetComponent<AudioSource>();
         gb.isClimbing = false;
         gb.JumpForward();
     }
@@ -25,10 +30,10 @@ public class JumpFromLadder : StateMachineBehaviour
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
-    //override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    
-    //}
+    override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    {
+            audioSource.PlayOneShot(landSound);
+    }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()
     //override public void OnStateMove(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
