@@ -8,6 +8,8 @@ public class MultiLock : MonoBehaviour
 {
 
     [SerializeField] private bool checkOnUpdate = false;
+
+    [SerializeField] private bool saveOnReload = false;
     public List<bool> locks;
 
     public UnityEvent OnAllLocksOpen;
@@ -34,6 +36,11 @@ public class MultiLock : MonoBehaviour
         }
         OnAllLocksOpen?.Invoke();
         
+    }
+
+    public void ForceUnlock()
+    {
+        OnAllLocksOpen?.Invoke();
     }
 
     // Update is called once per frame

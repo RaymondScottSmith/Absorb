@@ -77,22 +77,23 @@ public class StationaryTurret : MonoBehaviour
 
     public void SpottedMode()
     {
-        Debug.Log("In Spotted Mode");
+        //Debug.Log("In Spotted Mode");
         playerInRange = true;
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (isDead)
             return;
+        
         RaycastHit2D hit = Physics2D.Raycast(transform.position, 
             player.transform.position - transform.position, 
             maxRange, ~(LayerMask.GetMask("CrewColliders", "Ignore Raycast", "Player")));
         
+        Debug.Log(hit.collider.tag);
         if (playerInRange && hit.collider.CompareTag("Player"))
         {
             
-
             if (!isShooting)
             {
                 isShooting = true;
@@ -111,6 +112,7 @@ public class StationaryTurret : MonoBehaviour
             //Debug.Log(transform.rotation.eulerAngles.z);
             if (facingRight)
             {
+                
                 //Debug.Log("Old Transform: " + oldTransform + " transform.rotation: " + transform.rotation);
                 transform.rotation = Quaternion.RotateTowards(oldTransform, transform.rotation, 180);
                 transform.eulerAngles = new Vector3(0, 180, -transform.rotation.eulerAngles.z);
@@ -124,8 +126,12 @@ public class StationaryTurret : MonoBehaviour
             }
             else
             {
+                
+                Debug.Log(transform.position);
+                Debug.Log("Should be rotating.");
                 transform.rotation = Quaternion.RotateTowards(oldTransform, transform.rotation, 180);
                 transform.eulerAngles = new Vector3(0, 0, (transform.rotation.eulerAngles.z + 180));
+                Debug.Log(transform.eulerAngles);
 
                 float zAngle = transform.rotation.eulerAngles.z;
                 if (!((zAngle > 0 && zAngle < 90) || (zAngle <= 360 && zAngle > 270)))

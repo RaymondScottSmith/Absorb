@@ -41,6 +41,10 @@ public class WalkAround : StateMachineBehaviour
         gb = animator.GetComponent<GirlBoss>();
         mineSpawner = FindObjectOfType<GB_Spawner>();
 
+        if (gb.bossState == GB_State.None)
+        {
+            audioSource.Stop();
+        }
         if (gb.bossState != GB_State.None)
         {
             audioSource = animator.GetComponent<AudioSource>();
@@ -50,9 +54,9 @@ public class WalkAround : StateMachineBehaviour
         }
         if (gb.bossState == GB_State.Stage3)
         {
+            audioSource.Stop();
             gb.GetComponent<SpriteRenderer>().flipX = false;
             gb.UpdateCamera();
-            Debug.Log("Starting stage 3 walk");
             isWalkingRight = true;
             target = gb.ladders[3].transform.position;
             target = new Vector2(target.x, rb.position.y);

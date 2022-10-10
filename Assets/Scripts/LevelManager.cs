@@ -22,9 +22,17 @@ public class LevelManager : MonoBehaviour
     void Start()
     {
         player.GetComponent<PlayerController>().readyToLaunch = true;
-        TalkScript.Instance.QueueLine("Eat Him");
+        //TalkScript.Instance.QueueLine("Eat Him");
+
+        if (CheckpointManager.Instance != null)
+        {
+            player.transform.position = CheckpointManager.Instance.LoadCheckpoint();
+        }
+        else
+        {
+            player.transform.position = startingPosition.position;
+        }
         
-        player.transform.position = startingPosition.position;
         if (startPlayerOnAwake)
         {
             player.GetComponent<PlayerController>().readyToPlay = true;

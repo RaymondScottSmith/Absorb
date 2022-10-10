@@ -327,7 +327,7 @@ public class GirlBoss : MonoBehaviour
                 if (!cd.isReturning || bossState == GB_State.Stage3)
                 {
                     isCollidingDrone = true;
-                    myAudio.PlayOneShot(painSound);
+                    //myAudio.PlayOneShot(painSound);
                     myAnimator.SetTrigger("Hurt");
                     cd.ReverseVelocity();
                     cd.GetComponent<Collider2D>().enabled = false;
@@ -339,6 +339,11 @@ public class GirlBoss : MonoBehaviour
         {
             Debug.Log("Demo Completed!");
         }
+    }
+
+    public void PlayParticles()
+    {
+        particleSystem.Play();
     }
 
     private void OnTriggerExit2D(Collider2D collision)

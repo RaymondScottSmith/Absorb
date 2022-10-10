@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerShrink : Shrink
 {
@@ -199,7 +200,8 @@ public class PlayerShrink : Shrink
         if (leaderboard != null)
             yield return leaderboard.SubmitScoreRoutine((int)Mathf.Round(time));
         //timeLabel.SetText("Time: " + (int)Mathf.Round(time));
-        losePanel.GetComponent<LosePanel>().GameOver((int)Mathf.Round(time));
+        //losePanel.GetComponent<LosePanel>().GameOver((int)Mathf.Round(time));
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         //yield return new WaitForSeconds(1f);
         //Time.timeScale = 0f;
         //gameObject.SetActive(false);

@@ -13,6 +13,10 @@ public class Stage3Setup : StateMachineBehaviour
     public float speed = 3f;
 
     private PlayerController player;
+
+    private AudioSource audioSource;
+    public AudioClip runSound;
+    
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
@@ -23,6 +27,10 @@ public class Stage3Setup : StateMachineBehaviour
         player.GetComponent<CircleCollider2D>().enabled = false;
         //gb.GetComponent<SpriteRenderer>().flipX = true;
         gb.LookAtTarget(startPos);
+        audioSource = animator.GetComponent<AudioSource>();
+        audioSource.clip = runSound;
+        audioSource.loop = true;
+        audioSource.Play();
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -38,10 +46,10 @@ public class Stage3Setup : StateMachineBehaviour
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
-    //override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    
-    //}
+    override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    {
+        audioSource.Stop();
+    }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()
     //override public void OnStateMove(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)

@@ -19,6 +19,8 @@ public class CameraDrone : MonoBehaviour
 
     public float moveSpeed = 2f;
 
+    public float aimAssistSpeed = 2f;
+
     private Animator animator;
 
     private PlayerController player;
@@ -184,6 +186,12 @@ public class CameraDrone : MonoBehaviour
             player = col.gameObject.GetComponent<PlayerController>();
             player.ChangeDirection((player.gameObject.transform.position - transform.position) * 10f);
             ChangeDirection((transform.position - player.gameObject.transform.position) * 10f, player.baseSpeed/2f);
+            if (isStage3)
+            {
+                Vector2 newVelocity = (gBossRotateCenter.transform.position - transform.position);
+                rb.AddForce(newVelocity.normalized * aimAssistSpeed, ForceMode2D.Impulse);
+            }
+            
             //ChangeDirection((transform.position - player.gameObject.transform.position) * 10f, player.baseSpeed);
             isRotating = false;
             StartCoroutine(BounceTimer());

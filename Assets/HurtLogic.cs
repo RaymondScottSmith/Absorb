@@ -5,9 +5,18 @@ using UnityEngine;
 public class HurtLogic : StateMachineBehaviour
 {
     private GirlBoss gb;
+
+    private PlayerController pc;
+
+    public AudioClip hurtSound;
+
+    private AudioSource audioSource;
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        audioSource = animator.GetComponent<AudioSource>();
+        audioSource.PlayOneShot(hurtSound);
+        pc = FindObjectOfType<PlayerController>();
         gb = animator.GetComponent<GirlBoss>();
         if (gb.isFacingPlayer)
             gb.SwitchFacingPlayer();
@@ -31,6 +40,7 @@ public class HurtLogic : StateMachineBehaviour
                 gb.bossState = GB_State.Stage2;
             else if (gb.bossState == GB_State.Stage3)
             {
+                pc.HoldPlayerInPlace();
                 gb.bossState = GB_State.None;
                 animator.SetBool("Dead", true);
                 gb.DeathCutscene();
@@ -38,6 +48,7 @@ public class HurtLogic : StateMachineBehaviour
             }
             else if (gb.bossState == GB_State.Stage2)
             {
+                pc.HoldPlayerInPlace();
                 gb.bossState = GB_State.Stage3;
             }
                 
