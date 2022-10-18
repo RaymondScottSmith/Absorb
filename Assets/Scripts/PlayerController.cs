@@ -44,17 +44,22 @@ public class PlayerController : MonoBehaviour
 
     private GameObject grabbedSurface;
 
+    public bool shouldTakeDamage = true;
+    
+
     // Start is called before the first frame update
     void Awake()
     {
+        GetComponent<Collider2D>().enabled = true;
         moving = false;
         readyToLaunch = true;
         //readyToPlay = false;
-        rb = GetComponent<Rigidbody2D>();
+        
         playerShrink = GetComponent<PlayerShrink>();
         audioSource = GetComponent<AudioSource>();
         animator = GetComponent<Animator>();
         raycastReflection = GetComponent<RaycastReflection>();
+        /*
         if (isTutorial)
         {
             autoStick = true;
@@ -63,6 +68,14 @@ public class PlayerController : MonoBehaviour
         {
             autoStick = PlayerPrefs.GetInt("AutoStick") == 1;
         }
+        */
+        autoStick = true;
+
+    }
+
+    private void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
     }
 
     public void HoldPlayerInPlace()
@@ -72,15 +85,21 @@ public class PlayerController : MonoBehaviour
 
     private IEnumerator PauseAgainstWall()
     {
+        GetComponent<CircleCollider2D>().enabled = true;
+        shouldTakeDamage = false;
         while (moving)
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(0.01f);
         readyToLaunch = false;
         readyToPlay = false;
-        GetComponent<CircleCollider2D>().enabled = false;
+        rb.velocity = Vector2.zero;
+        //rb.constraints = RigidbodyConstraints2D.FreezeAll;
+
     }
 
     public void ReleasePlayer()
     {
+        shouldTakeDamage = true;
+        rb.constraints = RigidbodyConstraints2D.None;
         readyToLaunch = true;
         readyToPlay = true;
         GetComponent<CircleCollider2D>().enabled = true;
@@ -95,6 +114,7 @@ public class PlayerController : MonoBehaviour
         }
         if (readyToPlay)
         {
+            rb.constraints = RigidbodyConstraints2D.None;
             if (!moving)
             {
                 if (grabbedSurface != null && !grabbedSurface.activeInHierarchy)
@@ -121,7 +141,7 @@ public class PlayerController : MonoBehaviour
             if (Input.GetMouseButtonUp(0) )
             {
                 //Check readyToLaunch to make sure it doesn't automatically launch when we release click after stopping
-                if (readyToLaunch)
+                if (readyToLaunch && readyToPlay)
                 {
                 
                     grabbing = false;
@@ -157,6 +177,10 @@ public class PlayerController : MonoBehaviour
             {
                 grabbing = true;
             }
+        }
+        else
+        {
+            rb.constraints = RigidbodyConstraints2D.FreezeAll;
         }
         
     }
@@ -211,15 +235,25 @@ public class PlayerController : MonoBehaviour
 
         
 
-        if (col.gameObject.CompareTag("Damaging"))
+        if (col.gameObject.CompareTag("Damaging") && shouldTakeDamage)
         {
-            Debug.Log("Should be taking damage");
+            //Debug.Log("Should be taking damage");
             TakeDamage(damageFromHazards,zapSound, col);
         }
     }
 
+    private IEnumerator MercyInvuln()
+    {
+        shouldTakeDamage = false;
+        yield return new WaitForSeconds(1f);
+        shouldTakeDamage = true;
+    }
     public void TakeDamage(int damage, [CanBeNull] AudioClip damageSound, Collision2D coll = null, bool useAnimation = true)
     {
+        if (!shouldTakeDamage)
+            return;
+
+        StartCoroutine(MercyInvuln());
         if (useAnimation)
             animator.SetTrigger("Shock");
         if (damageSound == null)

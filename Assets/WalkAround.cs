@@ -30,6 +30,8 @@ public class WalkAround : StateMachineBehaviour
     private Vector2 target;
     private AudioSource audioSource;
 
+    private SpriteRenderer sp;
+
     public AudioClip walkSound;
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -40,6 +42,7 @@ public class WalkAround : StateMachineBehaviour
         cd = animator.GetComponentInChildren<CameraDrone>();
         gb = animator.GetComponent<GirlBoss>();
         mineSpawner = FindObjectOfType<GB_Spawner>();
+        sp = animator.GetComponent<SpriteRenderer>();
 
         if (gb.bossState == GB_State.None)
         {
@@ -67,7 +70,7 @@ public class WalkAround : StateMachineBehaviour
             target = gb.GetRandomLadder().position;
             gb.LookAtTarget(target);
             target = new Vector2(target.x, rb.position.y);
-            Debug.Log("Target's X: " + target.x);
+            //Debug.Log("Target's X: " + target.x);
         }
         
     }
@@ -78,6 +81,9 @@ public class WalkAround : StateMachineBehaviour
         //gb.LookAtPlayer();
 
         target = new Vector2(target.x, rb.position.y);
+        gb.LookAtTarget(target);
+        //Debug.Log("Girl X: " + animator.transform.position.x);
+        //Debug.Log("Target X: " + target.x);
         if (rb.position.x < target.x)
         {
             isWalkingRight = true;
@@ -94,12 +100,12 @@ public class WalkAround : StateMachineBehaviour
         {
             if (isWalkingRight && player.transform.position.x > rb.position.x)
             {
-                Debug.Log("Right, playerX: " + player.transform.position.x + ", BossX: " + rb.position.x);
+                //Debug.Log("Right, playerX: " + player.transform.position.x + ", BossX: " + rb.position.x);
                 animator.SetTrigger("KickAttack");
             }
             else if (!isWalkingRight && player.transform.position.x < rb.position.x)
             {
-                Debug.Log("Left, playerX: " + player.transform.position.x + ", BossX: " + rb.position.x);
+                //Debug.Log("Left, playerX: " + player.transform.position.x + ", BossX: " + rb.position.x);
                 animator.SetTrigger("KickAttack");
             }
             //rb.velocity = Vector3.zero;
@@ -107,7 +113,7 @@ public class WalkAround : StateMachineBehaviour
         }
         
         
-        if (Math.Abs(target.x - rb.transform.position.x) < 0.1f)
+        if (Math.Abs(target.x - rb.transform.position.x) < 0.5f)
         {
             if (gb.bossState != GB_State.Stage3)
             {

@@ -6,15 +6,10 @@ public class MineV2 : MonoBehaviour
 {
     private TempAI myAI;
 
-    private bool isPursuing;
+    //private bool isPursuing;
     private bool isInRange;
 
     private GameObject target;
-
-    //[SerializeField] private SpriteRenderer midBar;
-    //[SerializeField] private SpriteRenderer circleSprite;
-    //[SerializeField] private Light2D midLight;
-    //[SerializeField] private Light2D circleLight;
     private bool isExploding;
 
     private float currentDistance;
@@ -32,15 +27,14 @@ public class MineV2 : MonoBehaviour
 
     private CameraController camController;
 
-    private bool isFacingRight;
+    //private bool isFacingRight;
 
     private PlayerController player;
 
     [SerializeField] private bool timedExplosion;
 
     private Rigidbody2D rb;
-
-    private bool wasBounced;
+    
 
     private GB_Spawner gbSpawner;
 
@@ -50,7 +44,6 @@ public class MineV2 : MonoBehaviour
     void Start()
     {
         wasPaused = false;
-        wasBounced = false;
         rb = GetComponent<Rigidbody2D>();
         myAI = GetComponent<TempAI>();
         ///passiveColor = midBar.color;
@@ -58,13 +51,13 @@ public class MineV2 : MonoBehaviour
         
         animator = GetComponent<Animator>();
         camController = FindObjectOfType<CameraController>();
-        isFacingRight = false;
+        //isFacingRight = false;
 
         player = FindObjectOfType<PlayerController>();
         timeRemaining = explosionTimer;
         //StartBeeping();
         myAI.StartMoving(player.transform);
-        isPursuing = true;
+        //isPursuing = true;
         InvokeRepeating("ExplodeFromTimer", explosionTimer, 10f);
     }
 
@@ -148,7 +141,7 @@ public class MineV2 : MonoBehaviour
             
             PlayerController player = col.gameObject.GetComponent<PlayerController>();
             isExploding = true;
-            isPursuing = false;
+            //isPursuing = false;
             myAI.StopPursuit();
             if (!isExploding)
                 player.TakeDamage(explosionDamage,null);

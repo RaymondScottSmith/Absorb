@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LosePanel : MonoBehaviour
 {
@@ -11,11 +12,12 @@ public class LosePanel : MonoBehaviour
     private GameObject losePanel;
 
     [SerializeField] private TMP_Text timeText;
-    
+    private CameraController cam;
 
     void Start()
     {
-        losePanel.SetActive(false);
+        cam = FindObjectOfType<CameraController>();
+        //cam.PlayOneShot(loseMusic);
     }
 
     public void GameOver(int time)
@@ -31,9 +33,10 @@ public class LosePanel : MonoBehaviour
         Time.timeScale = 0f;
     }
 
-    public void StartNewGame()
+    public void LoadCheckPoint()
     {
-        ScreenTransition.Instance.StartGame();
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void ResetToTitle()

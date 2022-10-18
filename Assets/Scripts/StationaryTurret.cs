@@ -37,8 +37,6 @@ public class StationaryTurret : MonoBehaviour
 
     private CameraController camController;
 
-    [SerializeField] private float maxTurn = -90f;
-
     [SerializeField] private float minTurn;
 
     private Quaternion firstPos;
@@ -90,7 +88,7 @@ public class StationaryTurret : MonoBehaviour
             player.transform.position - transform.position, 
             maxRange, ~(LayerMask.GetMask("CrewColliders", "Ignore Raycast", "Player")));
         
-        Debug.Log(hit.collider.tag);
+        //Debug.Log(hit.collider.tag);
         if (playerInRange && hit.collider.CompareTag("Player"))
         {
             
@@ -120,23 +118,19 @@ public class StationaryTurret : MonoBehaviour
                 float zAngle = transform.rotation.eulerAngles.z;
                 if (!((zAngle > 0 && zAngle < 90) || (zAngle <= 360 && zAngle > 270)))
                 {
-                    Debug.Log("Should be restricting here");
+                    //Debug.Log("Should be restricting here");
                     transform.rotation = oldTransform;
                 }
             }
             else
             {
-                
-                Debug.Log(transform.position);
-                Debug.Log("Should be rotating.");
                 transform.rotation = Quaternion.RotateTowards(oldTransform, transform.rotation, 180);
                 transform.eulerAngles = new Vector3(0, 0, (transform.rotation.eulerAngles.z + 180));
-                Debug.Log(transform.eulerAngles);
 
                 float zAngle = transform.rotation.eulerAngles.z;
                 if (!((zAngle > 0 && zAngle < 90) || (zAngle <= 360 && zAngle > 270)))
                 {
-                    Debug.Log("Should be restricting here");
+                    //Debug.Log("Should be restricting here");
                     transform.rotation = oldTransform;
                 }
             }

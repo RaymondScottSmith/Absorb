@@ -893,7 +893,7 @@ AnimationClip:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 5.1833334
+        time: 8.183333
         value: 0
         inSlope: 0
         outSlope: 0
@@ -929,7 +929,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 8.033334
+    m_StopTime: 8.183333
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -949,7 +949,7 @@ AnimationClip:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 5.1833334
+        time: 8.183333
         value: 0
         inSlope: 0
         outSlope: 0
@@ -968,21 +968,14 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events:
-  - time: 8
-    functionName: ClearQueue
-    data: 
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
-  - time: 8.016666
+  - time: 3.2666667
     functionName: QueueLine
     data: Activate the teleporter!
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 8.033334
+  - time: 7.85
     functionName: DisplayMessages
     data: 
     objectReferenceParameter: {fileID: 0}

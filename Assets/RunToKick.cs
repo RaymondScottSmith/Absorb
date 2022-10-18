@@ -27,6 +27,8 @@ public class RunToKick : StateMachineBehaviour
     private AudioSource audioSource;
 
     public AudioClip runSound;
+
+    private SpriteRenderer sp;
     
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -36,6 +38,7 @@ public class RunToKick : StateMachineBehaviour
         rb = animator.GetComponent<Rigidbody2D>();
         cd = animator.GetComponentInChildren<CameraDrone>();
         gb = animator.GetComponent<GirlBoss>();
+        sp = animator.GetComponent<SpriteRenderer>();
         if (gb.bossState != GB_State.None)
         {
             audioSource = animator.GetComponent<AudioSource>();
@@ -65,9 +68,10 @@ public class RunToKick : StateMachineBehaviour
         switch (gb.bossState)
         {
             case GB_State.Stage1:
-                gb.LookAtPlayer();
+                //gb.LookAtPlayer();
         
                 target = new Vector2(player.position.x, rb.position.y);
+                gb.LookAtTarget(target);
                 Vector2 newPos = Vector2.MoveTowards(rb.position, target, speed * Time.fixedDeltaTime);
                 rb.MovePosition(newPos);
 

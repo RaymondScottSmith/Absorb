@@ -28,9 +28,9 @@ public class UserManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        leaderboard = FindObjectOfType<Leaderboard>();
+        //leaderboard = FindObjectOfType<Leaderboard>();
         //DontDestroyOnLoad(this);
-        StartCoroutine(SetupRoutine());
+        //StartCoroutine(SetupRoutine());
     }
 
     private IEnumerator SetupRoutine()

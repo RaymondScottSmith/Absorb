@@ -22,7 +22,7 @@ public class ClimbLadder : StateMachineBehaviour
         rb = animator.GetComponent<Rigidbody2D>();
         gb = animator.GetComponent<GirlBoss>();
         climbHeight = Random.Range(minimumHeight, maximumHeight);
-        Debug.Log("Climb Height: " + climbHeight);
+        //Debug.Log("Climb Height: " + climbHeight);
         target = new Vector2(rb.position.x, climbHeight);
         gb.isClimbing = true;
     }
@@ -35,8 +35,8 @@ public class ClimbLadder : StateMachineBehaviour
         Vector2 newPos = Vector2.MoveTowards(rb.position, target, climbSpeed * Time.fixedDeltaTime);
         rb.MovePosition(newPos);
 
-        Debug.Log("RB: " + rb.transform.position.y);
-        Debug.Log("Target: " + target.y);
+        //Debug.Log("RB: " + rb.transform.position.y);
+       // Debug.Log("Target: " + target.y);
         if (rb.transform.localPosition.y >= target.y)
         {
             animator.SetTrigger("StopClimbing");

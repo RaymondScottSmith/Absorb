@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 //using Unity.VisualScripting.FullSerializer;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class CameraController : MonoBehaviour
@@ -46,16 +47,27 @@ public class CameraController : MonoBehaviour
 
     public bool isBossChamber;
 
+    public GameObject focusObject;
+
     [SerializeField] private float bossChamberYPos = -14.7f;
 
+    private AudioSource musicPlayer;
+
+    void Awake()
+    {
+        
+    }
     void Start()
     {
+        musicPlayer = GetComponent<AudioSource>();
+        
         playerShrink = FindObjectOfType<PlayerShrink>();
         mainCamera = GetComponentInChildren<Camera>();
         audioSource = GetComponentInChildren<AudioSource>();
         playedDeathSound = false;
         pausePanel.SetActive(false);
         animator = GetComponentInChildren<Animator>();
+        ResetFocusToPlayer();
 
         if (PlayerPrefs.HasKey("ScrollMultiplier"))
         {
@@ -69,6 +81,34 @@ public class CameraController : MonoBehaviour
 
         if (scrollSlider != null)
             scrollSlider.transform.parent.gameObject.SetActive(isScrollSlider);
+    }
+
+    public void ResetFocusToPlayer()
+    {
+        focusObject = playerShrink.gameObject;
+    }
+
+    public void ChangeMusic(AudioClip newSong)
+    {
+        musicPlayer.Stop();
+        musicPlayer.clip = newSong;
+        musicPlayer.Play();
+    }
+
+    public void StopMusic()
+    {
+        musicPlayer.Stop();
+    }
+
+    public void PlayOneShot(AudioClip oneShot)
+    {
+        musicPlayer.Stop();
+        musicPlayer.PlayOneShot(oneShot);
+    }
+
+    public void FocusOnTarget(GameObject target)
+    {
+        focusObject = target;
     }
 
     // Update is called once per frame
@@ -98,10 +138,11 @@ public class CameraController : MonoBehaviour
         }
 
         if (!isBossChamber)
-            transform.position = playerShrink.transform.position + (Vector3.forward * -10);
+            transform.position = focusObject.transform.position + (Vector3.forward * -10);
         else
         {
-            transform.position = new Vector3(playerShrink.transform.position.x, bossChamberYPos, -10f);
+            transform.position = new Vector3(focusObject.transform.position.x, bossChamberYPos, -10f);
+            //Debug.Log(focusObject.transform.position.x);
         }
 
         if (isScrollSlider)
@@ -142,26 +183,15 @@ public class CameraController : MonoBehaviour
 
     public void ShakeScreen()
     {
-        animator.SetTrigger("ShakeIt");
+        //Fix after refactoring camera animations
     }
-    /*
-    private void StayInBoundaries()
-    {
-        //Vector3 camPosition = transform.position;
-        Vector3 adjustedPosition = transform.position;
-        if (adjustedPosition.x > maxRight)
-            adjustedPosition = new Vector3(maxRight, adjustedPosition.y, -10);
-        else if (adjustedPosition.x < maxLeft)
-            adjustedPosition = new Vector3(maxLeft, adjustedPosition.y, -10);
-        
-        if (adjustedPosition.y > maxUp)
-            adjustedPosition = new Vector3(adjustedPosition.x, maxUp, -10);
-        else if (adjustedPosition.y < maxDown)
-            adjustedPosition = new Vector3(adjustedPosition.x, maxDown, -10);
 
-        transform.position = adjustedPosition;
+    public void LoadScene(int sceneNumber)
+    {
+        Unpause();
+        ScreenTransition.Instance.LoadScene(sceneNumber);
     }
-*/
+    
     public void Unpause()
     {
         playerShrink.GetComponent<PlayerController>().readyToPlay = true;

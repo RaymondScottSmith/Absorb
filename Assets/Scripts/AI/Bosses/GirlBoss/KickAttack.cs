@@ -29,7 +29,7 @@ public class KickAttack : MonoBehaviour
     public void Attack()
     {
         Vector3 pos = transform.position;
-        pos += transform.right * attackOffset.x;
+        pos += -transform.right * attackOffset.x;
         pos += transform.up * attackOffset.y;
 
         
@@ -39,7 +39,7 @@ public class KickAttack : MonoBehaviour
             pc.TakeDamage(attackDamage,kickHitSound);
             if (gb.isFlipped)
             {
-                pc.ChangeDirection((Vector3.up + Vector3.right) * 10f);
+                pc.ChangeDirection((Vector3.up + Vector3.left) * 10f);
                 //StartCoroutine(LaunchBack());
                 /*
                 gb.transform.position = new Vector3(gb.transform.position.x - 5f, gb.transform.position.y,
@@ -48,7 +48,7 @@ public class KickAttack : MonoBehaviour
             }
             else
             {
-                pc.ChangeDirection((Vector3.up + Vector3.left) * 10f);
+                pc.ChangeDirection((Vector3.up + Vector3.right) * 10f);
             }
             
         }

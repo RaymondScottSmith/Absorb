@@ -27,7 +27,7 @@ public class RaycastReflection : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (player.readyToPlay)
+        if (player.readyToPlay && player.readyToLaunch)
         {
             if (Input.GetMouseButton(0) && player.readyToLaunch && !isOverUI) 
             {
@@ -98,6 +98,10 @@ public class RaycastReflection : MonoBehaviour
             {
                 lineRenderer.enabled = false;
             }
+        }
+        else
+        {
+            lineRenderer.enabled = false;
         }
         
     }

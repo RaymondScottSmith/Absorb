@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Playables;
 using UnityEngine.SceneManagement;
 
 public class PlayerShrink : Shrink
@@ -24,6 +25,8 @@ public class PlayerShrink : Shrink
     [SerializeField] private GameObject corpsePrefab;
     [SerializeField] private Sprite corpseSprite;
 
+    [SerializeField] private AudioClip loseMusic;
+
     [SerializeField] private GameObject losePanel;
 
     public GameObject corpse;
@@ -32,6 +35,8 @@ public class PlayerShrink : Shrink
     private PlayerController player;
 
     public bool isBeingDrained;
+
+    [SerializeField] private GameObject EatingPanel;
     
     
     //[SerializeField] private bool isTutorial;
@@ -130,6 +135,7 @@ public class PlayerShrink : Shrink
         {
             if (keyNumber == food.GetComponent<CrewShrink>().keyValue)
             {
+                RemoveFood(food);
                 Destroy(food.gameObject);
                 toRemove.Add(food);
             }
@@ -188,11 +194,15 @@ public class PlayerShrink : Shrink
            Destroy(food.gameObject); 
         }
         alive = false;
+        
         StartCoroutine(GameOver());
     }
 
     private IEnumerator GameOver()
     {
+        GetComponent<PlayerController>().readyToPlay = false;
+        //Destroy(GetComponent<LineRenderer>());
+        FindObjectOfType<CameraController>().PlayOneShot(loseMusic);
         //corpse = Instantiate(corpsePrefab, transform.position, corpsePrefab.transform.rotation);
         GetComponent<SpriteRenderer>().sprite = corpseSprite;
         gameObject.transform.localScale = Vector3.one * 2f;
@@ -200,11 +210,39 @@ public class PlayerShrink : Shrink
         if (leaderboard != null)
             yield return leaderboard.SubmitScoreRoutine((int)Mathf.Round(time));
         //timeLabel.SetText("Time: " + (int)Mathf.Round(time));
-        //losePanel.GetComponent<LosePanel>().GameOver((int)Mathf.Round(time));
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        
+        yield return new WaitForSeconds(1.5f);
+        
+        losePanel.gameObject.SetActive(true);
+        Time.timeScale = 0f;
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         //yield return new WaitForSeconds(1f);
         //Time.timeScale = 0f;
         //gameObject.SetActive(false);
+    }
+
+    public void RemoveAllFood()
+    {
+        List<Shrink> toRemove = new List<Shrink>();
+        foreach (Shrink food in currentlyEating)
+        {
+            
+            Destroy(food.gameObject); 
+            toRemove.Add(food);
+        }
+
+        if (toRemove.Count > 0)
+        {
+            currentlyEating.RemoveAll(x => toRemove.Contains(x));
+        }
+        
+        Transform[] allChildren = EatingPanel.GetComponentsInChildren<Transform>();
+        
+        foreach (Transform child in EatingPanel.transform)
+        {
+            child.gameObject.SetActive(false);
+            Destroy(child.gameObject);
+        }
     }
     
     

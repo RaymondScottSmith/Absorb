@@ -67,13 +67,13 @@ public class RunningFood : MonoBehaviour
         {
             return;
         }
-        int layerMask = ~(LayerMask.GetMask("Player") + LayerMask.GetMask("CrewColliders"));
+        int layerMask = ~(LayerMask.GetMask("Player") + LayerMask.GetMask("CrewColliders", "Player", "Ignore Raycast"));
         RaycastHit2D hit = Physics2D.Raycast(rayLocation.position, rayDirection, 2f, layerMask);
 
         if (hit.collider != null)
         {
             SwitchDirection();
-            Debug.Log("Hit: " + hit.collider.name);
+            //Debug.Log("Hit: " + hit.collider.name);
         }
             
         
@@ -90,7 +90,7 @@ public class RunningFood : MonoBehaviour
 
         if (isCowering)
         {
-            Debug.Log("Should be cowering");
+            //Debug.Log("Should be cowering");
         }
         
     }

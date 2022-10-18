@@ -43,6 +43,10 @@ public class CameraDrone : MonoBehaviour
     public bool isStage3;
 
     private bool isClockwise;
+
+    public bool inCutscene;
+    
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -58,6 +62,10 @@ public class CameraDrone : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        if (inCutscene)
+        {
+            return;
+        }
         if (!isReturning && isStage3)
         {
             isRotating = false;
@@ -167,6 +175,11 @@ public class CameraDrone : MonoBehaviour
 
     }
 
+    public void EndCutscene()
+    {
+        inCutscene = false;
+    }
+
     public void ChangeDirection(Vector2 newVelocity, float baseSpeed)
     {
         rb.bodyType = RigidbodyType2D.Dynamic;
@@ -180,7 +193,7 @@ public class CameraDrone : MonoBehaviour
     void OnCollisionEnter2D(Collision2D col)
     {
         
-        if (col.gameObject.CompareTag("Player"))
+        if (col.gameObject.CompareTag("Player") && col.gameObject.GetComponent<PlayerController>().shouldTakeDamage)
         {
             audioSource.Play();
             player = col.gameObject.GetComponent<PlayerController>();

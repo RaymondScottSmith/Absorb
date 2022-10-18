@@ -50,7 +50,6 @@ public class GB_Spawner : MonoBehaviour
                 ClearMines();
                 break;
             case GB_Stage.Stage1:
-                Debug.Log("Starting stage 1 now");
                 if (currentMines < maxMines)
                 {
                     InvokeRepeating("SpawnMine", 0, spawnDelay1);

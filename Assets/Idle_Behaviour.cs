@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Playables;
 
 public class Idle_Behaviour : StateMachineBehaviour
 {
@@ -27,6 +28,7 @@ public class Idle_Behaviour : StateMachineBehaviour
         rb = animator.GetComponent<Rigidbody2D>();
         if (gb.bossState == GB_State.Stage3 && gb.health == gb.maxHealth)
         {
+            player.GetComponent<PlayerController>().HoldPlayerInPlace();
             animator.SetTrigger("Stage3Setup");
         }
     }
@@ -35,6 +37,10 @@ public class Idle_Behaviour : StateMachineBehaviour
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         timeSpentIdling += Time.deltaTime;
+        if (animator.GetBool("Stage3SetupBool"))
+        {
+            return;
+        }
         if (timeSpentIdling >= timeToIdle)
         {
             switch (gb.bossState)

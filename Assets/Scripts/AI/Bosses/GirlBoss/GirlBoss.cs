@@ -1,8 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Playables;
+using Random = UnityEngine.Random;
 
 public class GirlBoss : MonoBehaviour
 {
@@ -59,6 +61,9 @@ public class GirlBoss : MonoBehaviour
 
     public GB_State bossState;
 
+    public GB_State startingState = GB_State.None;
+    
+
     public bool isClimbing = false;
 
     public bool isFacingPlayer = false;
@@ -66,9 +71,12 @@ public class GirlBoss : MonoBehaviour
     private bool isDead;
 
     [SerializeField] private PlayableDirector deathCutscene;
+
+    public Collider2D shieldCollider;
     // Start is called before the first frame update
     private void Start()
     {
+        bossState = startingState;
         particleSystem = GetComponentInChildren<ParticleSystem>();
         health = maxHealth;
         //bossState = GB_State.Stage3;
@@ -76,6 +84,7 @@ public class GirlBoss : MonoBehaviour
         myAnimator = GetComponent<Animator>();
         player = GameObject.FindGameObjectWithTag("Player");
         mySprite = GetComponent<SpriteRenderer>();
+        mySprite.flipX = true;
         rb = GetComponent<Rigidbody2D>();
         isGrounded = true;
         isClimbing = false;
@@ -89,8 +98,10 @@ public class GirlBoss : MonoBehaviour
     public void BeginStage1()
     {
         bossState = GB_State.Stage1;
-        //isFlipped = true;
-        mySprite.flipX = true;
+        spawner.UpdateStage(GB_Spawner.GB_Stage.Stage1);
+        isFlipped = false;
+        mySprite.flipX = false;
+        
     }
     public Transform GetRandomLadder()
     {
@@ -101,6 +112,7 @@ public class GirlBoss : MonoBehaviour
 
     public void PlayStage3Intro()
     {
+        PausePlayer();
         playableDirector.Play();
         bossState = GB_State.Stage3;
     }
@@ -117,15 +129,18 @@ public class GirlBoss : MonoBehaviour
 
     public void JumpBack()
     {
-        
-        float vPos;
-        velocity = 0.3f;
-        vPos = rb.position.y + velocity;
-        float xPos = rb.position.x - velocity;
+        velocity = 0.35f;
+        float vPos = rb.position.y + velocity;
+        float xPos;
+        if (isFlipped)
+            xPos = rb.position.x - velocity*2;
+        else
+        {
+            xPos = rb.position.x + velocity*2;
+        }
+        rb.MovePosition(new Vector3(xPos, vPos));
         //rb.MovePosition(new Vector3(rb.position.x, vPos));
-        rb.MovePosition(new Vector3(rb.position.x, vPos));
-        
-        xVelocity = 5f;
+        xVelocity = -7f;
     }
     public void JumpForward()
     {
@@ -171,6 +186,11 @@ public class GirlBoss : MonoBehaviour
     {
         spawner.UpdateStage(GB_Spawner.GB_Stage.Stage3);
     }
+
+    public void ClearMines()
+    {
+        spawner.ClearMines();
+    }
     
     public void StopAllSound()
     {
@@ -179,11 +199,15 @@ public class GirlBoss : MonoBehaviour
 
     public void ChangeStage(GB_State newState)
     {
+        
         bossState = newState;
     }
 
     public void DeathCutscene()
     {
+        CameraController camController = FindObjectOfType<CameraController>();
+        camController.FocusOnTarget(gameObject);
+        camController.StopMusic();
         spawner.UpdateStage(GB_Spawner.GB_Stage.Off);
         deathCutscene.Play();
         isDead = true;
@@ -192,25 +216,23 @@ public class GirlBoss : MonoBehaviour
 
     private void Update()
     {
-        
-
-        
-        if (bossState != GB_State.Stage3 && bossState != GB_State.None)
-            mySprite.flipX = true;
-            
-        if (transform.localPosition.y < -1f && !isDead)
+        if (transform.localPosition.y < -0.04f && !isDead && bossState != GB_State.Stage3)
         {
             transform.localPosition = new Vector3(transform.localPosition.x, -.03f, 0);
+            
         }
-        else if (transform.localPosition.y < -2f)
+        else if (transform.localPosition.y < -2f && !isDead && bossState != GB_State.Stage3)
         {
             transform.localPosition = new Vector3(transform.localPosition.x, -1.4f, 0);
+            
         }
         
-        RaycastHit2D hit = Physics2D.Raycast(groundSensor.position, Vector2.down, 0.5f);
+        float distance = bossState == GB_State.Stage3 ? 1.5f : 1f;
+        
+        RaycastHit2D hit = Physics2D.Raycast(groundSensor.position, Vector2.down, distance);
         if (hit.collider != null)
         {
-            if (!isGrounded)
+            if (!isGrounded && (bossState == GB_State.Stage1 || bossState == GB_State.Stage2))
                 transform.localPosition = new Vector2(transform.localPosition.x, -.21f);
             isGrounded = true;
             //Adjust to ground level
@@ -222,9 +244,10 @@ public class GirlBoss : MonoBehaviour
             isGrounded = false;
         }
         
+        
         if (isFacingPlayer)
         {
-            LookAtPlayer();
+            LookAtTarget(player.gameObject.transform.position);
         }
         float vPos;
         velocity += (gravity * gravityScale)/10f * Time.deltaTime;
@@ -237,7 +260,7 @@ public class GirlBoss : MonoBehaviour
             xPos = rb.position.x - (xVelocity* Time.deltaTime);
         }
         //Gravity force
-        if (!isGrounded && !isClimbing)
+        if (!isGrounded && !isClimbing && !isDead)
         {
             //Debug.Log("XVelocity: " + xVelocity);
             //Debug.Log("XPos: " + xPos);
@@ -251,10 +274,10 @@ public class GirlBoss : MonoBehaviour
 
     public void LookAtPlayer()
     {
-        Debug.Log("Should be facing player");
         Vector3 flipped = transform.localScale;
         flipped.z *= -1f;
 
+        /*
         if (transform.position.x > player.transform.position.x && isFlipped)
         {
             transform.localScale = flipped;
@@ -267,17 +290,33 @@ public class GirlBoss : MonoBehaviour
             transform.Rotate(0f, 180f, 0f);
             isFlipped = true;
         }
+        */
+        
+        //Moving Left
+        if (transform.position.x > player.transform.position.x)
+        {
+            //transform.localScale = flipped;
+            //transform.localRotation.eulerAngles = new Vector3(0f, 180f, 0f);
+            transform.SetPositionAndRotation(transform.position, Quaternion.Euler(0,180f,0));
+            isFlipped = true;
+        }
+        else if (transform.position.x < player.transform.position.x) //Moving Right
+        {
+            //transform.localScale = flipped;
+            transform.SetPositionAndRotation(transform.position, Quaternion.Euler(0, 0f, 0));
+            isFlipped = false;
+        }
+        
     }
 
     public void FireCrouchedLaser()
     {
-        Vector2 facingDirection = Vector2.left;
+        Vector2 facingDirection = Vector2.right;
         if (isFlipped)
-            facingDirection = Vector2.right;
+            facingDirection = Vector2.left;
         RaycastHit2D hit = Physics2D.Raycast(groundSensor.position, facingDirection, 100f,1 << LayerMask.NameToLayer("Obstacle"));
         if (hit.collider != null)
         {
-            Debug.Log("Distance to hit object: " + hit.distance);
             crouchLine.SetPosition(1,Vector3.zero);
             crouchLine.SetPosition(0, new Vector3(hit.distance-1f,0,0));
         }
@@ -287,18 +326,23 @@ public class GirlBoss : MonoBehaviour
     {
         Vector3 flipped = transform.localScale;
         flipped.z *= -1f;
-
-        if (transform.position.x > target.x && isFlipped)
+        
+        
+        //Moving Left
+        if (transform.position.x > target.x)
         {
-            transform.localScale = flipped;
-            transform.Rotate(0f, 180f, 0f);
-            isFlipped = false;
-        }
-        else if (transform.position.x < target.x && !isFlipped)
-        {
-            transform.localScale = flipped;
-            transform.Rotate(0f, 180f, 0f);
+            //transform.localScale = flipped;
+            //transform.localRotation.eulerAngles = new Vector3(0f, 180f, 0f);
+            transform.SetPositionAndRotation(transform.position, Quaternion.Euler(0f,180f,0f));
+            //Debug.Log(transform.rotation);
             isFlipped = true;
+        }
+        else if (transform.position.x < target.x) //Moving Right
+        {
+            //transform.localScale = flipped;
+            transform.SetPositionAndRotation(transform.position, Quaternion.Euler(0f, 0f, 0f));
+            
+            isFlipped = false;
         }
     }
 
@@ -319,7 +363,7 @@ public class GirlBoss : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Drone") && !isCollidingDrone)
+        if (collision.gameObject.CompareTag("Drone") && !isCollidingDrone && player.GetComponent<PlayerController>().shouldTakeDamage)
         {
             CameraDrone cd = collision.GetComponent<CameraDrone>();
             if (!cd.isRotating)
@@ -337,7 +381,7 @@ public class GirlBoss : MonoBehaviour
         }
         else if (collision.gameObject.CompareTag("Player") && isDead)
         {
-            Debug.Log("Demo Completed!");
+            ScreenTransition.Instance.LoadDemoEnd();
         }
     }
 

@@ -39,13 +39,7 @@ public class Terminal : MonoBehaviour
             }
             audioSource.Stop();
             audioSource.PlayOneShot(acceptSound);
-            if (deleteKey)
-            {
-                foreach (int key in keyValue)
-                {
-                    other.GetComponent<PlayerShrink>().DeleteKey(key);
-                }
-            }
+            
             StartCoroutine(CorrectActivate());
             triggerable.Activate();
             active = false;
@@ -54,9 +48,20 @@ public class Terminal : MonoBehaviour
             foreach (string message in afterMessages)
             {
                 TalkScript.Instance.QueueLine(message);
+                Debug.Log("Message Being Sent");
             }
-            TalkScript.Instance.DisplayMessages();
-            
+            if (afterMessages.Any())
+                TalkScript.Instance.DisplayMessages();
+            if (deleteKey)
+            {
+                other.GetComponent<PlayerShrink>().RemoveAllFood();
+                /*
+                foreach (int key in keyValue)
+                {
+                    other.GetComponent<PlayerShrink>().DeleteKey(key);
+                }
+                */
+            }
         }
     }
 

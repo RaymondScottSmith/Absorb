@@ -19,6 +19,7 @@ public class TalkScript : MonoBehaviour
     
     private void Awake()
     {
+        
         if (TalkScript.Instance == null)
         {
             Instance = this;
@@ -56,6 +57,7 @@ public class TalkScript : MonoBehaviour
     {
         if (!displaying)
         {
+            stop = false;
             displaying = true;
             textBox.text = "";
             if (queuedMessages.Any())
