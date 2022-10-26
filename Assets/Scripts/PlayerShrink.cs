@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Playables;
@@ -37,6 +38,10 @@ public class PlayerShrink : Shrink
     public bool isBeingDrained;
 
     [SerializeField] private GameObject EatingPanel;
+
+    [SerializeField] private List<Vector3> hideEdges;
+
+    public bool isHidden;
     
     
     //[SerializeField] private bool isTutorial;
@@ -46,6 +51,7 @@ public class PlayerShrink : Shrink
     // Start is called before the first frame update
     void Start()
     {
+        isHidden = false;
         isBeingDrained = false;
         player = GetComponent<PlayerController>();
         leaderboard = FindObjectOfType<Leaderboard>();
@@ -89,6 +95,21 @@ public class PlayerShrink : Shrink
     {
         
     }
+
+    public bool CheckIfHidden(Collider2D hideCollider)
+    {
+        foreach (Vector3 edge in hideEdges)
+        {
+            Vector3 pointToCheck = transform.position + edge;
+
+            Collider2D[] hideColliders = Physics2D.OverlapPointAll(pointToCheck);
+            if (!hideColliders.Contains(hideCollider))
+                return false;
+        }
+
+        return true;
+    }
+    
     private void FixedUpdate()
     {
         //Calculate the new scale

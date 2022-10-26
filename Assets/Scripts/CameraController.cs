@@ -53,6 +53,13 @@ public class CameraController : MonoBehaviour
 
     private AudioSource musicPlayer;
 
+    public bool huntingMode = false;
+
+    [SerializeField]
+    private Vector2 huntingMins;
+    [SerializeField]
+    private Vector2 huntingMaxes;
+
     void Awake()
     {
         
@@ -81,6 +88,8 @@ public class CameraController : MonoBehaviour
 
         if (scrollSlider != null)
             scrollSlider.transform.parent.gameObject.SetActive(isScrollSlider);
+        
+        //StartHuntingMode(huntingMins, huntingMaxes);
     }
 
     public void ResetFocusToPlayer()
@@ -111,6 +120,20 @@ public class CameraController : MonoBehaviour
         focusObject = target;
     }
 
+    public void StartHuntingMode(Vector2 areaMin, Vector2 areaMax)
+    {
+        huntingMins = areaMin;
+        huntingMaxes = areaMax;
+        huntingMode = true;
+        GetComponent<HuntingCamera>().StartHunting(areaMin, areaMax);
+    }
+
+    public void StopHuntingMode()
+    {
+        huntingMode = false;
+        GetComponent<HuntingCamera>().StopHunting();
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -134,6 +157,11 @@ public class CameraController : MonoBehaviour
             Vector3 corpsePos = playerShrink.corpse.transform.position;
             mainCamera.orthographicSize = 8;
             mainCamera.transform.position = new Vector3(corpsePos.x, corpsePos.y, -10);
+            return;
+        }
+
+        if (huntingMode)
+        {
             return;
         }
 
