@@ -133,6 +133,7 @@ GameObject:
   - component: {fileID: 1103273279}
   - component: {fileID: 6058852373697542537}
   - component: {fileID: 7231948798762874368}
+  - component: {fileID: 1754667069}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -248,6 +249,7 @@ MonoBehaviour:
   pausePanel: {fileID: 0}
   isOverUI: 0
   damageFromHazards: 20
+  shouldTakeDamage: 1
 --- !u!114 &1131083863740002907
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -266,6 +268,7 @@ MonoBehaviour:
   eatPerSecond: 0
   currentHealth: 0
   beingEaten: 0
+  spriteRenderer: {fileID: 0}
   foodGradient:
     serializedVersion: 2
     key0: {r: 1, g: 1, b: 1, a: 1}
@@ -329,10 +332,15 @@ MonoBehaviour:
   time: 0
   timeLabel: {fileID: 0}
   corpsePrefab: {fileID: 2844965292454645310, guid: 81ea662a22f120c43989bc00cd70d3a7, type: 3}
+  corpseSprite: {fileID: 21300000, guid: 35a60898747d4194f896b10414831782, type: 3}
+  loseMusic: {fileID: 8300000, guid: 35478ae9eec19b543b4e34c3ed954290, type: 3}
   losePanel: {fileID: 0}
   corpse: {fileID: 2844965292454645310, guid: 81ea662a22f120c43989bc00cd70d3a7, type: 3}
   currentlyEating: []
   isBeingDrained: 0
+  EatingPanel: {fileID: 0}
+  hideEdges: []
+  isHidden: 0
 --- !u!120 &1131083863740002904
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -372,7 +380,7 @@ LineRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 30
+  m_SortingOrder: 80
   m_Positions:
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 1}
@@ -480,7 +488,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 24300002, guid: 5b84db49d40ea449aa4f3e3bd229ab5b, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.409
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -617,3 +625,33 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1131083863740002849}
   m_Enabled: 1
+--- !u!114 &1754667069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1131083863740002849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: e2f31d47377a18c41aae9a85567cf9b1, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1131083863740002852}
+          m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+          m_MethodName: ReleasePlayer
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2

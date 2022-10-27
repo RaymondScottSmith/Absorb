@@ -193,7 +193,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Eat him
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 341a657912d09f548a708f7d03c3a193, type: 2}
   m_sharedMaterial: {fileID: 5808235158788768837, guid: 341a657912d09f548a708f7d03c3a193, type: 2}
