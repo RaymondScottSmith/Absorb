@@ -102,7 +102,6 @@ public class StationaryTurret : MonoBehaviour
             coneLight.color = redColor;
             spotLight.color = redColor;
             Quaternion oldTransform = transform.rotation;
-            int yRot = 180;
             transform.right = (player.transform.position - transform.position);
             
             

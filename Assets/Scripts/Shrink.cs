@@ -22,6 +22,7 @@ public class Shrink : MonoBehaviour
     protected Transform attachedEater;
 
     protected Vector3 attachPoint;
+    [SerializeField]
     protected SpriteRenderer spriteRenderer;
 
     [SerializeField] private Gradient foodGradient;
@@ -44,7 +45,8 @@ public class Shrink : MonoBehaviour
     {
         currentHealth = startingHealth;
         scaleValue = (transform.localScale.x - minimumScale)/startingHealth;
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        if (spriteRenderer == null)
+            spriteRenderer = GetComponent<SpriteRenderer>();
         shrinkCollider = GetComponent<Collider2D>();
         animator = GetComponent<Animator>();
         runner = GetComponent<Runner>();

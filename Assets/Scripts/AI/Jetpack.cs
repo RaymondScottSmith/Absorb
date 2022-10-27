@@ -14,18 +14,17 @@ public class Jetpack : MonoBehaviour
 
     [SerializeField] private LineRenderer fireLine;
 
-    [SerializeField] private float fireRate = 0.5f;
+    [SerializeField] private float targetLockTime = 0.5f;
 
-    [SerializeField] private int burstFireRounds = 3;
+    [SerializeField] private float fireTime = 1f;
     [SerializeField] private float xFireDistance = 5f;
 
     public GameObject bulletPrefab;
     
     private Seeker seeker;
 
-    private float timer = 0f;
-
-    private bool isPursuing = true;
+    //Turns on/off the AI
+    public bool isPursuing = false;
     
     public Vector3 targetPosition;
     
@@ -64,9 +63,22 @@ public class Jetpack : MonoBehaviour
         myAudio = GetComponent<AudioSource>();
     }
 
+    public void StartPursuit()
+    {
+        isPursuing = true;
+    }
+
+    public void StopPursuit()
+    {
+        isPursuing = false;
+        animator.SetBool("IsShooting", false);
+    }
+
     // Update is called once per frame
     void FixedUpdate()
     {
+        if (!isPursuing)
+            return;
         currentY = transform.position.y;
         //GoingUp
         if (Mathf.Abs(currentY - previousY) > 0.05f)
@@ -100,9 +112,9 @@ public class Jetpack : MonoBehaviour
     private IEnumerator ShootGun()
     {
         isFiringGun = true;
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(targetLockTime);
         GetComponentInChildren<JetpackGun>().StartFiring();
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(fireTime);
         GetComponentInChildren<JetpackGun>().StopFiring();
         isFiringGun = false;
     }
@@ -223,6 +235,12 @@ public class Jetpack : MonoBehaviour
         //controller.SimpleMove(velocity);
         //If writing a 2D game should remove CharacterController code above and instead move transform directly
         transform.position += velocity * Time.deltaTime;
+    }
+
+    public void Die()
+    {
+        isPursuing = false;
+        animator.SetBool("IsShooting", false);
     }
 
     public void FireBullet()
