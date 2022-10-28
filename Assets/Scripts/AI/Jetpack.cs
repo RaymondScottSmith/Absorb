@@ -111,6 +111,15 @@ public class Jetpack : MonoBehaviour
 
     private IEnumerator ShootGun()
     {
+        if (transform.position.x < player.transform.position.x)
+        {
+            transform.SetPositionAndRotation(transform.position, Quaternion.Euler(0f,0f,0f));
+        }
+        else
+        {
+            transform.SetPositionAndRotation(transform.position, Quaternion.Euler(0f,180f,0f));
+        }
+        
         isFiringGun = true;
         yield return new WaitForSeconds(targetLockTime);
         GetComponentInChildren<JetpackGun>().StartFiring();
