@@ -210,6 +210,7 @@ public class PlayerShrink : Shrink
 
     public void Die()
     {
+        Debug.Log("Player should die here");
         foreach (Shrink food in currentlyEating)
         {
            Destroy(food.gameObject); 
@@ -233,7 +234,13 @@ public class PlayerShrink : Shrink
         //timeLabel.SetText("Time: " + (int)Mathf.Round(time));
         
         yield return new WaitForSeconds(1.5f);
+
+        AudioSource[] audioSources = FindObjectsOfType<AudioSource>();
         
+        foreach(AudioSource aS in audioSources)
+        {
+            aS.Stop();
+        }
         losePanel.gameObject.SetActive(true);
         Time.timeScale = 0f;
         //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);

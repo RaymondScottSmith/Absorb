@@ -60,6 +60,8 @@ public class CameraController : MonoBehaviour
     [SerializeField]
     private Vector2 huntingMaxes;
 
+    [SerializeField] private bool cameraIsFixed = false;
+
     void Awake()
     {
         
@@ -137,6 +139,8 @@ public class CameraController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (cameraIsFixed)
+            return;
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {

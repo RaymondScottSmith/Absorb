@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
+using UnityEngine.Playables;
+using UnityEngine.UI;
 
 public class ShipControls : MonoBehaviour
 {
@@ -14,17 +17,41 @@ public class ShipControls : MonoBehaviour
     [SerializeField] private Vector2 maxPositions = new Vector2(10,10);
 
     [SerializeField] private Vector2 minPositions = new Vector2(-10, -10);
+
+    [SerializeField] private bool invincible = false;
+
+    [SerializeField] private int maxHealth = 100;
+
+    [SerializeField] private int asteroidDamage = 20;
+
+    [SerializeField] private int healthPickup = 20;
+
+    [SerializeField] private AudioClip healthPickupSound;
+
+    private int currentHealth;
     
     private Rigidbody2D myRB;
+
+    private PlayerController player;
+
+    private AudioSource audioSource;
+
+    [SerializeField] private Slider healthSlider;
     // Start is called before the first frame update
     void Start()
     {
+        healthSlider.maxValue = maxHealth;
+        healthSlider.minValue = 0;
         myRB = GetComponent<Rigidbody2D>();
+        currentHealth = maxHealth;
+        player = FindObjectOfType<PlayerController>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
+        healthSlider.value = currentHealth;
         //Friction in space?
         myRB.velocity -= myRB.velocity * frictionValue;
         
@@ -126,6 +153,41 @@ public class ShipControls : MonoBehaviour
     private float Distance(float num1, float num2)
     {
         return Mathf.Abs(num1 - num2);
+    }
+
+    public void HealthPickup()
+    {
+        currentHealth += healthPickup;
+        if (currentHealth > maxHealth)
+            currentHealth = maxHealth;
+        GetComponent<Animator>().SetTrigger("Healed");
+        audioSource.PlayOneShot(healthPickupSound);
+    }
+    
+    public void AsteroidHit()
+    {
+        currentHealth -= asteroidDamage;
+        if (currentHealth <= 0)
+        {
+            currentHealth = 0;
+            Destroyed();
+        }
+        else
+        {
+            GetComponent<Animator>().SetTrigger("Damaged");
+        }
+    }
+
+    private void Destroyed()
+    {
+        player.HoldPlayerInPlace();
+        GetComponent<PlayableDirector>().Play();
+    }
+
+    public void DestroyMe()
+    {
+        player.GetComponent<PlayerShrink>().Die();
+        Destroy(gameObject);
     }
     
     private enum ForwardDir

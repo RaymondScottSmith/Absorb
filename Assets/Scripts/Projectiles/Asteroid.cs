@@ -34,10 +34,14 @@ public class Asteroid : MonoBehaviour
     {
         if (col.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Hit the player Ship");
-            GameObject explosion = Instantiate(explosionPrefab, transform.position, explosionPrefab.transform.rotation);
-            explosion.GetComponent<AsteroidExplosion>().SetMovement(moveDirection, moveSpeed, transform.localScale);
-            Destroy(gameObject);
+            if (col.gameObject.GetComponent<ShipControls>() != null)
+            {
+                col.gameObject.GetComponent<ShipControls>().AsteroidHit();
+                GameObject explosion = Instantiate(explosionPrefab, transform.position, explosionPrefab.transform.rotation);
+                explosion.GetComponent<AsteroidExplosion>().SetMovement(moveDirection, moveSpeed, transform.localScale);
+                Destroy(gameObject);
+            }
+            
         }
     }
     
