@@ -1,0 +1,588 @@
+fileFormatVersion: 2
+guid: 586c1895403e0a54994c077b164b7034
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: ScifiCorporateAdvertisementAtlas_0
+  - first:
+      213: 21300002
+    second: ScifiCorporateAdvertisementAtlas_1
+  - first:
+      213: 21300004
+    second: ScifiCorporateAdvertisementAtlas_2
+  - first:
+      213: 21300006
+    second: ScifiCorporateAdvertisementAtlas_3
+  - first:
+      213: 21300008
+    second: ScifiCorporateAdvertisementAtlas_4
+  - first:
+      213: 21300010
+    second: ScifiCorporateAdvertisementAtlas_5
+  - first:
+      213: 21300012
+    second: ScifiCorporateAdvertisementAtlas_6
+  - first:
+      213: 21300014
+    second: ScifiCorporateAdvertisementAtlas_7
+  - first:
+      213: 21300016
+    second: ScifiCorporateAdvertisementAtlas_8
+  - first:
+      213: 21300018
+    second: ScifiCorporateAdvertisementAtlas_9
+  - first:
+      213: 21300020
+    second: ScifiCorporateAdvertisementAtlas_10
+  - first:
+      213: 21300022
+    second: ScifiCorporateAdvertisementAtlas_11
+  - first:
+      213: 21300024
+    second: ScifiCorporateAdvertisementAtlas_12
+  - first:
+      213: 21300026
+    second: ScifiCorporateAdvertisementAtlas_13
+  - first:
+      213: 21300028
+    second: ScifiCorporateAdvertisementAtlas_14
+  - first:
+      213: 21300030
+    second: ScifiCorporateAdvertisementAtlas_15
+  - first:
+      213: 21300032
+    second: ScifiCorporateAdvertisementAtlas_16
+  - first:
+      213: 21300034
+    second: ScifiCorporateAdvertisementAtlas_17
+  - first:
+      213: 21300036
+    second: ScifiCorporateAdvertisementAtlas_18
+  - first:
+      213: 21300038
+    second: ScifiCorporateAdvertisementAtlas_19
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 1
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ScifiCorporateAdvertisementAtlas_0
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 1515
+        width: 480
+        height: 481
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ad9f58efdaf7594db99781f7a946b6e
+      internalID: 21300000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScifiCorporateAdvertisementAtlas_1
+      rect:
+        serializedVersion: 2
+        x: 622
+        y: 1473
+        width: 110
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cb6d3421900ed04181c12e92f86d08b
+      internalID: 21300002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScifiCorporateAdvertisementAtlas_2
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 1321
+        width: 537
+        height: 131
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 017b6e81f3057ac409a2172668ce5b20
+      internalID: 21300004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScifiCorporateAdvertisementAtlas_3
+      rect:
+        serializedVersion: 2
+        x: 622
+        y: 1319
+        width: 110
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be8928642b04cac4fb548ce4cb9e0087
+      internalID: 21300006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScifiCorporateAdvertisementAtlas_4
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 528
+        width: 464
+        height: 461
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5a76c36319c95c45b8c48213dbbeacd
+      internalID: 21300008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScifiCorporateAdvertisementAtlas_5
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 525
+        width: 463
+        height: 460
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a50ec31a4c310f46836b5ecf13d0e29
+      internalID: 21300010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScifiCorporateAdvertisementAtlas_6
+      rect:
+        serializedVersion: 2
+        x: 1045
+        y: 766
+        width: 465
+        height: 233
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8034e3911ea69984987bec26b36648de
+      internalID: 21300012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScifiCorporateAdvertisementAtlas_7
+      rect:
+        serializedVersion: 2
+        x: 1524
+        y: 766
+        width: 233
+        height: 233
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 270fa7926cb0c9f48805ab9ecb16aa9a
+      internalID: 21300014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScifiCorporateAdvertisementAtlas_8
+      rect:
+        serializedVersion: 2
+        x: 1771
+        y: 766
+        width: 233
+        height: 233
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f299caa2e201bf44bb4141602a7f829
+      internalID: 21300016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScifiCorporateAdvertisementAtlas_9
+      rect:
+        serializedVersion: 2
+        x: 1045
+        y: 520
+        width: 465
+        height: 233
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2249d2b7df20e6c468d95c38e3fa7529
+      internalID: 21300018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScifiCorporateAdvertisementAtlas_10
+      rect:
+        serializedVersion: 2
+        x: 1523
+        y: 520
+        width: 233
+        height: 233
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb5b1aa35f147bc48b6ee175ebfdefc5
+      internalID: 21300020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScifiCorporateAdvertisementAtlas_11
+      rect:
+        serializedVersion: 2
+        x: 1770
+        y: 520
+        width: 234
+        height: 233
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0d67add91096054fa8c71ce6a5746d7
+      internalID: 21300022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScifiCorporateAdvertisementAtlas_12
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 47
+        width: 464
+        height: 459
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5bccd702a0b4d754f823170f7c7198a9
+      internalID: 21300024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScifiCorporateAdvertisementAtlas_13
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 50
+        width: 464
+        height: 460
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d7766fdac0779c43b24d21efbdc5a83
+      internalID: 21300026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScifiCorporateAdvertisementAtlas_14
+      rect:
+        serializedVersion: 2
+        x: 1045
+        y: 277
+        width: 465
+        height: 233
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ff2880bed5e49b48be188335499516c
+      internalID: 21300028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScifiCorporateAdvertisementAtlas_15
+      rect:
+        serializedVersion: 2
+        x: 1523
+        y: 277
+        width: 233
+        height: 233
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17fef80d903826943b0de8c5910869eb
+      internalID: 21300030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScifiCorporateAdvertisementAtlas_16
+      rect:
+        serializedVersion: 2
+        x: 1770
+        y: 277
+        width: 234
+        height: 233
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d05f38642aed8f42970bb2ec4207fa7
+      internalID: 21300032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScifiCorporateAdvertisementAtlas_17
+      rect:
+        serializedVersion: 2
+        x: 1045
+        y: 32
+        width: 465
+        height: 232
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9fdbea1e83ee054c9a8f3b5d15426a1
+      internalID: 21300034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScifiCorporateAdvertisementAtlas_18
+      rect:
+        serializedVersion: 2
+        x: 1523
+        y: 32
+        width: 233
+        height: 233
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fba5130183248df40acdea96bb865cf6
+      internalID: 21300036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScifiCorporateAdvertisementAtlas_19
+      rect:
+        serializedVersion: 2
+        x: 1770
+        y: 32
+        width: 234
+        height: 233
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 360bfefe36aedc8478e55eadd5a71434
+      internalID: 21300038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 573651b85c25a5543bb23c268db36b74
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

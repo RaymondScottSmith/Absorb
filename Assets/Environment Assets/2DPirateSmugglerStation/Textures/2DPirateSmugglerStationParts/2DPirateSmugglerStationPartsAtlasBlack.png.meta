@@ -1,0 +1,1764 @@
+fileFormatVersion: 2
+guid: e637659f4d25ba34dbf21d2bfb7785d2
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: 2DPirateSmugglerStationPartsAtlasBlack_0
+  - first:
+      213: 21300002
+    second: 2DPirateSmugglerStationPartsAtlasBlack_1
+  - first:
+      213: 21300004
+    second: 2DPirateSmugglerStationPartsAtlasBlack_2
+  - first:
+      213: 21300006
+    second: 2DPirateSmugglerStationPartsAtlasBlack_3
+  - first:
+      213: 21300008
+    second: 2DPirateSmugglerStationPartsAtlasBlack_4
+  - first:
+      213: 21300010
+    second: 2DPirateSmugglerStationPartsAtlasBlack_5
+  - first:
+      213: 21300012
+    second: 2DPirateSmugglerStationPartsAtlasBlack_6
+  - first:
+      213: 21300014
+    second: 2DPirateSmugglerStationPartsAtlasBlack_7
+  - first:
+      213: 21300016
+    second: 2DPirateSmugglerStationPartsAtlasBlack_8
+  - first:
+      213: 21300018
+    second: 2DPirateSmugglerStationPartsAtlasBlack_9
+  - first:
+      213: 21300020
+    second: 2DPirateSmugglerStationPartsAtlasBlack_10
+  - first:
+      213: 21300022
+    second: 2DPirateSmugglerStationPartsAtlasBlack_11
+  - first:
+      213: 21300024
+    second: 2DPirateSmugglerStationPartsAtlasBlack_12
+  - first:
+      213: 21300026
+    second: 2DPirateSmugglerStationPartsAtlasBlack_13
+  - first:
+      213: 21300028
+    second: 2DPirateSmugglerStationPartsAtlasBlack_14
+  - first:
+      213: 21300030
+    second: 2DPirateSmugglerStationPartsAtlasBlack_15
+  - first:
+      213: 21300032
+    second: 2DPirateSmugglerStationPartsAtlasBlack_16
+  - first:
+      213: 21300034
+    second: 2DPirateSmugglerStationPartsAtlasBlack_17
+  - first:
+      213: 21300036
+    second: 2DPirateSmugglerStationPartsAtlasBlack_18
+  - first:
+      213: 21300038
+    second: 2DPirateSmugglerStationPartsAtlasBlack_19
+  - first:
+      213: 21300040
+    second: 2DPirateSmugglerStationPartsAtlasBlack_20
+  - first:
+      213: 21300042
+    second: 2DPirateSmugglerStationPartsAtlasBlack_21
+  - first:
+      213: 21300044
+    second: 2DPirateSmugglerStationPartsAtlasBlack_22
+  - first:
+      213: 21300046
+    second: 2DPirateSmugglerStationPartsAtlasBlack_23
+  - first:
+      213: 21300048
+    second: 2DPirateSmugglerStationPartsAtlasBlack_24
+  - first:
+      213: 21300050
+    second: 2DPirateSmugglerStationPartsAtlasBlack_25
+  - first:
+      213: 21300052
+    second: 2DPirateSmugglerStationPartsAtlasBlack_26
+  - first:
+      213: 21300054
+    second: 2DPirateSmugglerStationPartsAtlasBlack_27
+  - first:
+      213: 21300056
+    second: 2DPirateSmugglerStationPartsAtlasBlack_28
+  - first:
+      213: 21300058
+    second: 2DPirateSmugglerStationPartsAtlasBlack_29
+  - first:
+      213: 21300060
+    second: 2DPirateSmugglerStationPartsAtlasBlack_30
+  - first:
+      213: 21300062
+    second: 2DPirateSmugglerStationPartsAtlasBlack_31
+  - first:
+      213: 21300064
+    second: 2DPirateSmugglerStationPartsAtlasBlack_32
+  - first:
+      213: 21300066
+    second: 2DPirateSmugglerStationPartsAtlasBlack_33
+  - first:
+      213: 21300068
+    second: 2DPirateSmugglerStationPartsAtlasBlack_34
+  - first:
+      213: 21300070
+    second: 2DPirateSmugglerStationPartsAtlasBlack_35
+  - first:
+      213: 21300072
+    second: 2DPirateSmugglerStationPartsAtlasBlack_36
+  - first:
+      213: 21300074
+    second: 2DPirateSmugglerStationPartsAtlasBlack_37
+  - first:
+      213: 21300076
+    second: 2DPirateSmugglerStationPartsAtlasBlack_38
+  - first:
+      213: 21300078
+    second: 2DPirateSmugglerStationPartsAtlasBlack_39
+  - first:
+      213: 21300080
+    second: 2DPirateSmugglerStationPartsAtlasBlack_40
+  - first:
+      213: 21300082
+    second: 2DPirateSmugglerStationPartsAtlasBlack_41
+  - first:
+      213: 21300084
+    second: 2DPirateSmugglerStationPartsAtlasBlack_42
+  - first:
+      213: 21300086
+    second: 2DPirateSmugglerStationPartsAtlasBlack_43
+  - first:
+      213: 21300088
+    second: 2DPirateSmugglerStationPartsAtlasBlack_44
+  - first:
+      213: 21300090
+    second: 2DPirateSmugglerStationPartsAtlasBlack_45
+  - first:
+      213: 21300092
+    second: 2DPirateSmugglerStationPartsAtlasBlack_46
+  - first:
+      213: 21300094
+    second: 2DPirateSmugglerStationPartsAtlasBlack_47
+  - first:
+      213: 21300096
+    second: 2DPirateSmugglerStationPartsAtlasBlack_48
+  - first:
+      213: 21300098
+    second: 2DPirateSmugglerStationPartsAtlasBlack_49
+  - first:
+      213: 21300100
+    second: 2DPirateSmugglerStationPartsAtlasBlack_50
+  - first:
+      213: 21300102
+    second: 2DPirateSmugglerStationPartsAtlasBlack_51
+  - first:
+      213: 21300104
+    second: 2DPirateSmugglerStationPartsAtlasBlack_52
+  - first:
+      213: 21300106
+    second: 2DPirateSmugglerStationPartsAtlasBlack_53
+  - first:
+      213: 21300108
+    second: 2DPirateSmugglerStationPartsAtlasBlack_54
+  - first:
+      213: 21300110
+    second: 2DPirateSmugglerStationPartsAtlasBlack_55
+  - first:
+      213: 21300112
+    second: 2DPirateSmugglerStationPartsAtlasBlack_56
+  - first:
+      213: 21300114
+    second: 2DPirateSmugglerStationPartsAtlasBlack_57
+  - first:
+      213: 21300116
+    second: 2DPirateSmugglerStationPartsAtlasBlack_58
+  - first:
+      213: 21300118
+    second: 2DPirateSmugglerStationPartsAtlasBlack_59
+  - first:
+      213: 21300120
+    second: 2DPirateSmugglerStationPartsAtlasBlack_60
+  - first:
+      213: 21300122
+    second: 2DPirateSmugglerStationPartsAtlasBlack_61
+  - first:
+      213: 21300124
+    second: 2DPirateSmugglerStationPartsAtlasBlack_62
+  - first:
+      213: 21300126
+    second: 2DPirateSmugglerStationPartsAtlasBlack_63
+  - first:
+      213: 21300128
+    second: 2DPirateSmugglerStationPartsAtlasBlack_64
+  - first:
+      213: 21300130
+    second: 2DPirateSmugglerStationPartsAtlasBlack_65
+  - first:
+      213: 21300132
+    second: 2DPirateSmugglerStationPartsAtlasBlack_66
+  - first:
+      213: 21300134
+    second: 2DPirateSmugglerStationPartsAtlasBlack_67
+  - first:
+      213: 21300136
+    second: 2DPirateSmugglerStationPartsAtlasBlack_68
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 1
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: 2DPirateSmugglerStationPartsAtlasBlack_0
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 3270
+        width: 167
+        height: 531
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ee2e2ae7e1ebdc4a8c39357dbe10778
+      internalID: 21300000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DPirateSmugglerStationPartsAtlasBlack_1
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 3268
+        width: 181
+        height: 556
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ca65c9c1334998448c2e19ff355ba08
+      internalID: 21300002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DPirateSmugglerStationPartsAtlasBlack_2
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 3449
+        width: 12
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06f9e1ec04fa94241b3d43ef68a0654a
+      internalID: 21300004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DPirateSmugglerStationPartsAtlasBlack_3
+      rect:
+        serializedVersion: 2
+        x: 750
+        y: 3446
+        width: 30
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b177a92341fe2f438cae17b74d5db34
+      internalID: 21300006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DPirateSmugglerStationPartsAtlasBlack_4
+      rect:
+        serializedVersion: 2
+        x: 801
+        y: 3429
+        width: 68
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ab98818cee148642a37ef995367302b
+      internalID: 21300008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DPirateSmugglerStationPartsAtlasBlack_5
+      rect:
+        serializedVersion: 2
+        x: 893
+        y: 3434
+        width: 26
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1df36bd8ca09bd34eb5c7578e4b4c347
+      internalID: 21300010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DPirateSmugglerStationPartsAtlasBlack_6
+      rect:
+        serializedVersion: 2
+        x: 956
+        y: 3445
+        width: 35
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5fd3bb97fcbd604bbe2711319eed44c
+      internalID: 21300012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DPirateSmugglerStationPartsAtlasBlack_7
+      rect:
+        serializedVersion: 2
+        x: 1036
+        y: 3442
+        width: 296
+        height: 206
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5f239d53fb15034ca3a3128237dffb0
+      internalID: 21300014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DPirateSmugglerStationPartsAtlasBlack_8
+      rect:
+        serializedVersion: 2
+        x: 1380
+        y: 3256
+        width: 294
+        height: 392
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25487c25288e41748bd8b9d48f75f68e
+      internalID: 21300016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DPirateSmugglerStationPartsAtlasBlack_9
+      rect:
+        serializedVersion: 2
+        x: 2119
+        y: 3353
+        width: 956
+        height: 460
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c68d9163b72cc1c4c844a4dd35785645
+      internalID: 21300018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DPirateSmugglerStationPartsAtlasBlack_10
+      rect:
+        serializedVersion: 2
+        x: 3124
+        y: 3108
+        width: 529
+        height: 696
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 609afc329398e944fb64e5f0d09e3ddb
+      internalID: 21300020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DPirateSmugglerStationPartsAtlasBlack_11
+      rect:
+        serializedVersion: 2
+        x: 3692
+        y: 3395
+        width: 104
+        height: 310
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a206c944f25b33c47a1d46c35650c20a
+      internalID: 21300022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DPirateSmugglerStationPartsAtlasBlack_12
+      rect:
+        serializedVersion: 2
+        x: 3828
+        y: 3395
+        width: 108
+        height: 310
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28638069b4263ad41b8d11dc26c32cfa
+      internalID: 21300024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DPirateSmugglerStationPartsAtlasBlack_13
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 3270
+        width: 151
+        height: 170
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 031d0c082aeb81b4dbbb228bfaa1a9cf
+      internalID: 21300026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DPirateSmugglerStationPartsAtlasBlack_14
+      rect:
+        serializedVersion: 2
+        x: 611
+        y: 3402
+        width: 157
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05341257d0ebb9544aadd383fab3d617
+      internalID: 21300028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DPirateSmugglerStationPartsAtlasBlack_15
+      rect:
+        serializedVersion: 2
+        x: 605
+        y: 3388
+        width: 312
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eeb5e486c87d0b64b83430f41d6b7d10
+      internalID: 21300030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DPirateSmugglerStationPartsAtlasBlack_16
+      rect:
+        serializedVersion: 2
+        x: 618
+        y: 3321
+        width: 107
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8063654a8f974ec44bc8d1180f61da6a
+      internalID: 21300032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DPirateSmugglerStationPartsAtlasBlack_17
+      rect:
+        serializedVersion: 2
+        x: 745
+        y: 3323
+        width: 159
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3cf3fc748096cc54c8a0b9dc1fe4a571
+      internalID: 21300034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DPirateSmugglerStationPartsAtlasBlack_18
+      rect:
+        serializedVersion: 2
+        x: 923
+        y: 3316
+        width: 313
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ecd184c2f65f31f408305250cfc1681b
+      internalID: 21300036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DPirateSmugglerStationPartsAtlasBlack_19
+      rect:
+        serializedVersion: 2
+        x: 1154
+        y: 2995
+        width: 151
+        height: 345
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82eec440bb1f49a4e80c16ed284fe063
+      internalID: 21300038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DPirateSmugglerStationPartsAtlasBlack_20
+      rect:
+        serializedVersion: 2
+        x: 2128
+        y: 3234
+        width: 103
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 352ec9e13b0639046abed966204c38c1
+      internalID: 21300040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DPirateSmugglerStationPartsAtlasBlack_21
+      rect:
+        serializedVersion: 2
+        x: 2275
+        y: 3232
+        width: 310
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 255e7d9a082db984eac1b4520a218109
+      internalID: 21300042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DPirateSmugglerStationPartsAtlasBlack_22
+      rect:
+        serializedVersion: 2
+        x: 2631
+        y: 3232
+        width: 311
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32656a7557aafe443b3a22700fe5d032
+      internalID: 21300044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DPirateSmugglerStationPartsAtlasBlack_23
+      rect:
+        serializedVersion: 2
+        x: 3673
+        y: 3107
+        width: 247
+        height: 257
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c76ade36c72989242ab28cba833299a8
+      internalID: 21300046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DPirateSmugglerStationPartsAtlasBlack_24
+      rect:
+        serializedVersion: 2
+        x: 610
+        y: 3272
+        width: 312
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2771d43c8b8116a43937d6f5e7282564
+      internalID: 21300048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DPirateSmugglerStationPartsAtlasBlack_25
+      rect:
+        serializedVersion: 2
+        x: 952
+        y: 3267
+        width: 158
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 916528cdd36eeb64187447692dcf01c3
+      internalID: 21300050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DPirateSmugglerStationPartsAtlasBlack_26
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 3107
+        width: 21
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d899356fff1d47648beb628cf8e2fa7d
+      internalID: 21300052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DPirateSmugglerStationPartsAtlasBlack_27
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 3082
+        width: 44
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10f8a0b6cbed6f54fb248ce191b4eb80
+      internalID: 21300054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DPirateSmugglerStationPartsAtlasBlack_28
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 3113
+        width: 98
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4dafe8b197bb40a42a8db3a1041de3b6
+      internalID: 21300056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DPirateSmugglerStationPartsAtlasBlack_29
+      rect:
+        serializedVersion: 2
+        x: 334
+        y: 3104
+        width: 130
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e15165d645e04f04cb8c147513961ca0
+      internalID: 21300058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DPirateSmugglerStationPartsAtlasBlack_30
+      rect:
+        serializedVersion: 2
+        x: 484
+        y: 3074
+        width: 100
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b15dc2b563f2f64a8189ba8cb35b97c
+      internalID: 21300060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DPirateSmugglerStationPartsAtlasBlack_31
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 3031
+        width: 98
+        height: 215
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 824706a338b13a24788dced1e837320f
+      internalID: 21300062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DPirateSmugglerStationPartsAtlasBlack_32
+      rect:
+        serializedVersion: 2
+        x: 734
+        y: 3031
+        width: 266
+        height: 215
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4483728ea399f742ab3df1000a6dfb2
+      internalID: 21300064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DPirateSmugglerStationPartsAtlasBlack_33
+      rect:
+        serializedVersion: 2
+        x: 1039
+        y: 3017
+        width: 49
+        height: 235
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fcb57b45d685c1c4a9906bffdf58abc9
+      internalID: 21300066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DPirateSmugglerStationPartsAtlasBlack_34
+      rect:
+        serializedVersion: 2
+        x: 1439
+        y: 2972
+        width: 207
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a4d7555bdb208044afccd6754012318
+      internalID: 21300068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DPirateSmugglerStationPartsAtlasBlack_35
+      rect:
+        serializedVersion: 2
+        x: 2115
+        y: 3051
+        width: 216
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ad21a7ec49fd6445bfcb1efd0b4d5cc
+      internalID: 21300070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DPirateSmugglerStationPartsAtlasBlack_36
+      rect:
+        serializedVersion: 2
+        x: 2356
+        y: 3051
+        width: 317
+        height: 157
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de133a7cf9f41544dbaaa686f9cacfd8
+      internalID: 21300072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DPirateSmugglerStationPartsAtlasBlack_37
+      rect:
+        serializedVersion: 2
+        x: 2707
+        y: 2996
+        width: 316
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a86e56a8169aa5644956d154075673a6
+      internalID: 21300074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DPirateSmugglerStationPartsAtlasBlack_38
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 3017
+        width: 150
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b39c157898ca134a879b9f253a64005
+      internalID: 21300076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DPirateSmugglerStationPartsAtlasBlack_39
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 3030
+        width: 66
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58fa20bcaac1e6b46ba37486a2d3feb7
+      internalID: 21300078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DPirateSmugglerStationPartsAtlasBlack_40
+      rect:
+        serializedVersion: 2
+        x: 3065
+        y: 2828
+        width: 956
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fafc7f80d901a5d4bb43cde0e2da5e38
+      internalID: 21300080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DPirateSmugglerStationPartsAtlasBlack_41
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 2921
+        width: 206
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80ffb9faa0c587644bd9735b652d4072
+      internalID: 21300082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DPirateSmugglerStationPartsAtlasBlack_42
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 2836
+        width: 387
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d65f1af96768c6469d716d497f39557
+      internalID: 21300084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DPirateSmugglerStationPartsAtlasBlack_43
+      rect:
+        serializedVersion: 2
+        x: 775
+        y: 2848
+        width: 285
+        height: 147
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d610714764ad9342bd609be250718c8
+      internalID: 21300086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DPirateSmugglerStationPartsAtlasBlack_44
+      rect:
+        serializedVersion: 2
+        x: 1116
+        y: 2829
+        width: 151
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80a9c05a405ddce4e97f493cb136fbe2
+      internalID: 21300088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DPirateSmugglerStationPartsAtlasBlack_45
+      rect:
+        serializedVersion: 2
+        x: 2113
+        y: 2920
+        width: 237
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9756d22a20f3a24993aa6f39e232624
+      internalID: 21300090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DPirateSmugglerStationPartsAtlasBlack_46
+      rect:
+        serializedVersion: 2
+        x: 2372
+        y: 2921
+        width: 288
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0f5a28af3161e9419b10b6c6f3cd05b
+      internalID: 21300092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DPirateSmugglerStationPartsAtlasBlack_47
+      rect:
+        serializedVersion: 2
+        x: 2719
+        y: 2749
+        width: 289
+        height: 237
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48d7e6182cb0dbb4eb8ed5e0eb79cb53
+      internalID: 21300094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DPirateSmugglerStationPartsAtlasBlack_48
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 2755
+        width: 150
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e7fa71fe2b4d964a8bcc25c273585b3
+      internalID: 21300096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DPirateSmugglerStationPartsAtlasBlack_49
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 2580
+        width: 207
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98e8a7aaef0a2da4397f30e5367e2d32
+      internalID: 21300098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DPirateSmugglerStationPartsAtlasBlack_50
+      rect:
+        serializedVersion: 2
+        x: 572
+        y: 2565
+        width: 66
+        height: 233
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bc30fb57de6b2e4c911565b13815fe5
+      internalID: 21300100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DPirateSmugglerStationPartsAtlasBlack_51
+      rect:
+        serializedVersion: 2
+        x: 668
+        y: 2662
+        width: 168
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 032216ba96f6a9f40a1c691d96f644d9
+      internalID: 21300102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DPirateSmugglerStationPartsAtlasBlack_52
+      rect:
+        serializedVersion: 2
+        x: 871
+        y: 2682
+        width: 236
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b13a1964d13440745be634676f60e49e
+      internalID: 21300104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DPirateSmugglerStationPartsAtlasBlack_53
+      rect:
+        serializedVersion: 2
+        x: 1153
+        y: 2522
+        width: 283
+        height: 254
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ccd7a3e3a2130e94a8acd83fd89e1ee7
+      internalID: 21300106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DPirateSmugglerStationPartsAtlasBlack_54
+      rect:
+        serializedVersion: 2
+        x: 2121
+        y: 2763
+        width: 251
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c26cd23baaa70d4a8356182bb6bda7b
+      internalID: 21300108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DPirateSmugglerStationPartsAtlasBlack_55
+      rect:
+        serializedVersion: 2
+        x: 3250
+        y: 2535
+        width: 774
+        height: 275
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66dc298c1badf6a4d909e937bb89493a
+      internalID: 21300110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DPirateSmugglerStationPartsAtlasBlack_56
+      rect:
+        serializedVersion: 2
+        x: 2755
+        y: 2526
+        width: 456
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 732cb926e173d5e48acdd0bfd1ea37c8
+      internalID: 21300112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DPirateSmugglerStationPartsAtlasBlack_57
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 1847
+        width: 1035
+        height: 452
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 487882215833e8d4a80f5d04c3fe3a59
+      internalID: 21300114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DPirateSmugglerStationPartsAtlasBlack_58
+      rect:
+        serializedVersion: 2
+        x: 1112
+        y: 1815
+        width: 840
+        height: 438
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5563a5201e34a6d48bc53e4ee7b73221
+      internalID: 21300116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DPirateSmugglerStationPartsAtlasBlack_59
+      rect:
+        serializedVersion: 2
+        x: 2070
+        y: 1161
+        width: 1208
+        height: 1209
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bb0cc80f25df4b4999b6d0cefd23697
+      internalID: 21300118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DPirateSmugglerStationPartsAtlasBlack_60
+      rect:
+        serializedVersion: 2
+        x: 3287
+        y: 1161
+        width: 604
+        height: 1209
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc37552796b40c9478155f721f6f4d54
+      internalID: 21300120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DPirateSmugglerStationPartsAtlasBlack_61
+      rect:
+        serializedVersion: 2
+        x: 3914
+        y: 1830
+        width: 126
+        height: 401
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73c39c569515ec743a07b68343836674
+      internalID: 21300122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DPirateSmugglerStationPartsAtlasBlack_62
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 1308
+        width: 1038
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dcf833d192b63a849940124413a49fd7
+      internalID: 21300124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DPirateSmugglerStationPartsAtlasBlack_63
+      rect:
+        serializedVersion: 2
+        x: 1116
+        y: 1594
+        width: 571
+        height: 202
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14c8f4aaf018a274c894826fc842bcf6
+      internalID: 21300126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DPirateSmugglerStationPartsAtlasBlack_64
+      rect:
+        serializedVersion: 2
+        x: 1716
+        y: 1671
+        width: 114
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07113ed1366f2b944a5ca1d59c75d2ee
+      internalID: 21300128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DPirateSmugglerStationPartsAtlasBlack_65
+      rect:
+        serializedVersion: 2
+        x: 3911
+        y: 1410
+        width: 157
+        height: 401
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7756291493083654da0b5eef7dd5e39f
+      internalID: 21300130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DPirateSmugglerStationPartsAtlasBlack_66
+      rect:
+        serializedVersion: 2
+        x: 1115
+        y: 1146
+        width: 494
+        height: 430
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7149e8d99b7e3db46a1fbc41eba174f6
+      internalID: 21300132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DPirateSmugglerStationPartsAtlasBlack_67
+      rect:
+        serializedVersion: 2
+        x: 1629
+        y: 1434
+        width: 272
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53ac9b73f49127a4ab5e5c9800889d8e
+      internalID: 21300134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DPirateSmugglerStationPartsAtlasBlack_68
+      rect:
+        serializedVersion: 2
+        x: 2529
+        y: 475
+        width: 1538
+        height: 530
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3204a5219365206479e004e30eb9bcc1
+      internalID: 21300136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: ecd7cbad87bc7b247bf920f92b6d3d18
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

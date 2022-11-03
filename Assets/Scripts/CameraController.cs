@@ -113,6 +113,10 @@ public class CameraController : MonoBehaviour
 
     public void PlayOneShot(AudioClip oneShot)
     {
+        if (musicPlayer == null)
+        {
+            return;
+        }
         musicPlayer.Stop();
         musicPlayer.PlayOneShot(oneShot);
     }

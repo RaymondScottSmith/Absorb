@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using JetBrains.Annotations;
 //using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Animations;
 using UnityEngine.EventSystems;
 using UnityEngine.Playables;
 
@@ -45,6 +46,11 @@ public class PlayerController : MonoBehaviour
     private GameObject grabbedSurface;
 
     public bool shouldTakeDamage = true;
+
+    private Vector3 scaleVsCollider;
+
+    //For use with ParentConstraints
+    private ConstraintSource constraintSource;
     
 
     // Start is called before the first frame update
@@ -144,6 +150,7 @@ public class PlayerController : MonoBehaviour
                 if (readyToLaunch && readyToPlay)
                 {
                 
+                    transform.SetParent(null);
                     grabbing = false;
                     readyToLaunch = false;
                     moving = true;
@@ -229,8 +236,21 @@ public class PlayerController : MonoBehaviour
             rb.velocity = Vector2.zero;
             moving = false;
             readyToLaunch = true;
-            transform.position = col.GetContact(0).point;
+            //transform.position = col.GetContact(0).point;
+            transform.position = col.GetContact(0).point + col.GetContact(0).normal * GetComponent<CircleCollider2D>().radius * transform.localScale.x;
             grabbedSurface = col.gameObject;
+            //transform.SetParent(col.gameObject.transform, true);
+            constraintSource.sourceTransform = col.transform;
+            constraintSource.weight = 1;
+            //GetComponent<ParentConstraint>().AddSource(constraintSource);
+
+            Vector3 colScale = col.transform.lossyScale;
+            transform.SetParent(col.transform);
+            //transform.localScale = transform.localScale / colScale.x;
+
+            //GetComponent<ParentConstraint>().locked = true;
+            //GetComponent<ParentConstraint>().constraintActive = true;
+
         }
 
         

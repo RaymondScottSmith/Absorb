@@ -1,0 +1,1140 @@
+fileFormatVersion: 2
+guid: 6afef2e806ca99c41b4bb0951a97c59b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: 2DSpaceStationComplexPartsAtlasGrey_0
+  - first:
+      213: 21300002
+    second: 2DSpaceStationComplexPartsAtlasGrey_1
+  - first:
+      213: 21300004
+    second: 2DSpaceStationComplexPartsAtlasGrey_2
+  - first:
+      213: 21300006
+    second: 2DSpaceStationComplexPartsAtlasGrey_3
+  - first:
+      213: 21300008
+    second: 2DSpaceStationComplexPartsAtlasGrey_4
+  - first:
+      213: 21300010
+    second: 2DSpaceStationComplexPartsAtlasGrey_5
+  - first:
+      213: 21300012
+    second: 2DSpaceStationComplexPartsAtlasGrey_6
+  - first:
+      213: 21300014
+    second: 2DSpaceStationComplexPartsAtlasGrey_7
+  - first:
+      213: 21300016
+    second: 2DSpaceStationComplexPartsAtlasGrey_8
+  - first:
+      213: 21300018
+    second: 2DSpaceStationComplexPartsAtlasGrey_9
+  - first:
+      213: 21300020
+    second: 2DSpaceStationComplexPartsAtlasGrey_10
+  - first:
+      213: 21300022
+    second: 2DSpaceStationComplexPartsAtlasGrey_11
+  - first:
+      213: 21300024
+    second: 2DSpaceStationComplexPartsAtlasGrey_12
+  - first:
+      213: 21300026
+    second: 2DSpaceStationComplexPartsAtlasGrey_13
+  - first:
+      213: 21300028
+    second: 2DSpaceStationComplexPartsAtlasGrey_14
+  - first:
+      213: 21300030
+    second: 2DSpaceStationComplexPartsAtlasGrey_15
+  - first:
+      213: 21300032
+    second: 2DSpaceStationComplexPartsAtlasGrey_16
+  - first:
+      213: 21300034
+    second: 2DSpaceStationComplexPartsAtlasGrey_17
+  - first:
+      213: 21300036
+    second: 2DSpaceStationComplexPartsAtlasGrey_18
+  - first:
+      213: 21300038
+    second: 2DSpaceStationComplexPartsAtlasGrey_19
+  - first:
+      213: 21300040
+    second: 2DSpaceStationComplexPartsAtlasGrey_20
+  - first:
+      213: 21300042
+    second: 2DSpaceStationComplexPartsAtlasGrey_21
+  - first:
+      213: 21300044
+    second: 2DSpaceStationComplexPartsAtlasGrey_22
+  - first:
+      213: 21300046
+    second: 2DSpaceStationComplexPartsAtlasGrey_23
+  - first:
+      213: 21300048
+    second: 2DSpaceStationComplexPartsAtlasGrey_24
+  - first:
+      213: 21300050
+    second: 2DSpaceStationComplexPartsAtlasGrey_25
+  - first:
+      213: 21300052
+    second: 2DSpaceStationComplexPartsAtlasGrey_26
+  - first:
+      213: 21300054
+    second: 2DSpaceStationComplexPartsAtlasGrey_27
+  - first:
+      213: 21300056
+    second: 2DSpaceStationComplexPartsAtlasGrey_28
+  - first:
+      213: 21300058
+    second: 2DSpaceStationComplexPartsAtlasGrey_29
+  - first:
+      213: 21300060
+    second: 2DSpaceStationComplexPartsAtlasGrey_30
+  - first:
+      213: 21300062
+    second: 2DSpaceStationComplexPartsAtlasGrey_31
+  - first:
+      213: 21300064
+    second: 2DSpaceStationComplexPartsAtlasGrey_32
+  - first:
+      213: 21300066
+    second: 2DSpaceStationComplexPartsAtlasGrey_33
+  - first:
+      213: 21300068
+    second: 2DSpaceStationComplexPartsAtlasGrey_34
+  - first:
+      213: 21300070
+    second: 2DSpaceStationComplexPartsAtlasGrey_35
+  - first:
+      213: 21300072
+    second: 2DSpaceStationComplexPartsAtlasGrey_36
+  - first:
+      213: 21300074
+    second: 2DSpaceStationComplexPartsAtlasGrey_37
+  - first:
+      213: 21300076
+    second: 2DSpaceStationComplexPartsAtlasGrey_38
+  - first:
+      213: 21300078
+    second: 2DSpaceStationComplexPartsAtlasGrey_39
+  - first:
+      213: 21300080
+    second: 2DSpaceStationComplexPartsAtlasGrey_40
+  - first:
+      213: 21300082
+    second: 2DSpaceStationComplexPartsAtlasGrey_41
+  - first:
+      213: 21300084
+    second: 2DSpaceStationComplexPartsAtlasGrey_42
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 1
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: 2DSpaceStationComplexPartsAtlasGrey_0
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 1988
+        width: 2069
+        height: 2104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a44e639ace627f946a369c14d80fb30b
+      internalID: 21300000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DSpaceStationComplexPartsAtlasGrey_1
+      rect:
+        serializedVersion: 2
+        x: 2701
+        y: 3743
+        width: 112
+        height: 260
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 666865e9b1e0ac64fb04a23614e11ba1
+      internalID: 21300002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DSpaceStationComplexPartsAtlasGrey_2
+      rect:
+        serializedVersion: 2
+        x: 2978
+        y: 3701
+        width: 460
+        height: 302
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45f98b9d2b383224a9ecba62e8bb7b6e
+      internalID: 21300004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DSpaceStationComplexPartsAtlasGrey_3
+      rect:
+        serializedVersion: 2
+        x: 3512
+        y: 3476
+        width: 511
+        height: 515
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59c1a7673d93e3f41b6f441a2f3bbe5e
+      internalID: 21300006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DSpaceStationComplexPartsAtlasGrey_4
+      rect:
+        serializedVersion: 2
+        x: 2701
+        y: 3578
+        width: 112
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f9c58b3afaf9f5468860901fc9f6a63
+      internalID: 21300008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DSpaceStationComplexPartsAtlasGrey_5
+      rect:
+        serializedVersion: 2
+        x: 2967
+        y: 3156
+        width: 466
+        height: 465
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6dcf95c8930d2d34390ec26f12145e01
+      internalID: 21300010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DSpaceStationComplexPartsAtlasGrey_6
+      rect:
+        serializedVersion: 2
+        x: 2596
+        y: 3217
+        width: 330
+        height: 329
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebd1ee59b135d464593c909eaa6143db
+      internalID: 21300012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DSpaceStationComplexPartsAtlasGrey_7
+      rect:
+        serializedVersion: 2
+        x: 3507
+        y: 3181
+        width: 264
+        height: 191
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e0ef87244235b74a90720e1addcdd57
+      internalID: 21300014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DSpaceStationComplexPartsAtlasGrey_8
+      rect:
+        serializedVersion: 2
+        x: 2219
+        y: 2819
+        width: 416
+        height: 171
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a36e44e5081ac5e48811027fa9f1c51a
+      internalID: 21300016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DSpaceStationComplexPartsAtlasGrey_9
+      rect:
+        serializedVersion: 2
+        x: 2780
+        y: 2612
+        width: 267
+        height: 412
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2b5a29c989632040974ac4ba1284464
+      internalID: 21300018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DSpaceStationComplexPartsAtlasGrey_10
+      rect:
+        serializedVersion: 2
+        x: 3106
+        y: 2750
+        width: 313
+        height: 137
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc9a12b7d0f587e4a97337e3c543fde5
+      internalID: 21300020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DSpaceStationComplexPartsAtlasGrey_11
+      rect:
+        serializedVersion: 2
+        x: 3462
+        y: 2592
+        width: 528
+        height: 453
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a823d4ee571576344b418bb4299d0b0c
+      internalID: 21300022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DSpaceStationComplexPartsAtlasGrey_12
+      rect:
+        serializedVersion: 2
+        x: 2215
+        y: 2104
+        width: 215
+        height: 629
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: deb303b1139845446a204375e6be8f40
+      internalID: 21300024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DSpaceStationComplexPartsAtlasGrey_13
+      rect:
+        serializedVersion: 2
+        x: 2481
+        y: 2104
+        width: 156
+        height: 629
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5d88e743dd8ec74ab3ef5caad8519c2
+      internalID: 21300026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DSpaceStationComplexPartsAtlasGrey_14
+      rect:
+        serializedVersion: 2
+        x: 2793
+        y: 2048
+        width: 516
+        height: 516
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d8350556cd488449aa54a07ec5be62e
+      internalID: 21300028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DSpaceStationComplexPartsAtlasGrey_15
+      rect:
+        serializedVersion: 2
+        x: 3367
+        y: 2177
+        width: 166
+        height: 269
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3b627032af77054ea48d91387dffd0c
+      internalID: 21300030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DSpaceStationComplexPartsAtlasGrey_16
+      rect:
+        serializedVersion: 2
+        x: 3599
+        y: 2156
+        width: 310
+        height: 301
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71066f6ea9e21e24f84c01bf5a76aa4b
+      internalID: 21300032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DSpaceStationComplexPartsAtlasGrey_17
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 1284
+        width: 2085
+        height: 658
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73b4c301f6c3eb44f91b697f30d1352d
+      internalID: 21300034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DSpaceStationComplexPartsAtlasGrey_18
+      rect:
+        serializedVersion: 2
+        x: 2482
+        y: 1344
+        width: 340
+        height: 343
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 840350855ef26174ebddf120f2b0f300
+      internalID: 21300036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DSpaceStationComplexPartsAtlasGrey_19
+      rect:
+        serializedVersion: 2
+        x: 2897
+        y: 1210
+        width: 398
+        height: 611
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb5c4f213401b9a4a9beb1be193f19b6
+      internalID: 21300038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DSpaceStationComplexPartsAtlasGrey_20
+      rect:
+        serializedVersion: 2
+        x: 3350
+        y: 1271
+        width: 673
+        height: 489
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d575eb97c22b39e4f8a0b6943644edd8
+      internalID: 21300040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DSpaceStationComplexPartsAtlasGrey_21
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 57
+        width: 1009
+        height: 1009
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91e7a2214bb05274c99cf80b1402ab3b
+      internalID: 21300042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DSpaceStationComplexPartsAtlasGrey_22
+      rect:
+        serializedVersion: 2
+        x: 1983
+        y: 791
+        width: 375
+        height: 327
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7789c1d0eb2305c489fc7cfafafecb7b
+      internalID: 21300044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DSpaceStationComplexPartsAtlasGrey_23
+      rect:
+        serializedVersion: 2
+        x: 2518
+        y: 1000
+        width: 657
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2c308faad5bbf5409d4d042f2f32b4f
+      internalID: 21300046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DSpaceStationComplexPartsAtlasGrey_24
+      rect:
+        serializedVersion: 2
+        x: 3248
+        y: 977
+        width: 212
+        height: 194
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1b0722f623445c4983cb0778370dd78
+      internalID: 21300048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DSpaceStationComplexPartsAtlasGrey_25
+      rect:
+        serializedVersion: 2
+        x: 3545
+        y: 933
+        width: 393
+        height: 282
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1993ff84b56e4b849a5217ff5b7e2392
+      internalID: 21300050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DSpaceStationComplexPartsAtlasGrey_26
+      rect:
+        serializedVersion: 2
+        x: 1123
+        y: 853
+        width: 455
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16904d3eab8491c4c97453683fd9dae2
+      internalID: 21300052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DSpaceStationComplexPartsAtlasGrey_27
+      rect:
+        serializedVersion: 2
+        x: 1697
+        y: 927
+        width: 212
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a891585a0e62fe4b9e3922c782d9a16
+      internalID: 21300054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DSpaceStationComplexPartsAtlasGrey_28
+      rect:
+        serializedVersion: 2
+        x: 1264
+        y: 806
+        width: 311
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d00cfbb3d15dafd408bf94dd74a84534
+      internalID: 21300056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DSpaceStationComplexPartsAtlasGrey_29
+      rect:
+        serializedVersion: 2
+        x: 1758
+        y: 813
+        width: 90
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46001d863cde9f548bb4f835eb3c897d
+      internalID: 21300058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DSpaceStationComplexPartsAtlasGrey_30
+      rect:
+        serializedVersion: 2
+        x: 1114
+        y: 556
+        width: 365
+        height: 227
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d63894cc4f2f61a4c861bca2d3b5fb37
+      internalID: 21300060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DSpaceStationComplexPartsAtlasGrey_31
+      rect:
+        serializedVersion: 2
+        x: 1672
+        y: 179
+        width: 269
+        height: 580
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b6d82171e10b904e9484d6c9b7188a5
+      internalID: 21300062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DSpaceStationComplexPartsAtlasGrey_32
+      rect:
+        serializedVersion: 2
+        x: 1974
+        y: 208
+        width: 380
+        height: 521
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7c8806cd7e82ec47bc9939bb0b46c95
+      internalID: 21300064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DSpaceStationComplexPartsAtlasGrey_33
+      rect:
+        serializedVersion: 2
+        x: 2482
+        y: 406
+        width: 324
+        height: 235
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e997c1441290634a9d2e52000049d8d
+      internalID: 21300066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DSpaceStationComplexPartsAtlasGrey_34
+      rect:
+        serializedVersion: 2
+        x: 2847
+        y: 341
+        width: 380
+        height: 365
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47d1383bcf9fa0f47acfff5c4688b7e9
+      internalID: 21300068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DSpaceStationComplexPartsAtlasGrey_35
+      rect:
+        serializedVersion: 2
+        x: 3249
+        y: 357
+        width: 304
+        height: 333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fa9ec78f173f444c9ec6efe2591f3c6
+      internalID: 21300070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DSpaceStationComplexPartsAtlasGrey_36
+      rect:
+        serializedVersion: 2
+        x: 3575
+        y: 430
+        width: 424
+        height: 187
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28eb87dd63e69894e8ea6b5cdbeabae4
+      internalID: 21300072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DSpaceStationComplexPartsAtlasGrey_37
+      rect:
+        serializedVersion: 2
+        x: 1115
+        y: 325
+        width: 293
+        height: 205
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8ad43378fbd5184b897be5703a21ec0
+      internalID: 21300074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DSpaceStationComplexPartsAtlasGrey_38
+      rect:
+        serializedVersion: 2
+        x: 1435
+        y: 345
+        width: 132
+        height: 131
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5251fe19fca4a142ab1da3a7e22e151
+      internalID: 21300076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DSpaceStationComplexPartsAtlasGrey_39
+      rect:
+        serializedVersion: 2
+        x: 1122
+        y: 166
+        width: 408
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79323c67009a5b44888683d11ebf6b6d
+      internalID: 21300078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DSpaceStationComplexPartsAtlasGrey_40
+      rect:
+        serializedVersion: 2
+        x: 3574
+        y: 263
+        width: 472
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 115f3915d465fb748bd755a7c3a3a43c
+      internalID: 21300080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DSpaceStationComplexPartsAtlasGrey_41
+      rect:
+        serializedVersion: 2
+        x: 2499
+        y: 102
+        width: 137
+        height: 136
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41f84bcf1871a9b4390dc26da5da4b51
+      internalID: 21300082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DSpaceStationComplexPartsAtlasGrey_42
+      rect:
+        serializedVersion: 2
+        x: 2700
+        y: 102
+        width: 1048
+        height: 136
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 611d3e05933cf854b92fe1ae584b78d5
+      internalID: 21300084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 4faee57de9304b24aa8deceb194f6e21
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -118,10 +118,15 @@ public class PlayerShrink : Shrink
             float newScale = scaleValue * currentHealth + minimumScale;
             
             //Adjust scale as health changes
-            transform.localScale = new Vector3(newScale, newScale, 0);
+            if (transform.parent == null)
+                transform.localScale = new Vector3(newScale, newScale, 0);
+            else
+            {
+                newScale = (scaleValue * currentHealth + minimumScale) / transform.parent.lossyScale.x;
+                transform.localScale = new Vector3(newScale, newScale, 0);
+            }
             //Adjust color as health changes
-            float healthColor = (float)currentHealth / startingHealth;
-            spriteRenderer.color = playerColor.Evaluate(healthColor);
+            float healthColor = (float)currentHealth / startingHealth; 
         }
             
         

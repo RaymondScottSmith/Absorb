@@ -1,0 +1,1116 @@
+fileFormatVersion: 2
+guid: 16ba9d4305111824697086dbea3a04b4
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: 2DCorporateMiningStationAtlasYellow_0
+  - first:
+      213: 21300002
+    second: 2DCorporateMiningStationAtlasYellow_1
+  - first:
+      213: 21300004
+    second: 2DCorporateMiningStationAtlasYellow_2
+  - first:
+      213: 21300006
+    second: 2DCorporateMiningStationAtlasYellow_3
+  - first:
+      213: 21300008
+    second: 2DCorporateMiningStationAtlasYellow_4
+  - first:
+      213: 21300010
+    second: 2DCorporateMiningStationAtlasYellow_5
+  - first:
+      213: 21300012
+    second: 2DCorporateMiningStationAtlasYellow_6
+  - first:
+      213: 21300014
+    second: 2DCorporateMiningStationAtlasYellow_7
+  - first:
+      213: 21300016
+    second: 2DCorporateMiningStationAtlasYellow_8
+  - first:
+      213: 21300018
+    second: 2DCorporateMiningStationAtlasYellow_9
+  - first:
+      213: 21300020
+    second: 2DCorporateMiningStationAtlasYellow_10
+  - first:
+      213: 21300022
+    second: 2DCorporateMiningStationAtlasYellow_11
+  - first:
+      213: 21300024
+    second: 2DCorporateMiningStationAtlasYellow_12
+  - first:
+      213: 21300026
+    second: 2DCorporateMiningStationAtlasYellow_13
+  - first:
+      213: 21300028
+    second: 2DCorporateMiningStationAtlasYellow_14
+  - first:
+      213: 21300030
+    second: 2DCorporateMiningStationAtlasYellow_15
+  - first:
+      213: 21300032
+    second: 2DCorporateMiningStationAtlasYellow_16
+  - first:
+      213: 21300034
+    second: 2DCorporateMiningStationAtlasYellow_17
+  - first:
+      213: 21300036
+    second: 2DCorporateMiningStationAtlasYellow_18
+  - first:
+      213: 21300038
+    second: 2DCorporateMiningStationAtlasYellow_19
+  - first:
+      213: 21300040
+    second: 2DCorporateMiningStationAtlasYellow_20
+  - first:
+      213: 21300042
+    second: 2DCorporateMiningStationAtlasYellow_21
+  - first:
+      213: 21300044
+    second: 2DCorporateMiningStationAtlasYellow_22
+  - first:
+      213: 21300046
+    second: 2DCorporateMiningStationAtlasYellow_23
+  - first:
+      213: 21300048
+    second: 2DCorporateMiningStationAtlasYellow_24
+  - first:
+      213: 21300050
+    second: 2DCorporateMiningStationAtlasYellow_25
+  - first:
+      213: 21300052
+    second: 2DCorporateMiningStationAtlasYellow_26
+  - first:
+      213: 21300054
+    second: 2DCorporateMiningStationAtlasYellow_27
+  - first:
+      213: 21300056
+    second: 2DCorporateMiningStationAtlasYellow_28
+  - first:
+      213: 21300058
+    second: 2DCorporateMiningStationAtlasYellow_29
+  - first:
+      213: 21300060
+    second: 2DCorporateMiningStationAtlasYellow_30
+  - first:
+      213: 21300062
+    second: 2DCorporateMiningStationAtlasYellow_31
+  - first:
+      213: 21300064
+    second: 2DCorporateMiningStationAtlasYellow_32
+  - first:
+      213: 21300066
+    second: 2DCorporateMiningStationAtlasYellow_33
+  - first:
+      213: 21300068
+    second: 2DCorporateMiningStationAtlasYellow_34
+  - first:
+      213: 21300070
+    second: 2DCorporateMiningStationAtlasYellow_35
+  - first:
+      213: 21300072
+    second: 2DCorporateMiningStationAtlasYellow_36
+  - first:
+      213: 21300074
+    second: 2DCorporateMiningStationAtlasYellow_37
+  - first:
+      213: 21300076
+    second: 2DCorporateMiningStationAtlasYellow_38
+  - first:
+      213: 21300078
+    second: 2DCorporateMiningStationAtlasYellow_39
+  - first:
+      213: 21300080
+    second: 2DCorporateMiningStationAtlasYellow_40
+  - first:
+      213: 21300082
+    second: 2DCorporateMiningStationAtlasYellow_41
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 1
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: 2DCorporateMiningStationAtlasYellow_0
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 3120
+        width: 386
+        height: 325
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87426a4330f11b447b131aecbc7fce02
+      internalID: 21300000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DCorporateMiningStationAtlasYellow_1
+      rect:
+        serializedVersion: 2
+        x: 503
+        y: 3138
+        width: 544
+        height: 326
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 275c46b5251c6824caf7f0cf7001a33f
+      internalID: 21300002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DCorporateMiningStationAtlasYellow_2
+      rect:
+        serializedVersion: 2
+        x: 1140
+        y: 3332
+        width: 439
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c58aa24a1f0dd741bd12076e57b0fb8
+      internalID: 21300004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DCorporateMiningStationAtlasYellow_3
+      rect:
+        serializedVersion: 2
+        x: 1632
+        y: 3363
+        width: 384
+        height: 202
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb2f8e256b18c584f8b431d185b7a2b4
+      internalID: 21300006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DCorporateMiningStationAtlasYellow_4
+      rect:
+        serializedVersion: 2
+        x: 2325
+        y: 3112
+        width: 419
+        height: 469
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7814dc3956c7ce0408164b34207f8287
+      internalID: 21300008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DCorporateMiningStationAtlasYellow_5
+      rect:
+        serializedVersion: 2
+        x: 2760
+        y: 3112
+        width: 340
+        height: 469
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a713179c94b87594b87dedc91d5839e8
+      internalID: 21300010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DCorporateMiningStationAtlasYellow_6
+      rect:
+        serializedVersion: 2
+        x: 3116
+        y: 3199
+        width: 148
+        height: 297
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0ed011b1fee774438b1a72872cf3da1
+      internalID: 21300012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DCorporateMiningStationAtlasYellow_7
+      rect:
+        serializedVersion: 2
+        x: 3284
+        y: 3263
+        width: 119
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55c5cd334b240a243aa6e1e32c03e38d
+      internalID: 21300014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DCorporateMiningStationAtlasYellow_8
+      rect:
+        serializedVersion: 2
+        x: 1305
+        y: 3119
+        width: 219
+        height: 173
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74ec65d7d26a2f54aa1676bfc21d9c17
+      internalID: 21300016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DCorporateMiningStationAtlasYellow_9
+      rect:
+        serializedVersion: 2
+        x: 1805
+        y: 3263
+        width: 308
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80c4aeb6361e68649af475a5930a5a99
+      internalID: 21300018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DCorporateMiningStationAtlasYellow_10
+      rect:
+        serializedVersion: 2
+        x: 3555
+        y: 3196
+        width: 87
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5378ea330ae7f9499f533a71864afe1
+      internalID: 21300020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DCorporateMiningStationAtlasYellow_11
+      rect:
+        serializedVersion: 2
+        x: 1583
+        y: 2921
+        width: 535
+        height: 311
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9242f9997504b46408299a03b5e80e23
+      internalID: 21300022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DCorporateMiningStationAtlasYellow_12
+      rect:
+        serializedVersion: 2
+        x: 3280
+        y: 3107
+        width: 260
+        height: 137
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e881392b1211bd45b591f4083b42545
+      internalID: 21300024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DCorporateMiningStationAtlasYellow_13
+      rect:
+        serializedVersion: 2
+        x: 3648
+        y: 3194
+        width: 67
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3032d979db33b44428d88129bf62b966
+      internalID: 21300026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DCorporateMiningStationAtlasYellow_14
+      rect:
+        serializedVersion: 2
+        x: 3554
+        y: 3112
+        width: 258
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 901e4c14bd332864eb9790e5b0eac29d
+      internalID: 21300028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DCorporateMiningStationAtlasYellow_15
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 2295
+        width: 407
+        height: 776
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7c3bd3c05e037c47b604df4601cadaa
+      internalID: 21300030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DCorporateMiningStationAtlasYellow_16
+      rect:
+        serializedVersion: 2
+        x: 561
+        y: 2920
+        width: 167
+        height: 175
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3bcd1dd0c76e03d42914a257fe9f4d39
+      internalID: 21300032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DCorporateMiningStationAtlasYellow_17
+      rect:
+        serializedVersion: 2
+        x: 769
+        y: 2923
+        width: 196
+        height: 158
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88797ff9dbfb97349a79fa41db5540f8
+      internalID: 21300034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DCorporateMiningStationAtlasYellow_18
+      rect:
+        serializedVersion: 2
+        x: 1006
+        y: 2928
+        width: 538
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb53c9421cd35b541a0e92cbc3fa1ad9
+      internalID: 21300036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DCorporateMiningStationAtlasYellow_19
+      rect:
+        serializedVersion: 2
+        x: 2304
+        y: 2630
+        width: 1439
+        height: 447
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc8936c9bd71fcb428fb8b547484cfbc
+      internalID: 21300038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DCorporateMiningStationAtlasYellow_20
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 2256
+        width: 603
+        height: 640
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af3e8592dd9f2604ba95ae3bd55b0a17
+      internalID: 21300040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DCorporateMiningStationAtlasYellow_21
+      rect:
+        serializedVersion: 2
+        x: 1153
+        y: 2256
+        width: 935
+        height: 640
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a746f28df433f824d9d4cd8061a7fa8b
+      internalID: 21300042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DCorporateMiningStationAtlasYellow_22
+      rect:
+        serializedVersion: 2
+        x: 2303
+        y: 2242
+        width: 457
+        height: 355
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 693e94b76222ee9478198fa5a0017f8e
+      internalID: 21300044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DCorporateMiningStationAtlasYellow_23
+      rect:
+        serializedVersion: 2
+        x: 2792
+        y: 2248
+        width: 628
+        height: 357
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 651a0816d3162034691750b6d63805ce
+      internalID: 21300046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DCorporateMiningStationAtlasYellow_24
+      rect:
+        serializedVersion: 2
+        x: 3453
+        y: 2242
+        width: 210
+        height: 355
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d6085e79a57a7d45982cdd846b43d04
+      internalID: 21300048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DCorporateMiningStationAtlasYellow_25
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 1512
+        width: 476
+        height: 480
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b06c57f1846921941888c06cc6d52c00
+      internalID: 21300050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DCorporateMiningStationAtlasYellow_26
+      rect:
+        serializedVersion: 2
+        x: 888
+        y: 1868
+        width: 627
+        height: 182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 535fbea631c7761498932ce35b6659ce
+      internalID: 21300052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DCorporateMiningStationAtlasYellow_27
+      rect:
+        serializedVersion: 2
+        x: 2210
+        y: 691
+        width: 1362
+        height: 1359
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2ee7c662b88bee48931bf6de2b5eb9a
+      internalID: 21300054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DCorporateMiningStationAtlasYellow_28
+      rect:
+        serializedVersion: 2
+        x: 3584
+        y: 1836
+        width: 433
+        height: 199
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 832b5381e8e5a4a40b1f6f9c214ffc19
+      internalID: 21300056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DCorporateMiningStationAtlasYellow_29
+      rect:
+        serializedVersion: 2
+        x: 819
+        y: 753
+        width: 705
+        height: 1091
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 769e929fd51718d4e8a095336e3aca3b
+      internalID: 21300058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DCorporateMiningStationAtlasYellow_30
+      rect:
+        serializedVersion: 2
+        x: 1556
+        y: 1647
+        width: 257
+        height: 195
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01d53d39dbe55b444b80f9784ee936a2
+      internalID: 21300060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DCorporateMiningStationAtlasYellow_31
+      rect:
+        serializedVersion: 2
+        x: 3584
+        y: 1217
+        width: 433
+        height: 593
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fe9529af7adb824b9b3fce0c625da10
+      internalID: 21300062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DCorporateMiningStationAtlasYellow_32
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 1015
+        width: 635
+        height: 453
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b21cf93bcd448d948874964f4987527e
+      internalID: 21300064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DCorporateMiningStationAtlasYellow_33
+      rect:
+        serializedVersion: 2
+        x: 1548
+        y: 1161
+        width: 513
+        height: 448
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 436855e95e898964d8a84823f4e1486d
+      internalID: 21300066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DCorporateMiningStationAtlasYellow_34
+      rect:
+        serializedVersion: 2
+        x: 3584
+        y: 876
+        width: 394
+        height: 318
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11bf6eb12675ee74ca12b6bb647a6375
+      internalID: 21300068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DCorporateMiningStationAtlasYellow_35
+      rect:
+        serializedVersion: 2
+        x: 4002
+        y: 959
+        width: 59
+        height: 245
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc37007e80807b64298aba22e633626c
+      internalID: 21300070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DCorporateMiningStationAtlasYellow_36
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 759
+        width: 628
+        height: 229
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84d4a33b954dcbc4e807bf8a149565ca
+      internalID: 21300072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DCorporateMiningStationAtlasYellow_37
+      rect:
+        serializedVersion: 2
+        x: 1540
+        y: 744
+        width: 361
+        height: 394
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 616a1f08fc9d8f0418e26697150697ec
+      internalID: 21300074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DCorporateMiningStationAtlasYellow_38
+      rect:
+        serializedVersion: 2
+        x: 3584
+        y: 723
+        width: 142
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 754f33581a3b41643a3e9980b80466f0
+      internalID: 21300076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DCorporateMiningStationAtlasYellow_39
+      rect:
+        serializedVersion: 2
+        x: 3745
+        y: 733
+        width: 109
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59af282fca4b4104c8405eb492da744c
+      internalID: 21300078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DCorporateMiningStationAtlasYellow_40
+      rect:
+        serializedVersion: 2
+        x: 3871
+        y: 775
+        width: 61
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27d6e7afefaa3c3439a7f383e4e54757
+      internalID: 21300080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DCorporateMiningStationAtlasYellow_41
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 704
+        width: 61
+        height: 243
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd2dd92d311e8864c86b9e228e02aaff
+      internalID: 21300082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 3e6975fa202f1094ba19334e98f6a068
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

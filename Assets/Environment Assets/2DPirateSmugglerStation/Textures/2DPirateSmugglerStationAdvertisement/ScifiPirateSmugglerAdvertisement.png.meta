@@ -1,0 +1,396 @@
+fileFormatVersion: 2
+guid: 4f75985bdbcb70d4e8176a3fb4fe986f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: ScifiPirateSmugglerAdvertisement_0
+  - first:
+      213: 21300002
+    second: ScifiPirateSmugglerAdvertisement_1
+  - first:
+      213: 21300004
+    second: ScifiPirateSmugglerAdvertisement_2
+  - first:
+      213: 21300006
+    second: ScifiPirateSmugglerAdvertisement_3
+  - first:
+      213: 21300008
+    second: ScifiPirateSmugglerAdvertisement_4
+  - first:
+      213: 21300010
+    second: ScifiPirateSmugglerAdvertisement_5
+  - first:
+      213: 21300012
+    second: ScifiPirateSmugglerAdvertisement_6
+  - first:
+      213: 21300014
+    second: ScifiPirateSmugglerAdvertisement_7
+  - first:
+      213: 21300016
+    second: ScifiPirateSmugglerAdvertisement_8
+  - first:
+      213: 21300018
+    second: ScifiPirateSmugglerAdvertisement_9
+  - first:
+      213: 21300020
+    second: ScifiPirateSmugglerAdvertisement_10
+  - first:
+      213: 21300022
+    second: ScifiPirateSmugglerAdvertisement_11
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 1
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ScifiPirateSmugglerAdvertisement_0
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 3143
+        width: 1842
+        height: 953
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cc2f238e796261468e702debda59d34
+      internalID: 21300000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScifiPirateSmugglerAdvertisement_1
+      rect:
+        serializedVersion: 2
+        x: 1891
+        y: 3151
+        width: 926
+        height: 929
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be4842701b3e30f49bc134c703ad50d7
+      internalID: 21300002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScifiPirateSmugglerAdvertisement_2
+      rect:
+        serializedVersion: 2
+        x: 2847
+        y: 2221
+        width: 1249
+        height: 1840
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d9df2e6ad9675944af92530904bd70d
+      internalID: 21300004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScifiPirateSmugglerAdvertisement_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2207
+        width: 1857
+        height: 922
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ce90571574fb134f90c3ccbe9d1c1ab
+      internalID: 21300006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScifiPirateSmugglerAdvertisement_4
+      rect:
+        serializedVersion: 2
+        x: 1888
+        y: 2216
+        width: 928
+        height: 923
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3bb7d4f50c9f6464cae65f486aaeaa90
+      internalID: 21300008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScifiPirateSmugglerAdvertisement_5
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 1257
+        width: 1840
+        height: 920
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8986b2f91c81034caa1ae537d093106
+      internalID: 21300010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScifiPirateSmugglerAdvertisement_6
+      rect:
+        serializedVersion: 2
+        x: 1891
+        y: 1261
+        width: 924
+        height: 924
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 659ab08786f503145ac43af9bc133782
+      internalID: 21300012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScifiPirateSmugglerAdvertisement_7
+      rect:
+        serializedVersion: 2
+        x: 2855
+        y: 313
+        width: 1241
+        height: 1840
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d2d4a7645de49345867764cb2fb81b0
+      internalID: 21300014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScifiPirateSmugglerAdvertisement_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 291
+        width: 1873
+        height: 956
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d40c920144f406a45a4a28650240f6df
+      internalID: 21300016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScifiPirateSmugglerAdvertisement_9
+      rect:
+        serializedVersion: 2
+        x: 1865
+        y: 291
+        width: 966
+        height: 956
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dcd568bebf1c7af42ae2c8adf3a53dea
+      internalID: 21300018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScifiPirateSmugglerAdvertisement_10
+      rect:
+        serializedVersion: 2
+        x: 2615
+        y: 19
+        width: 505
+        height: 276
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f99558445fc5e304181ebc7bd3429c88
+      internalID: 21300020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScifiPirateSmugglerAdvertisement_11
+      rect:
+        serializedVersion: 2
+        x: 3139
+        y: 21
+        width: 924
+        height: 276
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea64ca788bc63764e8d51ef611e610cb
+      internalID: 21300022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 099914d7a83d876439aa3989d98d1fc5
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
