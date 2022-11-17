@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 6058852373697542537}
   - component: {fileID: 7231948798762874368}
   - component: {fileID: 1754667069}
+  - component: {fileID: 888711471}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -250,6 +251,7 @@ MonoBehaviour:
   isOverUI: 0
   damageFromHazards: 20
   shouldTakeDamage: 1
+  colliderControlSize: 1
 --- !u!114 &1131083863740002907
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -339,7 +341,11 @@ MonoBehaviour:
   currentlyEating: []
   isBeingDrained: 0
   EatingPanel: {fileID: 0}
-  hideEdges: []
+  hideEdges:
+  - {x: 0.25, y: 0, z: 0}
+  - {x: -0.25, y: 0, z: 0}
+  - {x: 0, y: 0.25, z: 0}
+  - {x: 0, y: -0.25, z: 0}
   isHidden: 0
 --- !u!120 &1131083863740002904
 LineRenderer:
@@ -474,7 +480,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!82 &1103273278
 AudioSource:
@@ -655,3 +661,25 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!1773428102 &888711471
+ParentConstraint:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1131083863740002849}
+  m_Enabled: 1
+  m_Weight: 1
+  m_TranslationAtRest: {x: 5.47, y: 1.1489697, z: 0}
+  m_RotationAtRest: {x: 0, y: 0, z: 0}
+  m_TranslationOffsets: []
+  m_RotationOffsets: []
+  m_AffectTranslationX: 1
+  m_AffectTranslationY: 1
+  m_AffectTranslationZ: 1
+  m_AffectRotationX: 1
+  m_AffectRotationY: 1
+  m_AffectRotationZ: 1
+  m_IsContraintActive: 0
+  m_IsLocked: 1
+  m_Sources: []

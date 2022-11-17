@@ -15,6 +15,7 @@ TagManager:
   - NoStick
   - Drone
   - Killzone
+  - TurnOff
   layers:
   - Default
   - TransparentFX

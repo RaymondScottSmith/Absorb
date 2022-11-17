@@ -51,7 +51,8 @@ public class PlayerController : MonoBehaviour
 
     //For use with ParentConstraints
     private ConstraintSource constraintSource;
-    
+
+    [SerializeField] private bool colliderControlSize;
 
     // Start is called before the first frame update
     void Awake()
@@ -244,8 +245,12 @@ public class PlayerController : MonoBehaviour
             constraintSource.weight = 1;
             //GetComponent<ParentConstraint>().AddSource(constraintSource);
 
-            Vector3 colScale = col.transform.lossyScale;
-            transform.SetParent(col.transform);
+            if (colliderControlSize)
+            {
+                Vector3 colScale = col.transform.lossyScale;
+                transform.SetParent(col.transform);
+            }
+            
             //transform.localScale = transform.localScale / colScale.x;
 
             //GetComponent<ParentConstraint>().locked = true;

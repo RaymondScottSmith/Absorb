@@ -215,7 +215,7 @@ public class PlayerShrink : Shrink
 
     public void Die()
     {
-        Debug.Log("Player should die here");
+        //Debug.Log("Player should die here");
         foreach (Shrink food in currentlyEating)
         {
            Destroy(food.gameObject); 
