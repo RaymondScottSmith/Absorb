@@ -198,6 +198,14 @@ public class PlayerController : MonoBehaviour
         //audioSource.Stop();
         audioSource.PlayOneShot(squishSound);
     }
+
+    private IEnumerator SquishImage()
+    {
+        SpriteRenderer myRenderer = GetComponent<SpriteRenderer>();
+        myRenderer.size = new Vector2(myRenderer.size.x, myRenderer.size.y / 1.25f);
+        yield return new WaitForSecondsRealtime(0.1f);
+        myRenderer.size = new Vector2(myRenderer.size.x, myRenderer.size.y * 1.25f);
+    }
     
     
 
@@ -207,12 +215,14 @@ public class PlayerController : MonoBehaviour
         {
             if (!col.gameObject.CompareTag("Food") && !col.gameObject.CompareTag("Damaging"))
             {
+                StartCoroutine(SquishImage());
                 if (col.gameObject.CompareTag("NoStick"))
                 {
                     audioSource.PlayOneShot(bounceSound);
                 }
                 else
                 {
+                    
                     PlaySquishSound();
                 }
                 //audioSource.Stop();
@@ -249,8 +259,21 @@ public class PlayerController : MonoBehaviour
             {
                 Vector3 colScale = col.transform.lossyScale;
                 transform.SetParent(col.transform);
+                /*
+                transform.localScale = new Vector3(
+                    transform.lossyScale.x /colScale.x,
+                    transform.lossyScale.y / colScale.y,
+                    transform.lossyScale.z / colScale.z);
+                    */
             }
-            
+
+            /*
+            transform.localScale = new Vector3(
+                transform.localScale.x /col.gameObject.transform.localScale.x,
+                transform.localScale.y / col.gameObject.transform.localScale.y,
+                transform.localScale.z / col.gameObject.transform.localScale.z);
+            */
+
             //transform.localScale = transform.localScale / colScale.x;
 
             //GetComponent<ParentConstraint>().locked = true;

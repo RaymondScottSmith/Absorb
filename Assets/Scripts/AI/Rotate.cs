@@ -51,7 +51,6 @@ public class Rotate : MonoBehaviour
         }
         else
         {
-            Debug.Log("Should be hitting here");
             for (float i = -1; i >= rotateAngle.z/4; i--)
             {
                 yield return new WaitForFixedUpdate();

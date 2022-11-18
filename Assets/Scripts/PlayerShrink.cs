@@ -232,7 +232,8 @@ public class PlayerShrink : Shrink
         FindObjectOfType<CameraController>().PlayOneShot(loseMusic);
         //corpse = Instantiate(corpsePrefab, transform.position, corpsePrefab.transform.rotation);
         GetComponent<SpriteRenderer>().sprite = corpseSprite;
-        gameObject.transform.localScale = Vector3.one * 2f;
+        
+        gameObject.transform.localScale = Vector3.one;
         GetComponent<CircleCollider2D>().radius = 0.15f;
         if (leaderboard != null)
             yield return leaderboard.SubmitScoreRoutine((int)Mathf.Round(time));
