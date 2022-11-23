@@ -796,6 +796,8 @@ PlayableDirector:
   m_SceneBindings:
   - key: {fileID: -2885982378755508156, guid: 3b23add7a0f2d3444bd4149bf9179946, type: 2}
     value: {fileID: 0}
+  - key: {fileID: 2349444870826468742, guid: 3b23add7a0f2d3444bd4149bf9179946, type: 2}
+    value: {fileID: 9155636316357464632}
   m_ExposedReferences:
     m_References: []
 --- !u!61 &9155636316357464628
@@ -1722,7 +1724,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9155636317916966831}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -1748,7 +1750,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9155636317916966831}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0

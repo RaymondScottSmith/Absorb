@@ -14,6 +14,7 @@ public class TimerRepeat : MonoBehaviour
     public bool isRepeating;
 
     public float timerDuration;
+    
     // Start is called before the first frame update
     private void Start()
     {
@@ -22,6 +23,19 @@ public class TimerRepeat : MonoBehaviour
             StartTimer(timerDuration, isRepeating, 0);
         }
     }
+
+    public void StartTimer()
+    {
+        if (isRepeating)
+        {
+            InvokeRepeating("RepeatingTimer", timerDuration,timerDuration);
+        }
+        else
+        {
+            StartCoroutine(NonRepeatingTimer(timerDuration));
+        }
+    }
+    
 
     private void StartTimer(float duration, bool repeating, float delay = 0f)
     {

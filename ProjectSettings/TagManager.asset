@@ -16,6 +16,7 @@ TagManager:
   - Drone
   - Killzone
   - TurnOff
+  - NewParent
   layers:
   - Default
   - TransparentFX

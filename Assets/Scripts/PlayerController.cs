@@ -6,6 +6,7 @@ using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.Animations;
 using UnityEngine.EventSystems;
+using UnityEngine.Experimental.Rendering.Universal;
 using UnityEngine.Playables;
 
 public class PlayerController : MonoBehaviour
@@ -54,14 +55,19 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private bool colliderControlSize;
 
+    private Light2D playerLight;
+
+    public LaserColor playerColor;
+
     // Start is called before the first frame update
     void Awake()
     {
+        playerColor = LaserColor.None;
         GetComponent<Collider2D>().enabled = true;
         moving = false;
         readyToLaunch = true;
         //readyToPlay = false;
-        
+        playerLight = GetComponentInChildren<Light2D>();
         playerShrink = GetComponent<PlayerShrink>();
         audioSource = GetComponent<AudioSource>();
         animator = GetComponent<Animator>();
@@ -83,6 +89,7 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        playerLight.enabled = false;
     }
 
     public void HoldPlayerInPlace()
@@ -101,6 +108,46 @@ public class PlayerController : MonoBehaviour
         rb.velocity = Vector2.zero;
         //rb.constraints = RigidbodyConstraints2D.FreezeAll;
 
+    }
+
+    public IEnumerator SetColor(LaserColor newColor, float timer)
+    {
+        playerColor = newColor;
+
+        ColorLaser[] affectedLasers = FindObjectsOfType<ColorLaser>();
+
+        switch (newColor)
+        {
+            case LaserColor.Red:
+                playerLight.enabled = true;
+                playerLight.color = Color.red;
+                break;
+            
+            case LaserColor.Green:
+                playerLight.enabled = true;
+                playerLight.color = Color.green;
+                break;
+        }
+
+        foreach (ColorLaser cl in affectedLasers)
+        {
+            if (cl.color == newColor)
+            {
+                cl.TurnOffDamage();
+            }
+        }
+        yield return new WaitForSeconds(timer);
+        playerColor = LaserColor.None;
+        
+        foreach (ColorLaser cl in affectedLasers)
+        {
+            if (cl.color == newColor)
+            {
+                cl.TurnOnDamage();
+            }
+        }
+
+        playerLight.enabled = false;
     }
 
     public void ReleasePlayer()
@@ -206,11 +253,26 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSecondsRealtime(0.1f);
         myRenderer.size = new Vector2(myRenderer.size.x, myRenderer.size.y * 1.25f);
     }
+
+    public void DetachFromParent()
+    {
+        Vector3 currentPos = transform.position;
+        Debug.Log(currentPos);
+        transform.SetParent(null);
+        transform.localPosition = currentPos;
+        Debug.Log(transform.position);
+    }
     
     
 
     void OnCollisionEnter2D(Collision2D col)
     {
+        if (col.gameObject.CompareTag("NewParent"))
+        {
+            moving = false;
+            transform.SetParent(col.gameObject.transform);
+            return;
+        }
         if (moving)
         {
             if (!col.gameObject.CompareTag("Food") && !col.gameObject.CompareTag("Damaging"))
@@ -232,6 +294,7 @@ public class PlayerController : MonoBehaviour
             float angle = Mathf.Atan2(v.y, v.x) * Mathf.Rad2Deg;
             transform.rotation = Quaternion.AngleAxis(angle-90, Vector3.forward);
         }
+
         
         
         //If we hit a bounceable object while holding down mouse and moving

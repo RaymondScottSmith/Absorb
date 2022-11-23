@@ -17,6 +17,8 @@ public class Rotate : MonoBehaviour
 
     public Vector3 rotateAxis;
 
+    public int rotateAngleSteps = 4;
+
     private AudioSource rotateSound;
     // Start is called before the first frame update
     void Start()
@@ -43,18 +45,18 @@ public class Rotate : MonoBehaviour
         float z = transform.rotation.eulerAngles.z;
         if (rotateAngle.z > 0)
         {
-            for (float i = 1; i <= rotateAngle.z/4; i++)
+            for (float i = 1; i <= rotateAngle.z/rotateAngleSteps; i++)
             {
                 yield return new WaitForFixedUpdate();
-                transform.rotation = Quaternion.Euler(0,0,z+i*4);
+                transform.rotation = Quaternion.Euler(0,0,z+i*rotateAngleSteps);
             }
         }
         else
         {
-            for (float i = -1; i >= rotateAngle.z/4; i--)
+            for (float i = -1; i >= rotateAngle.z/rotateAngleSteps; i--)
             {
                 yield return new WaitForFixedUpdate();
-                transform.rotation = Quaternion.Euler(0,0,z+i*4);
+                transform.rotation = Quaternion.Euler(0,0,z+i*rotateAngleSteps);
             }
         }
         
