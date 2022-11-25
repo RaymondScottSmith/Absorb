@@ -19,6 +19,8 @@ public class Jetpack : MonoBehaviour
     [SerializeField] private float fireTime = 1f;
     [SerializeField] private float xFireDistance = 5f;
 
+    [SerializeField] private GameObject thruster;
+
     public GameObject bulletPrefab;
     
     private Seeker seeker;
@@ -123,6 +125,7 @@ public class Jetpack : MonoBehaviour
         isFiringGun = true;
         yield return new WaitForSeconds(targetLockTime);
         GetComponentInChildren<JetpackGun>().StartFiring();
+        FireBullet();
         yield return new WaitForSeconds(fireTime);
         GetComponentInChildren<JetpackGun>().StopFiring();
         isFiringGun = false;
@@ -248,6 +251,7 @@ public class Jetpack : MonoBehaviour
 
     public void Die()
     {
+        thruster.SetActive(false);
         isPursuing = false;
         animator.SetBool("IsShooting", false);
     }

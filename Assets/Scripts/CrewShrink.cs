@@ -29,6 +29,7 @@ public class CrewShrink : Shrink
     }
     public override void AttachToEater(GameObject eater)
     {
+        audioSource.Stop();
         if (deathSounds.Length > 0 && audioSource != null)
         {
             int randSound = Random.Range(0, deathSounds.Length);
@@ -54,7 +55,7 @@ public class CrewShrink : Shrink
             myAnimator.SetTrigger("Dying");
         StartCoroutine(BeEaten(eater.GetComponent<Shrink>()));
 
-        eatSymbolPrefab = Instantiate(eatSymbolPrefab, LevelManager.Instance.eatingPanel.transform);
+        eatSymbolPrefab = Instantiate(eatSymbolPrefab, eater.GetComponent<PlayerShrink>().EatingPanel.transform);
         
     }
 

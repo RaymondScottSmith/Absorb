@@ -59,6 +59,8 @@ public class PlayerController : MonoBehaviour
 
     public LaserColor playerColor;
 
+    private Coroutine colorTimerCoroutine;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -110,6 +112,27 @@ public class PlayerController : MonoBehaviour
 
     }
 
+    public void SetPlayerColor(LaserColor color, float timer)
+    {
+        if (colorTimerCoroutine != null)
+        {
+            StopCoroutine(colorTimerCoroutine);
+            
+            ColorLaser[] affectedLasers = FindObjectsOfType<ColorLaser>();
+            foreach (ColorLaser cl in affectedLasers)
+            {
+                if (cl.color == playerColor)
+                {
+                    cl.TurnOnDamage();
+                }
+            }
+            playerColor = LaserColor.None;
+
+            playerLight.enabled = false;
+        }
+
+        colorTimerCoroutine = StartCoroutine(SetColor(color, timer));
+    }
     public IEnumerator SetColor(LaserColor newColor, float timer)
     {
         playerColor = newColor;
@@ -122,10 +145,25 @@ public class PlayerController : MonoBehaviour
                 playerLight.enabled = true;
                 playerLight.color = Color.red;
                 break;
-            
             case LaserColor.Green:
                 playerLight.enabled = true;
                 playerLight.color = Color.green;
+                break;
+            case LaserColor.Yellow:
+                playerLight.enabled = true;
+                playerLight.color = Color.yellow;
+                break;
+            case LaserColor.Blue:
+                playerLight.enabled = true;
+                playerLight.color = Color.blue;
+                break;
+            case LaserColor.Purple:
+                playerLight.enabled = true;
+                playerLight.color = new Color(250/255f, 0, 240/255f);
+                break;
+            case LaserColor.Orange:
+                playerLight.enabled = true;
+                playerLight.color = new Color(255/255f, 95/255f, 0);
                 break;
         }
 

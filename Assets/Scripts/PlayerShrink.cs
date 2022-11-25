@@ -37,7 +37,7 @@ public class PlayerShrink : Shrink
 
     public bool isBeingDrained;
 
-    [SerializeField] private GameObject EatingPanel;
+    [SerializeField] public GameObject EatingPanel;
 
     [SerializeField] private List<Vector3> hideEdges;
 

@@ -10,7 +10,7 @@ public class Bullet : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("TimeoutDestroy", 2f, 10f);
+        InvokeRepeating("TimeoutDestroy", 1f, 10f);
     }
 
     private void TimeoutDestroy()
@@ -26,6 +26,7 @@ public class Bullet : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D col)
     {
-        Destroy(gameObject);
+        if (!col.gameObject.CompareTag("Food"))
+            Destroy(gameObject);
     }
 }
