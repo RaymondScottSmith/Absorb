@@ -16,7 +16,8 @@ public class Shrink : MonoBehaviour
     [SerializeField] protected int eatPerSecond;
     
     public int currentHealth;
-    protected float scaleValue;
+    protected float scaleValueX;
+    protected float scaleValueY;
 
     public bool beingEaten = false;
     protected Transform attachedEater;
@@ -44,7 +45,8 @@ public class Shrink : MonoBehaviour
     private void Awake()
     {
         currentHealth = startingHealth;
-        scaleValue = (transform.localScale.x - minimumScale)/startingHealth;
+        scaleValueX = (transform.localScale.x - minimumScale)/startingHealth;
+        scaleValueY = (transform.localScale.y - minimumScale)/startingHealth;
         if (spriteRenderer == null)
             spriteRenderer = GetComponent<SpriteRenderer>();
         shrinkCollider = GetComponent<Collider2D>();
@@ -57,10 +59,11 @@ public class Shrink : MonoBehaviour
     private void Update()
     {
         //Calculate the new scale
-        float newScale = scaleValue * currentHealth + minimumScale;
+        float newScaleX = scaleValueX * currentHealth + minimumScale;
+        float newScaleY = scaleValueY * currentHealth + minimumScale;
             
         //Adjust scale as health decreases
-        transform.localScale = new Vector3(newScale, newScale, 0);
+        transform.localScale = new Vector3(newScaleX, newScaleY, 0);
         //Adjust color as health decreases
         
         if (beingEaten)

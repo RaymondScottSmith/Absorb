@@ -62,7 +62,8 @@ public class PlayerShrink : Shrink
         alive = true;
         time = 0;
         //Calculate scale value
-        scaleValue = (transform.localScale.x - minimumScale) / startingHealth;
+        scaleValueX = (transform.localScale.x - minimumScale) / startingHealth;
+        scaleValueY = (transform.localScale.y - minimumScale) / startingHealth;
         //Start the Coroutine that will decrease health over time
         if (!isTutorial)
         {
@@ -115,15 +116,16 @@ public class PlayerShrink : Shrink
         //Calculate the new scale
         if (alive)
         {
-            float newScale = scaleValue * currentHealth + minimumScale;
-            
+            float newScaleX = scaleValueX * currentHealth + minimumScale;
+            float newScaleY = scaleValueY * currentHealth + minimumScale;
             //Adjust scale as health changes
             if (transform.parent == null)
-                transform.localScale = new Vector3(newScale, newScale, 0);
+                transform.localScale = new Vector3(newScaleX, newScaleY, 0);
             else
             {
-                newScale = (scaleValue * currentHealth + minimumScale) / transform.parent.lossyScale.x;
-                transform.localScale = new Vector3(newScale, newScale, 0);
+                newScaleX = (scaleValueX * currentHealth + minimumScale) / transform.parent.lossyScale.x;
+                newScaleY = (scaleValueY * currentHealth + minimumScale) / transform.parent.lossyScale.y;
+                transform.localScale = new Vector3(newScaleX, newScaleY, 0);
             }
             //Adjust color as health changes
             float healthColor = (float)currentHealth / startingHealth; 
