@@ -66,7 +66,7 @@ public class ColorShift : MonoBehaviour
                 signalLight.intensity = 3f;
                 break;
             case LaserColor.Blue:
-                signalLight.color = Color.blue;
+                signalLight.color = new Color(56/255f, 215/255f, 255/255f);
                 signalLight.intensity = 4f;
                 break;
             case LaserColor.Green:

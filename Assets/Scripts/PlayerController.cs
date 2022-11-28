@@ -155,7 +155,7 @@ public class PlayerController : MonoBehaviour
                 break;
             case LaserColor.Blue:
                 playerLight.enabled = true;
-                playerLight.color = Color.blue;
+                playerLight.color = new Color(56/255f, 215/255f, 255/255f);
                 break;
             case LaserColor.Purple:
                 playerLight.enabled = true;

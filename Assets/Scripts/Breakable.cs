@@ -20,7 +20,8 @@ public class Breakable : MonoBehaviour
 
     private ParticleSystem breakParticleSystem;
 
-    private bool readyToBreak;
+    public bool readyToBreak = false;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -36,16 +37,23 @@ public class Breakable : MonoBehaviour
         {
             spriteRenderer.sprite = sprites[0];
         }
+        
+        if (readyToBreak)
+        {
+            bounceSurface.enabled = false;
+        }
+        
     }
 
     void OnCollisionEnter2D(Collision2D col)
     {
         if (col.gameObject.CompareTag("Player"))
         {
+            
             if (audioSource != null)
                 audioSource.PlayOneShot(hitSound);
             numSurvivable--;
-            if (sprites.Count > 0)
+            if (sprites.Count > 1)
             {
                 sprites.RemoveAt(0);
                 spriteRenderer.sprite = sprites[0];
