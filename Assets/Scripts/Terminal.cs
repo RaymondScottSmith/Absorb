@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Terminal : MonoBehaviour
 {
@@ -20,6 +21,9 @@ public class Terminal : MonoBehaviour
     [SerializeField] private bool deleteKey = false;
 
     protected bool active = true;
+    
+    public UnityEvent OnActivateTerminal;
+    
     // Start is called before the first frame update
     void Awake()
     {
@@ -41,7 +45,11 @@ public class Terminal : MonoBehaviour
             audioSource.PlayOneShot(acceptSound);
             
             StartCoroutine(CorrectActivate());
-            triggerable.Activate();
+            if (triggerable != null)
+            {
+                triggerable.Activate();
+            }
+            
             active = false;
             
             TalkScript.Instance.ClearQueue();
@@ -114,5 +122,6 @@ public class Terminal : MonoBehaviour
         animator.SetTrigger("Correct");
         yield return new WaitForSeconds(0.5f);
         animator.SetBool("Activated", true);
+        OnActivateTerminal?.Invoke();
     }
 }
